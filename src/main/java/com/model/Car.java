@@ -19,7 +19,7 @@ public class Car {
     private int seat;
     private String imgSrc;
 
-    private model.database database;
+    private database database;
 
     public String getId() {
         return id;
