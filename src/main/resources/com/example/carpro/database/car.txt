@@ -1,0 +1,8 @@
+1,Honda,Civic,DWE 123,15.00,Kuala Lumpur
+2,Toyota,Alphard,JVE 54,30.00,Selangor
+3,Mercedes-Benz,G-Class,RA 6571,85.00,Johor
+4,Perodua,Alza,VWM 654,12.00,Penang
+5,BMW,1 Series,PFV 55,65.00,Perak
+6,Proton,Exora,LRM 54,25.00,Kelantan
+7,Porsche,Boxster,MVD 521,75.00,Sabah
+8,Volkswagen,Beetle,VSD 125,66.00,Sarawak
