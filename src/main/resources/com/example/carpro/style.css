@@ -5,8 +5,35 @@
     -fx-font-size: 17px;
 }
 
-#addCarbtn:hover{
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3),10,0.5,0.0,0.0)
+#reportBtn:hover, #reportBtn:focused{
+    -fx-graphic: url(img/analytics-hover.png);
+}
+
+#editBtn:hover, #editBtn:focused{
+    -fx-graphic: url(img/settings-hover.png);
+}
+
+#bookingBtn:hover, #bookingBtn:focused{
+    -fx-graphic: url(img/booking-hover.png);
+}
+
+#addUserBtn:hover, #addUserBtn:focused{
+    -fx-graphic: url(img/add-user-hover.png);
+}
+
+#reportBtn_menu, #editBtn_menu, #bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+    -fx-background-radius: 0px;
+}
+
+#reportBtn_menu:hover, #editBtn_menu:hover, #bookingBtn_menu:hover, #addUserBtn_menu:hover, #logoutBtn_menu:hover,
+#reportBtn_menu:focused, #editBtn_menu:focused, #bookingBtn_menu:focused, #addUserBtn_menu:focused, #logoutBtn_menu:focused{
+    -fx-background-color: #E7E3E3;
+}
+
+#logoutBtn_menu{
+    -fx-background-radius: 0px 0px 24px 0px;
 }
 
 #deleteBtn{
