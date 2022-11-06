@@ -44,7 +44,7 @@ public class addeditcar_Main_Controller implements Initializable {
 
         carList = db.readFile("car.txt");
         int i;
-        // comment
+
         for (i=0;i< carList.size();i++){
             String[] arr = carList.get(i).split( ",",6);
             Car car = new Car();

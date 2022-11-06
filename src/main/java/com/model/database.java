@@ -9,7 +9,7 @@ public class database {
 
     public database(){}
 
-    private String path = "D:\\OneDrive - Asia Pacific University\\APU\\2nd-Year-Sem-1\\OODJ\\Assignment\\CarPro\\src\\main\\resources\\com\\example\\carpro\\database\\";
+    private String path = "src/main/resources/com/example/carpro/database/";
 
     public ArrayList<String> readFile(String fileName){
 
@@ -20,9 +20,7 @@ public class database {
             Scanner reader = new Scanner(file);
             while(reader.hasNextLine()){
                 data.add(reader.nextLine());
-                //String fd = reader.nextLine();
             }
-            //return data;
             reader.close();
         }catch (FileNotFoundException e){
             System.out.println("Database error");

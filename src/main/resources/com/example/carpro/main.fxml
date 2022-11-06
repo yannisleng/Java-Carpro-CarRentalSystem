@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<StackPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.carpro.Controller">
+<StackPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.Controller">
    <children>
       <StackPane fx:id="switchScene" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" StackPane.alignment="TOP_RIGHT">
       </StackPane>
