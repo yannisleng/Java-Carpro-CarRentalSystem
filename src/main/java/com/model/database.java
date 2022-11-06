@@ -9,7 +9,7 @@ public class database {
 
     public database(){}
 
-    private String path = "D:\\OneDrive - Asia Pacific University\\APU\\2nd-Year-Sem-1\\OODJ\\Assignment\\CarPro\\src\\main\\resources\\com\\example\\carpro\\database\\";
+    private String path = "C:\\Users\\lengz\\OneDrive\\Desktop\\oodj\\oodjAssignment\\carpro\\src\\main\\resources\\com\\example\\carpro\\database\\";
 
     public ArrayList<String> readFile(String fileName){
 
