@@ -87,3 +87,11 @@
     -fx-border-radius: 2px;
     -fx-text-fill: black;
 }
+
+#txtUsername, #txtPassword{
+    -fx-prompt-text-fill: #000000;
+}
+
+#txtSearch{
+    -fx-prompt-text-fill: #C2C2C2;
+}
