@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="carpro" target="18" />
+      <module name="carpro" target="0" />
     </bytecodeTargetLevel>
   </component>
 </project>

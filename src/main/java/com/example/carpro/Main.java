@@ -25,7 +25,6 @@ public class Main extends Application {
         stage.setTitle("Car Pro");
         stage.show();
 
-
     }
 
     public static void main(String[] args) {
