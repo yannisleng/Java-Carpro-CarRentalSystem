@@ -19,6 +19,8 @@ public class Car {
     private int seat;
     private String imgSrc;
 
+    private database database;
+
     public String getId() {
         return id;
     }
@@ -83,4 +85,20 @@ public class Car {
         this.imgSrc = imgSrc;
     }
 
+   /* public void readcar(){
+        ArrayList<String> carList= new ArrayList<>();
+
+        carList = database.readFile("car.txt");
+        int i;
+        for (i=0;i< carList.size();i++){
+            //carList.get(i);
+            String[] arr = carList.get(i).split("\n",6);
+            this.setId(arr[0]);
+            this.setBrand(arr[1]);
+            this.setModel(arr[2]);
+            this.setNumPlate(arr[3]);
+            this.setPrice(Float.parseFloat(arr[4]));
+            this.setLocation(arr[5]);
+        }
+    }*/
 }

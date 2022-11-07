@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,10 +14,11 @@ import java.util.Iterator;
 
 public class Main extends Application {
     Image icon = new Image("file:src/main/resources/com/example/carpro/img/logo.png");
+    //Font font = Font.loadFont("file:src/main/resources/com/example/carpro/font/SFProDisplay-Regular.ttf", 12);
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("forgotPassword.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         stage.setScene(scene);
         /*Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -24,7 +26,6 @@ public class Main extends Application {
         stage.getIcons().add(icon);
         stage.setTitle("Car Pro");
         stage.show();
-
     }
 
     public static void main(String[] args) {
