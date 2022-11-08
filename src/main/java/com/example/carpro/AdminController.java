@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class AdminController implements Initializable {
 
     @FXML
     private Button booking;
@@ -61,7 +61,7 @@ public class Controller implements Initializable {
         }
     }
 
-    private void switchscene(String fxml){
+    public void switchscene(String fxml){
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource(fxml));
 

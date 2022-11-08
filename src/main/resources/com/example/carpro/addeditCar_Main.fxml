@@ -13,11 +13,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane fx:id="addeditcar_Main" prefHeight="600.0" prefWidth="780.0"
-           style="-fx-background-color: white;"
-           xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditcar_Main_Controller">
+<StackPane fx:id="addeditcar_Main" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditcar_Main_Controller">
    <children>
-      <Button id="addCarbtn" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" stylesheets="@style.css" text="+ Add Car" StackPane.alignment="TOP_LEFT">
+      <Button id="addCarbtn" fx:id="addCar" mnemonicParsing="false" onAction="#switchtoNext" prefHeight="40.0" prefWidth="120.0" stylesheets="@style.css" text="+ Add Car" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="29.0" top="37.0" />
          </StackPane.margin>
@@ -54,56 +52,54 @@
             <Insets left="562.0" top="28.0" />
          </StackPane.margin>
       </Label>
-      <VBox fx:id="carlistLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <VBox fx:id="carlistLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" />
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="721.0">
          <children>
             <HBox prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css">
                <children>
-                  <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="101.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
+                  <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </CheckBox>
-                  <Label prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: white;" stylesheets="@style.css" text="Brand">
+                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Brand">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: white;" stylesheets="@style.css" text="Model">
+                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Model">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: white;" stylesheets="@style.css" text="Plate">
+                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Plate">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: white;" stylesheets="@style.css" text="Price">
+                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Price">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: white;" stylesheets="@style.css" text="Location">
+                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Location">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
                </children>
             </HBox>
+            <Pagination fx:id="pagination" maxHeight="-Infinity" maxPageIndicatorCount="6" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="722.0" style="-fx-background-color: white;" stylesheets="@style.css">
+               <styleClass>
+                  <String fx:value="pagination" />
+                  <String fx:value="pagination-control" />
+                  <String fx:value="right-arrow-button" />
+               </styleClass>
+            </Pagination>
          </children>
          <StackPane.margin>
             <Insets left="29.0" top="83.0" />
          </StackPane.margin>
       </VBox>
-      <Pagination maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="280.0" style="-fx-background-color: white;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
-         <styleClass>
-            <String fx:value="pagination" />
-            <String fx:value="pagination-control" />
-            <String fx:value="right-arrow-button" />
-         </styleClass>
-         <StackPane.margin>
-            <Insets left="29.0" top="536.0" />
-         </StackPane.margin>
-      </Pagination>
    </children>
 </StackPane>

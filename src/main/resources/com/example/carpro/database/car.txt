@@ -6,3 +6,9 @@
 0060010001,Proton,Exora,LRM 54,25.00,Kelantan
 0070010001,Porsche,Boxster,MVD 521,75.00,Sabah
 0080010001,Volkswagen,Beetle,VSD 125,66.00,Sarawak
+0090010001,Bentley,Arnage,ABC 12,99.00,Pahang
+0100010001,Bison,BJ 1039,IJH 5,59.00,Selangor
+0010010002,Honda,Civic,LK 2,16.00,Sabah
+0070010002,Porsche,Boxster,JH 6,79.00,Kuala Lumpur
+0110010001,Chery,Maxime,LV 465,89.00,Perak
+0120010001,Lamborghini,Aventador,GJH 5,129.00,Penang
