@@ -1,22 +1,17 @@
 package com.example.carpro;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Main extends Application {
     Image icon = new Image("file:src/main/resources/com/example/carpro/img/logo.png");
@@ -35,8 +30,8 @@ public class Main extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
 
         //Press esc to exit the program
-        stage.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent keyEvent) -> {
-            if(keyEvent.getCode()== KeyCode.ESCAPE) {
+        stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent keyEvent) -> {
+            if(keyEvent.getCode() == KeyCode.ESCAPE) {
                 exit(stage);
             }
         });
@@ -51,7 +46,7 @@ public class Main extends Application {
         alert.setHeaderText("You're about to logout.");
         alert.setContentText("Are you sure you want to exit Car Pro?");
 
-        if(alert.showAndWait().get()== ButtonType.OK){
+        if(alert.showAndWait().get() == ButtonType.OK){
             stage.close();
         }
     }
