@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="spExloreC3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lblResult" text="0 result of ‘Tokyo’" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNotMatch" text="Your search ‘Tokyo’ did not match any cars" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="65.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblSuggestion" text="Suggestions:" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="115.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblDiffKey" text="• Try different keywords." StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="20.0" top="165.0" />
+         </StackPane.margin>
+      </Label>
+      <ImageView fx:id="imgNotFoundCar" fitHeight="320.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT">
+         <image>
+            <Image url="@img/notFoundCar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="400.0" top="180.0" />
+         </StackPane.margin>
+      </ImageView>
+   </children>
+</StackPane>

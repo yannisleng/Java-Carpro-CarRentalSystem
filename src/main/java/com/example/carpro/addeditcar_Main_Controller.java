@@ -1,16 +1,15 @@
 package com.example.carpro;
-import com.model.database;
+import com.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Pagination;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import com.model.Car;
 import javafx.util.Callback;
 
 import java.io.IOException;
@@ -25,13 +24,17 @@ public class addeditcar_Main_Controller implements Initializable {
     private VBox carlistLayout;
 
     @FXML
-    private Button addCar;
-
-    @FXML
     private StackPane addeditcar_Main;
 
     @FXML
+    private ComboBox<String> brandCmb;
+
+    @FXML
+    private ComboBox<String> modelCmb;
+
+    @FXML
     private Pagination pagination;
+
     private final static int rowsPerPage = 8;
 
     List<Car> car = new ArrayList<>(readcar());
@@ -39,6 +42,18 @@ public class addeditcar_Main_Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(this.pagination != null){
+            List <Model> modelList = new ArrayList<>(readModel());
+            List <Brand> brandList = new ArrayList<>(readBrand());
+
+            //add item to combo box
+            for(int i=0;i<brandList.size();i++){
+                brandCmb.getItems().addAll(brandList.get(i).getBrandName());
+            }
+
+            for (int j=0;j<modelList.size();j++){
+                modelCmb.getItems().addAll(modelList.get(j).getModelName());
+            }
+
             pagination.setPageFactory(new Callback<Integer, Node>() {
                 @Override
                 public Node call(Integer pageIndex) {
@@ -55,36 +70,34 @@ public class addeditcar_Main_Controller implements Initializable {
 
             pagination.setPageCount(pageCount);
         }
-
     }
 
     private List<Car> readcar(){
-        database db = new database();
-        ArrayList<String> carList= new ArrayList<>();
-        List<Car> ls= new ArrayList<>();
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("car");
+        List<Car> carList = new ArrayList<>(db.getAllData());
+        return carList;
+    }
 
-        carList = db.readFile("car.txt");
-        int i;
+    private List<Brand> readBrand(){
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("brand");
+        List<Brand> brandList = new ArrayList<>(db.getAllData());
+        return brandList;
+    }
 
-        for (i=0;i< carList.size();i++){
-            String[] arr = carList.get(i).split( ",",6);
-            Car car = new Car();
-            car.setId(arr[0]);
-            car.setBrand(arr[1]);
-            car.setModel(arr[2]);
-            car.setNumPlate(arr[3]);
-            car.setPrice(Float.parseFloat(arr[4]));
-            car.setLocation(arr[5]);
-            ls.add(car);
-        }
-        return ls;
+    private List<Model> readModel(){
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("model");
+        List<Model> modelList = new ArrayList<>(db.getAllData());
+        return modelList;
     }
 
     private Node createPage(int pageIndex){
         int fromIndex = pageIndex * rowsPerPage;
         int toIndex = Math.min(fromIndex+ rowsPerPage,car.size());
 
-        for (int i=fromIndex; i<= toIndex; i++){
+        for (int i=fromIndex; i< toIndex; i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("addeditCar_item.fxml"));
 

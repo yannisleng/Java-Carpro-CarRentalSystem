@@ -32,12 +32,12 @@
             </ImageView>
          </graphic>
       </Button>
-      <ComboBox prefHeight="26.0" prefWidth="138.0" promptText="All Brand" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <ComboBox id="brandCmbMain" fx:id="brandCmb" prefHeight="26.0" prefWidth="138.0" promptText="All Brand" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="395.0" top="51.0" />
          </StackPane.margin>
       </ComboBox>
-      <ComboBox prefHeight="26.0" prefWidth="138.0" promptText="All Model" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <ComboBox id="modelCmbMain" fx:id="modelCmb" prefHeight="26.0" prefWidth="138.0" promptText="All Model" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="553.0" top="51.0" />
          </StackPane.margin>

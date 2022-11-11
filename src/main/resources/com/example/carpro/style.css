@@ -111,12 +111,35 @@
     -fx-background-color: transparent;
 }
 
+.spinner{
+    -fx-text-fill: #000000;
+    -fx-border-color: #dedede;
+    -fx-border-radius: 8px 0px 0px 8px;
+    -fx-background-color: transparent;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button{
+    -fx-background-color: #d3d3d3;
+    -fx-border-radius: 8px;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover{
+    -fx-background-color: #000000;
+}
+
+.spinner .increment-arrow-button .increment-arrow,
+.spinner .decrement-arrow-button .decrement-arrow{
+    -fx-background-color: #535353;
+}
+
 #carinfogrid, #locationgrid, #carpicVbox, #uploadPhotoLbl{
     -fx-border-color: #dedede;
     -fx-border-radius: 8px;
 }
 
-#addbrandBtn:hover, #addbrandBtn:focused, #addmodelBtn:hover, #addmodelBtn:focused{
+#addbrandBtn:hover, #addbrandBtn:pressed, #addmodelBtn:hover, #addmodelBtn:pressed{
     -fx-graphic: url(img/add-hover.png);
 }
 

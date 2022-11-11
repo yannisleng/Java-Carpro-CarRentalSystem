@@ -7,10 +7,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
@@ -37,45 +36,48 @@
             <Insets left="530.0" top="25.0" />
          </StackPane.margin>
       </DatePicker>
-      <Label fx:id="lblRecentlyAdd" text="Recently Added" StackPane.alignment="TOP_LEFT">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-         <StackPane.margin>
-            <Insets left="20.0" top="85.0" />
-         </StackPane.margin>
-      </Label>
-      <ScrollPane fx:id="scrollPaneRecentlyAdd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="730.0" style="-fx-background-color: rgba(0,0,0,0);" StackPane.alignment="TOP_LEFT">
-         <StackPane.margin>
-            <Insets left="20.0" top="120.0" />
-         </StackPane.margin>
-         <content>
-            <HBox fx:id="cardLayout" alignment="CENTER" prefHeight="160.0" prefWidth="731.0" spacing="15.0" style="-fx-background-color: rgba(0,0,0,0);" />
-         </content>
-      </ScrollPane>
-      <Label fx:id="lblRecommend" text="Recommended for You" StackPane.alignment="TOP_LEFT">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-         <StackPane.margin>
-            <Insets left="20.0" top="300.0" />
-         </StackPane.margin>
-      </Label>
-      <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="730.0" style="-fx-background-color: transparent;" StackPane.alignment="TOP_LEFT">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <GridPane fx:id="gridRecommendCar">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
+      <StackPane fx:id="spExploreC1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" StackPane.alignment="BOTTOM_LEFT">
+         <children>
+            <Label fx:id="lblRecentlyAdd" text="Recently Added" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="15.0" />
+               </StackPane.margin>
+            </Label>
+            <ScrollPane fx:id="scrollPaneRecentlyAdd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="730.0" style="-fx-background-color: #ffffff;" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets top="45.0" />
+               </StackPane.margin>
+               <content>
+                  <HBox fx:id="cardLayout" alignment="CENTER" prefHeight="160.0" prefWidth="731.0" spacing="15.0" style="-fx-background-color: #ffffff;" />
+               </content>
+            </ScrollPane>
+            <Label fx:id="lblRecommend" text="Recommended for You" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="225.0" />
+               </StackPane.margin>
+            </Label>
+            <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="730.0" style="-fx-background-color: #ffffff;" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets top="260.0" />
+               </StackPane.margin>
+               <content>
+                  <GridPane fx:id="gridRecommendCar" style="-fx-background-color: #ffffff;">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                   </GridPane>
-               </children>
-            </AnchorPane>
-        </content>
+               </content>
+            </ScrollPane>
+         </children>
          <StackPane.margin>
-            <Insets left="20.0" top="335.0" />
+            <Insets left="20.0" />
          </StackPane.margin>
-      </ScrollPane>
+      </StackPane>
    </children>
 </StackPane>

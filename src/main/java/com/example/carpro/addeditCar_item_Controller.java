@@ -35,7 +35,7 @@ public class addeditCar_item_Controller implements Initializable {
         model.setText(car.getModel());
         plate.setText(car.getNumPlate());
         price.setText("RM "+ car.getPrice());
-        location.setText(car.getLocation());
+        location.setText(car.getState());
     }
 
     @Override

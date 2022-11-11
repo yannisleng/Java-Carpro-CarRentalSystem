@@ -35,6 +35,6 @@ public class RecentlyAddCardController {
         imgRecentlyAddCar.setImage(image);*/
 
         lblBrandModel.setText(car.getModel());
-        lblLocation.setText(car.getLocation());
+        lblLocation.setText(car.getState());
     }
 }
