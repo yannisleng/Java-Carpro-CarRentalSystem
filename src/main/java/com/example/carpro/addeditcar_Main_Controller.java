@@ -37,13 +37,13 @@ public class addeditcar_Main_Controller implements Initializable {
 
     private final static int rowsPerPage = 8;
 
-    List<Car> car = new ArrayList<>(readcar());
+    private List<Car> carList = new ArrayList<>(readcar());
+    private List <Model> modelList = new ArrayList<>(readModel());
+    private List <Brand> brandList = new ArrayList<>(readBrand());
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(this.pagination != null){
-            List <Model> modelList = new ArrayList<>(readModel());
-            List <Brand> brandList = new ArrayList<>(readBrand());
 
             //add item to combo box
             for(int i=0;i<brandList.size();i++){
@@ -62,8 +62,8 @@ public class addeditcar_Main_Controller implements Initializable {
                 }
             });
 
-            int pageCount = car.size()/rowsPerPage;
-            int remain = car.size()%rowsPerPage;
+            int pageCount = carList.size()/rowsPerPage;
+            int remain = carList.size()%rowsPerPage;
             if(remain!=0){
                 pageCount++;
             }
@@ -95,7 +95,7 @@ public class addeditcar_Main_Controller implements Initializable {
 
     private Node createPage(int pageIndex){
         int fromIndex = pageIndex * rowsPerPage;
-        int toIndex = Math.min(fromIndex+ rowsPerPage,car.size());
+        int toIndex = Math.min(fromIndex+ rowsPerPage,carList.size());
 
         for (int i=fromIndex; i< toIndex; i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -104,13 +104,31 @@ public class addeditcar_Main_Controller implements Initializable {
             try{
                 HBox hBox = fxmlLoader.load();
                 addeditCar_item_Controller aic = fxmlLoader.getController();
-                aic.setData(car.get(i));
+                aic.setData(carList.get(i));
                 carlistLayout.getChildren().add(hBox);
             }catch (IOException e){
                 e.printStackTrace();
             }
         }
         return carlistLayout;
+    }
+
+    @FXML
+    private void comboBoxselection (ActionEvent event) throws Exception{
+        List<Model> models = new ArrayList<>();
+        if(brandCmb.getValue() != null & !brandCmb.getValue().toString().isEmpty()){
+            modelCmb.setDisable(false);
+
+            for(int i=0;i<brandList.size();i++){
+                if(brandList.get(i).getBrandName().equals(brandCmb.getValue())){
+                    models = brandList.get(i).getModels();
+                }
+            }
+            modelCmb.getItems().clear();
+            for (int j=0;j<models.size();j++) {
+                modelCmb.getItems().addAll(models.get(j).getModelName());
+            }
+        }
     }
 
     @FXML

@@ -9,7 +9,6 @@ public class BrandDB extends database{
 
     public List<Brand> getAllData(){
         List<Brand> brandList= new ArrayList<Brand>();
-        List<Model> modelList = new ArrayList<Model>();
         ArrayList<String> branddata = new ArrayList<String>();
 
         ModelDB modeldb = new ModelDB();
@@ -19,7 +18,7 @@ public class BrandDB extends database{
 
         for (int i=0;i< branddata.size();i++){
             String[] arr = branddata.get(i).split( "`",3);
-
+            List<Model> modelList = new ArrayList<Model>();
             for (int j=0;j< allModels.size();j++){
                 if(allModels.get(j).getId().substring(0,3).equals(arr[0])){
                     modelList.add(allModels.get(j));
@@ -27,7 +26,7 @@ public class BrandDB extends database{
             }
             Brand brand = new Brand(arr[0],arr[1],modelList);
             brandList.add(brand);
-            modelList.clear();
+
         }
         return brandList;
     };
