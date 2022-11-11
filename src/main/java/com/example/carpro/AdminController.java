@@ -98,6 +98,5 @@ public class AdminController implements Initializable {
         }else{
             menu.setVisible(true);
         }
-
     }
 }

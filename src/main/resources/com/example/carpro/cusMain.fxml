@@ -5,71 +5,110 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
-           prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-         prefHeight="555.82" prefWidth="86.0" spacing="48.0"
-         style="-fx-background-color: black; -fx-background-radius: 24px;" stylesheets="@style.css"
-         StackPane.alignment="TOP_LEFT">
-      <padding>
-         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-      </padding>
-      <opaqueInsets>
-         <Insets/>
-      </opaqueInsets>
+<StackPane fx:id="spCusMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.CusController">
+   <StackPane fx:id="spCusDefault" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" StackPane.alignment="TOP_RIGHT" />
+   <VBox fx:id="vboxCusMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.82" prefWidth="249.0" style="-fx-background-color: white; -fx-background-radius: 24px;" visible="false" StackPane.alignment="TOP_LEFT">
+      <children>
+         <Region prefHeight="140.0" />
+         <Button fx:id="exploreMenu" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="btnMenu" stylesheets="@style.css" text="Explore">
+            <VBox.margin>
+               <Insets left="86.0" />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="bookingMenu" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="btnMenu" stylesheets="@style.css" text="Booking">
+            <VBox.margin>
+               <Insets left="86.0" />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="profileMenu" layoutX="10.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="btnMenu" stylesheets="@style.css" text="Profile">
+            <VBox.margin>
+               <Insets left="86.0" />
+            </VBox.margin>
+         </Button>
+         <Region prefHeight="140.0" />
+         <Button id="logoutBtn_menu" fx:id="logoutMenu" mnemonicParsing="false" onAction="#exit" prefHeight="105.0" prefWidth="163.0" stylesheets="@style.css" text="Logout">
+            <VBox.margin>
+               <Insets left="86.0" />
+            </VBox.margin>
+         </Button>
+      </children>
       <effect>
-         <DropShadow/>
+         <DropShadow height="11.64" radius="4.15" width="6.96">
+            <color>
+               <Color opacity="0.5258358120918274" />
+            </color>
+         </DropShadow>
       </effect>
       <StackPane.margin>
-         <Insets left="29.0" top="22.0"/>
+         <Insets left="29.0" top="22.0" />
       </StackPane.margin>
-      <ImageView fx:id="logo" fitHeight="55.61" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/logo.png"/>
-         </image>
-      </ImageView>
-      <Button fx:id="explore" mnemonicParsing="false">
+   </VBox>
+   <VBox fx:id="vboxCusNav" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.82" prefWidth="86.0" spacing="48.0" style="-fx-background-color: black; -fx-background-radius: 24px;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <effect>
+         <DropShadow />
+      </effect>
+      <StackPane.margin>
+         <Insets left="29.0" top="22.0" />
+      </StackPane.margin>
+      <Button mnemonicParsing="false" onAction="#setMenuVisible">
+         <graphic>
+            <ImageView fitHeight="55.61" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnExplore" mnemonicParsing="false" onAction="#handleMenuAction" stylesheets="@style.css">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/explore.png"/>
+                  <Image url="@img/explore.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="history" mnemonicParsing="false">
+      <Button fx:id="btnHistory" mnemonicParsing="false" onAction="#handleMenuAction" stylesheets="@style.css">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/history.png"/>
+                  <Image url="@img/history.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="profile" mnemonicParsing="false">
+      <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#handleMenuAction" stylesheets="@style.css">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/profile.png"/>
+                  <Image url="@img/profile.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="32.0" layoutY="541.0" mnemonicParsing="false"/>
-      <Button fx:id="logout" layoutX="32.0" layoutY="583.0" mnemonicParsing="false">
+      <Region prefHeight="230.0" prefWidth="200.0" />
+      <Button fx:id="btnLogout" layoutX="34.5" layoutY="517.46" mnemonicParsing="false" onAction="#exit" stylesheets="@style.css">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/logout.png"/>
+                  <Image url="@img/logout.png" />
                </image>
             </ImageView>
          </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </Button>
    </VBox>
-   <StackPane fx:id="switchScene" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0"
-              prefWidth="780.0" StackPane.alignment="TOP_RIGHT"/>
 </StackPane>
