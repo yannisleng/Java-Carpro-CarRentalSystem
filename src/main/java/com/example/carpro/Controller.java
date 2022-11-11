@@ -98,6 +98,5 @@ public class Controller implements Initializable {
         }else{
             menu.setVisible(true);
         }
-
     }
 }

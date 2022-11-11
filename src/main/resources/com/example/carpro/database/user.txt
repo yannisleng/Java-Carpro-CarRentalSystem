@@ -1,0 +1,3 @@
+U00001,admin,yannis,abc123,Leng,Zhi Yan,female,0169985960,2001-10-15,lengzhiyan1015@gmail.com,Sunshine Residence,57000,Kuala Lumpur
+U00002,admin,pheymin,123abc,Foo,Phey Min,female,0123456789,2000-12-23,pheymin@gmail.com,Rainbow Residence,47000,Selangor
+U00003,customer,kexin,cba321,Tan,Ke Xin,female,0198765432,2001-09-14,kexin@gmail.com,Sunflower Residence,52000,Kuala Lumpur

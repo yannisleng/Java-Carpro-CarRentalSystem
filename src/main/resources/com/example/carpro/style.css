@@ -21,13 +21,26 @@
     -fx-graphic: url(img/add-user-hover.png);
 }
 
-#reportBtn_menu, #editBtn_menu, #bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu{
+/*customer navigation buttons*/
+#btnExplore:hover, #btnExplore:focused{
+    /*-fx-graphic: url(img/analytics-hover.png);*/
+}
+
+#btnHistory:hover, #btnHistory:focused{
+    /*-fx-graphic: url(img/settings-hover.png);*/
+}
+
+#btnProfile:hover, #btnProfile:focused{
+    /*-fx-graphic: url(img/booking-hover.png);*/
+}
+
+.btnMenu, #reportBtn_menu, #editBtn_menu, #bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu{
     -fx-background-color: #ffffff;
     -fx-text-fill: black;
     -fx-background-radius: 0px;
 }
 
-#reportBtn_menu:hover, #editBtn_menu:hover, #bookingBtn_menu:hover, #addUserBtn_menu:hover, #logoutBtn_menu:hover,
+.btnMenu:hover, .btnMenu:focused, #reportBtn_menu:hover, #editBtn_menu:hover, #bookingBtn_menu:hover, #addUserBtn_menu:hover, #logoutBtn_menu:hover,
 #reportBtn_menu:focused, #editBtn_menu:focused, #bookingBtn_menu:focused, #addUserBtn_menu:focused, #logoutBtn_menu:focused{
     -fx-background-color: #E7E3E3;
 }
@@ -88,10 +101,46 @@
     -fx-text-fill: black;
 }
 
-#txtUsername, #txtPassword{
-    -fx-prompt-text-fill: #000000;
+/*separator style*/
+.separatorBlack *.line{
+    -fx-border-style: solid;
+    -fx-border-width: 3px;
+    -fx-border-radius: 8;
+    -fx-border-color: #000000;
 }
 
-#txtSearch{
-    -fx-prompt-text-fill: #C2C2C2;
+.separatorGrey *.line{
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8;
+    -fx-border-color: #e5e5e5;
+}
+
+/*login*/
+/*on-focused: hide prompt-text*/
+.txtPrompt{
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+}
+
+.txtPrompt:focused{
+    -fx-prompt-text-fill: transparent;
+}
+
+/*hover: button effect*/
+#btnView:hover{
+    -fx-opacity: 38%;
+}
+
+.btnLogin{
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.btnLogin:hover{
+    -fx-opacity: 87%;
+}
+
+#lblForgotPass:hover, #lblForgotPass:focused{
+    -fx-font-weight: bold;
+    -fx-underline: true;
 }

@@ -18,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         stage.setScene(scene);
         /*Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -42,7 +42,7 @@ public class Main extends Application {
     //Exit Confirmation
     public void exit(Stage stage){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Exit Car Pro");
+        alert.setTitle("Exit");
         alert.setHeaderText("You're about to logout.");
         alert.setContentText("Are you sure you want to exit Car Pro?");
 
