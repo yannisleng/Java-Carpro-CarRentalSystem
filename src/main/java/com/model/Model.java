@@ -39,4 +39,6 @@ public class Model {
         return cars;
     }
 
+    public void setCars(List<Car> cars) {this.cars = cars;}
+
 }

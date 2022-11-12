@@ -45,7 +45,7 @@ public class addeditcar_Main_Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(this.pagination != null){
 
-            //add item to combo box
+            //add all item to combo box
             for(int i=0;i<brandList.size();i++){
                 brandCmb.getItems().addAll(brandList.get(i).getBrandName());
             }
@@ -58,17 +58,11 @@ public class addeditcar_Main_Controller implements Initializable {
                 @Override
                 public Node call(Integer pageIndex) {
                     carlistLayout.getChildren().clear();
-                    return createPage(pageIndex);
+                    return createPage(pageIndex,carList);
                 }
             });
 
-            int pageCount = carList.size()/rowsPerPage;
-            int remain = carList.size()%rowsPerPage;
-            if(remain!=0){
-                pageCount++;
-            }
-
-            pagination.setPageCount(pageCount);
+            setPaginationPageCount();
         }
     }
 
@@ -93,7 +87,17 @@ public class addeditcar_Main_Controller implements Initializable {
         return modelList;
     }
 
-    private Node createPage(int pageIndex){
+    private void setPaginationPageCount(){
+        int pageCount = carList.size()/rowsPerPage;
+        int remain = carList.size()%rowsPerPage;
+        if(remain!=0){
+            pageCount++;
+        }
+
+        pagination.setPageCount(pageCount);
+    }
+
+    private Node createPage(int pageIndex, List<Car> carList){
         int fromIndex = pageIndex * rowsPerPage;
         int toIndex = Math.min(fromIndex+ rowsPerPage,carList.size());
 
@@ -114,20 +118,54 @@ public class addeditcar_Main_Controller implements Initializable {
     }
 
     @FXML
-    private void comboBoxselection (ActionEvent event) throws Exception{
+    private void brandComboBoxselection (ActionEvent event) throws Exception{
         List<Model> models = new ArrayList<>();
         if(brandCmb.getValue() != null & !brandCmb.getValue().toString().isEmpty()){
             modelCmb.setDisable(false);
 
+            //find the brand name in the brand list
             for(int i=0;i<brandList.size();i++){
                 if(brandList.get(i).getBrandName().equals(brandCmb.getValue())){
                     models = brandList.get(i).getModels();
                 }
             }
+            //empty the combobox and add in the corresponding model into the empty combobox
             modelCmb.getItems().clear();
+
+            //update model combo box and car list
+            List<Car> carlist = new ArrayList<>();
             for (int j=0;j<models.size();j++) {
                 modelCmb.getItems().addAll(models.get(j).getModelName());
+
+                carlist.addAll(models.get(j).getCars());
+                //System.out.println(models.get(0).getCars());
+                carlistLayout.getChildren().clear();
+                createPage(pagination.getCurrentPageIndex(),carlist);
             }
+
+            setPaginationPageCount();
+        }
+    }
+
+    @FXML
+    private void modelComboBoxselection(ActionEvent event) throws Exception{
+        List<Car> cars = new ArrayList<>();
+        if(modelCmb.getValue() != null){
+            //find the model name in the model list
+            for(int i=0;i<modelList.size();i++){
+                if(modelList.get(i).getModelName().equals(modelCmb.getValue())){
+                    cars = modelList.get(i).getCars();
+                }
+            }
+
+            List<Car> carlist = new ArrayList<>();
+            for (int j=0;j<cars.size();j++) {
+                carlist.add(cars.get(j));
+                carlistLayout.getChildren().clear();
+                createPage(pagination.getCurrentPageIndex(),carlist);
+            }
+
+            setPaginationPageCount();
         }
     }
 
