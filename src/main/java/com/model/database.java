@@ -26,10 +26,10 @@ public abstract class database<T> {
         return data;
     };
 
-    public void updateFile(String fileName){
+    public void updateFile(String fileName,String data){
         try{
             Writer file = new FileWriter(path+fileName, true);
-            file.write("");
+            file.write(data);
         }catch (Exception e){
             System.out.println("Database error");
             e.printStackTrace();
@@ -59,6 +59,6 @@ public abstract class database<T> {
 
     public abstract List<T> getAllData();
     public abstract void updateData(Object object);
-    public abstract void addData();
+    public abstract void addData(T t);
     public abstract void deleteData(String fileName);
 }

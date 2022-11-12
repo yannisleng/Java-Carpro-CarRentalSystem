@@ -44,12 +44,12 @@
             <Insets left="714.0" top="49.0" />
          </StackPane.margin>
       </Button>
-      <ComboBox id="brandCmbMain" fx:id="brandCmb" onAction="#brandComboBoxselection" prefHeight="26.0" prefWidth="138.0" promptText="All Brand" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <ComboBox id="brandCmbMain" fx:id="brandCmb" onAction="#handleComboBoxSelection" prefHeight="26.0" prefWidth="138.0" promptText="All Brand" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="395.0" top="51.0" />
          </StackPane.margin>
       </ComboBox>
-      <ComboBox id="modelCmbMain" fx:id="modelCmb" disable="true" onAction="#modelComboBoxselection" prefHeight="26.0" prefWidth="138.0" promptText="All Model" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <ComboBox id="modelCmbMain" fx:id="modelCmb" disable="true" onAction="#handleComboBoxSelection" prefHeight="26.0" prefWidth="138.0" promptText="All Model" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="553.0" top="51.0" />
          </StackPane.margin>

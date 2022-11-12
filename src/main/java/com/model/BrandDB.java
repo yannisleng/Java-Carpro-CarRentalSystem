@@ -3,7 +3,7 @@ package com.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrandDB extends database{
+public class BrandDB extends database <Brand>{
 
     private String fileName = "brand.txt";
 
@@ -32,6 +32,6 @@ public class BrandDB extends database{
     };
 
     public void updateData(Object object){};
-    public void addData(){};
+    public void addData(Brand brand){};
     public void deleteData(String fileName){};
 }

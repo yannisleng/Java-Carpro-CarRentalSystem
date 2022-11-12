@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CarDB extends database {
+public class CarDB extends database <Car>{
 
     private final String fileName = "car.txt";
 
@@ -19,7 +19,7 @@ public class CarDB extends database {
         data = readFile(fileName);
         for (int i=0;i< data.size();i++){
             Car car = new Car();
-            String[] arr = data.get(i).split( "`",11);
+            String[] arr = data.get(i).split( "`",12);
             car.setId(arr[0]);
             car.setBrand(arr[1]);
             car.setModel(arr[2]);
@@ -31,18 +31,20 @@ public class CarDB extends database {
             car.setAddress(arr[8]);
             car.setPostCode(arr[9]);
             car.setState(arr[10]);
+            car.setImgsrc(arr[11]);
             ls.add(car);
         }
         return ls;
     };
 
-    public void addData(){
-        Car car = new Car();
-        String carData = car.toString();
-
+    public void addData(Car car){
+        String data = car.toString();
+        System.out.println(data);
         try{
-            Writer file = new FileWriter(path+fileName, true);
-            file.write(carData);
+            FileWriter file = new FileWriter(path+fileName, true);
+            file.write(data);
+            file.close();
+            System.out.println("Done");
         }catch (Exception e){
             System.out.println("Database error");
             e.printStackTrace();

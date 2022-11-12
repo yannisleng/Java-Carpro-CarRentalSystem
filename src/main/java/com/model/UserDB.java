@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserDB extends database{
+public class UserDB extends database <User>{
 
     private final String fileName = "user.txt";
 
@@ -37,6 +37,6 @@ public class UserDB extends database{
 
 
     public void updateData(Object object){};
-    public void addData(){};
+    public void addData(User user){};
     public void deleteData(String fileName){};
 }

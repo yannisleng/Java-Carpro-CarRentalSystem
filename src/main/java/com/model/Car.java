@@ -13,8 +13,12 @@ public class Car {
     private String address;
     private String postCode;
     private String state;
+    private String imgsrc;
 
-    public Car(){}
+    public Car(){
+        fuel = 100;
+        status = "Available";
+    }
 
     public Car(String id,String brand,String model,String numPlate, float price, int seat,String address,String postCode,String state){
         this.id = id;
@@ -27,13 +31,12 @@ public class Car {
         this.postCode = postCode;
         this.state = state;
         fuel = 100;
-        status = "available";
+        status = "Available";
     }
 
     @Override
     public String toString() {
-        return id+"`"+brand+"`"+model+"`"+numPlate+"`"+price+"`"+seat+"`"+fuel+"`"+status+"`"+address+"`"+postCode+"`"+state+"\n";
-
+        return id+"`"+brand+"`"+model+"`"+numPlate+"`"+price+"`"+seat+"`"+fuel+"`"+status+"`"+address+"`"+postCode+"`"+state+"`"+imgsrc+"\n";
     }
 
     public String getBrand() {return brand;}
@@ -95,5 +98,9 @@ public class Car {
     public void setSeat(int seat) {
         this.seat = seat;
     }
+
+    public String getImgsrc() {return imgsrc;}
+
+    public void setImgsrc(String imgsrc) {this.imgsrc = imgsrc;}
 
 }

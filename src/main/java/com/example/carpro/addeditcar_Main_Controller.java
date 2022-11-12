@@ -37,9 +37,9 @@ public class addeditcar_Main_Controller implements Initializable {
 
     private final static int rowsPerPage = 8;
 
-    private List<Car> carList = new ArrayList<>(readcar());
-    private List <Model> modelList = new ArrayList<>(readModel());
-    private List <Brand> brandList = new ArrayList<>(readBrand());
+    protected List<Car> carList = new ArrayList<>(readcar());
+    protected List <Model> modelList = new ArrayList<>(readModel());
+    protected List <Brand> brandList = new ArrayList<>(readBrand());
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -66,21 +66,21 @@ public class addeditcar_Main_Controller implements Initializable {
         }
     }
 
-    private List<Car> readcar(){
+    protected List<Car> readcar(){
         dataFactory dataFactory = new dataFactory();
         database db = dataFactory.getDB("car");
         List<Car> carList = new ArrayList<>(db.getAllData());
         return carList;
     }
 
-    private List<Brand> readBrand(){
+    protected List<Brand> readBrand(){
         dataFactory dataFactory = new dataFactory();
         database db = dataFactory.getDB("brand");
         List<Brand> brandList = new ArrayList<>(db.getAllData());
         return brandList;
     }
 
-    private List<Model> readModel(){
+    protected List<Model> readModel(){
         dataFactory dataFactory = new dataFactory();
         database db = dataFactory.getDB("model");
         List<Model> modelList = new ArrayList<>(db.getAllData());
@@ -117,8 +117,7 @@ public class addeditcar_Main_Controller implements Initializable {
         return carlistLayout;
     }
 
-    @FXML
-    private void brandComboBoxselection (ActionEvent event) throws Exception{
+    private void setBrandCmb(){
         List<Model> models = new ArrayList<>();
         if(brandCmb.getValue() != null & !brandCmb.getValue().toString().isEmpty()){
             modelCmb.setDisable(false);
@@ -138,7 +137,6 @@ public class addeditcar_Main_Controller implements Initializable {
                 modelCmb.getItems().addAll(models.get(j).getModelName());
 
                 carlist.addAll(models.get(j).getCars());
-                //System.out.println(models.get(0).getCars());
                 carlistLayout.getChildren().clear();
                 createPage(pagination.getCurrentPageIndex(),carlist);
             }
@@ -147,8 +145,7 @@ public class addeditcar_Main_Controller implements Initializable {
         }
     }
 
-    @FXML
-    private void modelComboBoxselection(ActionEvent event) throws Exception{
+    private void setModelCmb(){
         List<Car> cars = new ArrayList<>();
         if(modelCmb.getValue() != null){
             //find the model name in the model list
@@ -164,8 +161,16 @@ public class addeditcar_Main_Controller implements Initializable {
                 carlistLayout.getChildren().clear();
                 createPage(pagination.getCurrentPageIndex(),carlist);
             }
-
             setPaginationPageCount();
+        }
+    }
+
+    @FXML
+    private void handleComboBoxSelection(ActionEvent event) throws Exception{
+        if(event.getSource() == brandCmb){
+            setBrandCmb();
+        }else if(event.getSource() == modelCmb){
+            setModelCmb();
         }
     }
 

@@ -3,7 +3,7 @@ package com.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelDB extends database{
+public class ModelDB extends database <Model>{
 
     private final String fileName = "model.txt";
 
@@ -25,13 +25,13 @@ public class ModelDB extends database{
                     carList.add(allCars.get(j));
                 }
             }
-            Model model = new Model(arr[0],arr[1],arr[2],carList);
+            Model model = new Model(arr[0],arr[1],carList);
             modelList.add(model);
         }
         return modelList;
     };
 
     public void updateData(Object object){};
-    public void addData(){};
+    public void addData(Model model){};
     public void deleteData(String fileName){};
 }
