@@ -32,6 +32,18 @@
             </ImageView>
          </graphic>
       </Button>
+      <Button id="deleteBtn" fx:id="deleteBtn1" layoutX="165.0" layoutY="50.0" mnemonicParsing="false" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/search_admin.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <StackPane.margin>
+            <Insets left="714.0" top="49.0" />
+         </StackPane.margin>
+      </Button>
       <ComboBox id="brandCmbMain" fx:id="brandCmb" onAction="#brandComboBoxselection" prefHeight="26.0" prefWidth="138.0" promptText="All Brand" styleClass="ComboBox" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="395.0" top="51.0" />
