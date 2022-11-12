@@ -74,7 +74,7 @@ public class ExploreController implements Initializable {
         List<Car> ls = new ArrayList<>();
         Car car = new Car();
         car.setModel("Toyota Vios");
-        car.setLocation("Kuala Lumpur");
+        car.setState("Kuala Lumpur");
         ls.add(car);
         ls.add(car);
         ls.add(car);
@@ -85,7 +85,7 @@ public class ExploreController implements Initializable {
         List<Car> ls = new ArrayList<>();
         Car car = new Car();
         car.setModel("Toyota Vios");
-        car.setLocation("Kuala Lumpur");
+        car.setState("Kuala Lumpur");
         ls.add(car);
         ls.add(car);
         ls.add(car);

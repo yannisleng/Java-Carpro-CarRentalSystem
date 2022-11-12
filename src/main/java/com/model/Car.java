@@ -2,22 +2,67 @@ package com.model;
 
 public class Car {
 
+    private String id;
+    private String brand;
+    private String model;
+    private String numPlate;
+    private float price;
+    private int seat;
+    private int fuel;
+    private String status;
+    private String address;
+    private String postCode;
+    private String state;
+
     public Car(){}
+
+    public Car(String id,String brand,String model,String numPlate, float price, int seat,String address,String postCode,String state){
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.numPlate = numPlate;
+        this.price = price;
+        this.seat = seat;
+        this.address = address;
+        this.postCode = postCode;
+        this.state = state;
+        fuel = 100;
+        status = "available";
+    }
 
     @Override
     public String toString() {
+        return id+"`"+brand+"`"+model+"`"+numPlate+"`"+price+"`"+seat+"`"+fuel+"`"+status+"`"+address+"`"+postCode+"`"+state+"\n";
 
-        return this.id+this.brand+this.model+this.location;
     }
 
-    private String id;
-    private String model;
-    private String brand;
-    private String numPlate;
-    private float price;
-    private String location;
-    private int seat;
-    private String imgSrc;
+    public String getBrand() {return brand;}
+
+    public void setBrand(String brand) {this.brand = brand;}
+
+    public String getModel() {return model;}
+
+    public void setModel(String model) {this.model = model;}
+
+    public int getFuel() {return fuel;}
+
+    public void setFuel(int fuel) {this.fuel = fuel;}
+
+    public String getStatus() {return status;}
+
+    public void setStatus(String status) {this.status = status;}
+
+    public String getAddress() {return address;}
+
+    public void setAddress(String address) {this.address = address;}
+
+    public String getPostCode() {return postCode;}
+
+    public void setPostCode(String postCode) {this.postCode = postCode;}
+
+    public String getState() {return state;}
+
+    public void setState(String state) { this.state = state;}
 
     public String getId() {
         return id;
@@ -25,22 +70,6 @@ public class Car {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
     }
 
     public String getNumPlate() {
@@ -59,28 +88,12 @@ public class Car {
         this.price = price;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
     public int getSeat() {
         return seat;
     }
 
     public void setSeat(int seat) {
         this.seat = seat;
-    }
-
-    public String getImgSrc() {
-        return imgSrc;
-    }
-
-    public void setImgSrc(String imgSrc) {
-        this.imgSrc = imgSrc;
     }
 
 }
