@@ -154,6 +154,11 @@
     -fx-text-fill: #000000;
 }
 
+#priceHint, #plateNumHint, #addressHint, #postCodeHint{
+    -fx-text-fill: red;
+    -fx-font-size: 9px;
+}
+
 /*separator style*/
 .separatorBlack *.line{
     -fx-border-style: solid;

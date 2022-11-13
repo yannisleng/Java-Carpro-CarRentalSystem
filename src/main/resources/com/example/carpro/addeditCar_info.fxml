@@ -127,6 +127,41 @@
                   <Insets left="20.0" top="39.0" />
                </GridPane.margin>
             </ComboBox>
+            <Label fx:id="brandAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="165.0" top="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="modelAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="165.0" top="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="seatsAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="185.0" top="23.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="priceAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="178.0" top="23.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="plateNumAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="178.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="priceHint" fx:id="priceHint" stylesheets="@style.css" text="* price should be in numerical value" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="14.0" top="71.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="plateNumHint" fx:id="plateNumHint" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="375.95" stylesheets="@style.css" text="* plate number should be in this format: DAY 1234/ JVE 12/PK 1" visible="false" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="21.0" top="55.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
       <Label id="locationLbl" stylesheets="@style.css" text="Current Location" StackPane.alignment="TOP_LEFT">
@@ -177,6 +212,31 @@
                   <Insets left="14.0" top="33.0" />
                </GridPane.margin>
             </ComboBox>
+            <Label fx:id="addressAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="178.0" top="23.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="postCodeAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="185.0" top="13.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="stateAlert" alignment="TOP_LEFT" style="-fx-text-fill: red;" text="*" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="178.0" top="13.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="addressHint" fx:id="addressHint" stylesheets="@style.css" text="* invalid address" visible="false" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="20.0" top="73.0" />
+               </GridPane.margin>
+            </Label>
+            <Label id="postCodeHint" fx:id="postCodeHint" stylesheets="@style.css" text="* invalid postal code" visible="false" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" top="63.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
       <Label id="pictureLbl" stylesheets="@style.css" text="Car Picture" StackPane.alignment="TOP_LEFT">
@@ -189,22 +249,29 @@
             <Insets left="504.0" top="96.0" />
          </StackPane.margin>
          <children>
-            <ImageView fitHeight="212.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="212.0" prefWidth="212.0">
+               <children>
+                  <ImageView fx:id="carPicimgView" fitHeight="212.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                     <image>
+                        <Image url="@img/car/default-image.png" />
+                     </image>
+                  </ImageView>
+               </children>
                <VBox.margin>
-                  <Insets left="14.0" top="12.0" />
+                  <Insets left="12.0" top="14.0" />
                </VBox.margin>
-               <image>
-                  <Image url="@img/default-image.png" />
-               </image>
-            </ImageView>
+            </StackPane>
             <Label stylesheets="@style.css" text="Add car picture">
                <VBox.margin>
-                  <Insets left="14.0" top="19.0" />
+                  <Insets />
                </VBox.margin>
+               <padding>
+                  <Insets left="14.0" top="19.0" />
+               </padding>
             </Label>
-            <Label id="uploadPhotoLbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="33.0" prefWidth="216.0" stylesheets="@style.css" text="Path">
+            <Label id="uploadPhotoLbl" fx:id="pathLbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="33.0" prefWidth="216.0" stylesheets="@style.css" text="src/main/resources/com/example/carpro/img/car/default-image.png">
                <graphic>
-                  <Button id="uploadPhotoBtn" mnemonicParsing="false" stylesheets="@style.css" text="Upload photo ·" />
+                  <Button id="uploadPhotoBtn" fx:id="uploadPhoBtn" mnemonicParsing="false" onAction="#uploadPhoto" stylesheets="@style.css" text="Upload photo ·" />
                </graphic>
                <VBox.margin>
                   <Insets left="14.0" top="6.0" />
@@ -217,5 +284,10 @@
             <Insets left="584.0" top="536.0" />
          </StackPane.margin>
       </Button>
+      <Label fx:id="successMsg" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="40.0" prefWidth="160.0" style="-fx-text-fill: black; -fx-font-size: 12px; -fx-background-color: #e5e5e5;" text="Item updated" textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="584.0" top="480.0" />
+         </StackPane.margin>
+      </Label>
    </children>
 </StackPane>

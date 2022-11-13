@@ -1,5 +1,8 @@
 package com.model;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Car {
 
     private String id;
@@ -18,6 +21,7 @@ public class Car {
     public Car(){
         fuel = 100;
         status = "Available";
+        imgsrc = "default-image.png";
     }
 
     public Car(String id,String brand,String model,String numPlate, float price, int seat,String address,String postCode,String state){
@@ -32,6 +36,7 @@ public class Car {
         this.state = state;
         fuel = 100;
         status = "Available";
+        imgsrc = "default-image.png";
     }
 
     @Override
@@ -87,9 +92,7 @@ public class Car {
         return price;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
+    public void setPrice(float price) {this.price = price;}
 
     public int getSeat() {
         return seat;
@@ -102,5 +105,42 @@ public class Car {
     public String getImgsrc() {return imgsrc;}
 
     public void setImgsrc(String imgsrc) {this.imgsrc = imgsrc;}
+
+    //method
+    public boolean priceValidation(String input){
+        try{
+            float price = Float.parseFloat(input);
+            return true;
+        }catch (NumberFormatException e){
+            return false;
+        }
+    }
+
+    public boolean plateNumValidation(String input){
+        Matcher matcher = Pattern.compile("[a-zA-Z]{1,3} [0-9]{1,4}").matcher(input);
+        if(matcher.find()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean addressValidation(String input){
+        Matcher matcher = Pattern.compile("[A-Za-z0-9'\\.\\-\\s\\,]").matcher(input);
+        if (matcher.find()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean postCodeValidation(String input){
+        Matcher matcher = Pattern.compile("\\d{5}").matcher(input);
+        if(matcher.find()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }

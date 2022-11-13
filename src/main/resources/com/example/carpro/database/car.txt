@@ -12,4 +12,3 @@
 0010010002`Honda`Civic`LK 2`16.00`5`100`Available`39 Jln Midah 5 Taman Midah`81200`Johor`0010010002.png
 0070010002`Porsche`Boxster`JH 6`79.00`5`100`Available`2 1/2 Miles, Jalan , Wilayah Persekutuan`30250`Perak`0070010002.png
 0110010001`Mazda`3`LV 465`89.00`5`100`Available`22 Jalan Sri Hartamas 14 Sri Hartamas 14 Sri Hartamas Malay`14000`Penang`0110010002.png
-0120010001`Lamborghini`Aventador`GJH 5`129.00`5`100`Available`388-A Jalan Burma`07000`Kedah`0120010002.png
