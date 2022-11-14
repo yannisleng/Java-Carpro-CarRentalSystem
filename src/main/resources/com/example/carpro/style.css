@@ -140,7 +140,7 @@
     -fx-text-fill: #000000;
 }
 
-#brandCmb, #modelCmb, #seatsCmb, #stateCmb{
+#brandCmb, #modelCmb, #seatsCmb, #stateCmb, #userRoleCmb, #datePicker{
     -fx-text-fill: #000000;
     -fx-border-color: #dedede;
     -fx-border-radius: 8px;
@@ -154,7 +154,7 @@
     -fx-text-fill: #000000;
 }
 
-#priceHint, #plateNumHint, #addressHint, #postCodeHint{
+#priceHint, #plateNumHint, #addressHint, #postCodeHint, #userRoleHint{
     -fx-text-fill: red;
     -fx-font-size: 9px;
 }

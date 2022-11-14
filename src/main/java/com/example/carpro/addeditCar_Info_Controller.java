@@ -106,7 +106,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     @FXML
     private Label successMsg;
 
-    private Image defaulImg = new Image("file:src/main/resources/com/example/carpro/img/car/default-image.png",212,212,true,true);
+    private Image defaultImg = new Image("file:src/main/resources/com/example/carpro/img/car/default-image.png",212,212,true,true);
 
 
     @Override
@@ -250,7 +250,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         plateNumText.clear();
         addressText.clear();
         postCodeText.clear();
-        carPicimgView.setImage(defaulImg);
+        carPicimgView.setImage(defaultImg);
         pathLbl.setText("src/main/resources/com/example/carpro/img/car/default-image.png");
     }
 
@@ -267,15 +267,19 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
                     arr.add(carList.get(i).getId());
                 }
             }
+
+            //generate car id
             int intId = Integer.parseInt(arr.get(arr.size()-1))+1;
             String id = String.format("%010d",intId);
 
+            //copy file to local storage
             String oriPath = pathLbl.getText();
             Path from = Paths.get(oriPath);
             String fileExtension = oriPath.substring(oriPath.lastIndexOf("."), pathLbl.getText().length());
             Path to = Paths.get("src/main/resources/com/example/carpro/img/car/"+id+fileExtension);
             Files.copy(from,to);
 
+            //set car data
             car.setId(id);
             car.setBrand(brandCmb.getValue());
             car.setModel(modelCmb.getValue());
