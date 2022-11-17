@@ -32,6 +32,6 @@ public class RecommendedCarController {
         //Image image = new Image(getClass().getResourceAsStream(car.getImgSrc()));
         //imgCar.setImage(image);
         lblBrandModel.setText(car.getModel());
-        lblLocation.setText(car.getLocation());
+        lblLocation.setText(car.getState());
     }
 }

@@ -1,18 +1,14 @@
 package com.model;
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.util.List;
+import java.util.Scanner;
 
-public class database {
+public abstract class database<T> {
 
-    public database(){}
-
-    private String path = "src/main/resources/com/example/carpro/database/";
+    final String path = "src/main/resources/com/example/carpro/database/";
 
     public ArrayList<String> readFile(String fileName){
-
         ArrayList<String> data = new ArrayList<String>();
 
         try{
@@ -28,5 +24,41 @@ public class database {
         }
 
         return data;
+    };
+
+    public void updateFile(String fileName,String data){
+        try{
+            Writer file = new FileWriter(path+fileName, true);
+            file.write(data);
+        }catch (Exception e){
+            System.out.println("Database error");
+            e.printStackTrace();
+        }
+
+
+        /*if(!file.exists()){
+            try{
+                file.createNewFile();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+
+        //checking whether the data already exist or not
+        boolean found = false;
+
+        while(file.getFilePointer() < file.length()){
+
+        }*/
+
     }
+
+    public void editFile(String fileName){
+
+    }
+
+    public abstract List<T> getAllData();
+    public abstract void updateData(Object object);
+    public abstract void addData(T t);
+    public abstract void deleteData(String fileName);
 }
