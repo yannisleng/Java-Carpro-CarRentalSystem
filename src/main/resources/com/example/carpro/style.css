@@ -144,3 +144,65 @@
     -fx-font-weight: bold;
     -fx-underline: true;
 }
+
+/*date picker style*/
+.date-picker{
+    -fx-background-color: transparent;
+    -fx-border-color: #000000;
+    -fx-border-radius: 8;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: #000000;
+    -fx-background-radius: 8;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #c2c2c2;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #ffffff;
+}
+
+.date-picker .cell {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-text-fill: #000000;
+}
+
+.date-picker .cell:hover,
+.date-picker .cell:focused,
+.date-picker .selected,
+.date-picker .selected:focused{
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+}
+
+.date-picker-popup  {
+    -fx-border-color: transparent;
+    -fx-background-radius: 8;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #000000;
+    -fx-background-radius: 8;
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #ffffff;
+}
+
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: #ffffff;
+}
+
+.date-picker-popup .spinner .button .left-arrow:hover,
+.date-picker-popup .spinner .button .right-arrow:hover,
+.date-picker-popup .spinner .button .left-arrow:focused,
+.date-picker-popup .spinner .button .right-arrow:focused{
+    -fx-background-color: #000000;
+}
