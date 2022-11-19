@@ -15,7 +15,7 @@
 
 <StackPane fx:id="addeditcar_Main" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditcar_Main_Controller">
    <children>
-      <Button id="addCarbtn" fx:id="addCar" mnemonicParsing="false" onAction="#switchtoNext" prefHeight="40.0" prefWidth="120.0" stylesheets="@style.css" text="+ Add Car" StackPane.alignment="TOP_LEFT">
+      <Button id="addCarbtn" fx:id="addCar" mnemonicParsing="false" onAction="#switchtoCarInfo" prefHeight="40.0" prefWidth="120.0" stylesheets="@style.css" text="+ Add Car" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="29.0" top="37.0" />
          </StackPane.margin>
@@ -32,7 +32,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button id="deleteBtn" fx:id="deleteBtn1" layoutX="165.0" layoutY="50.0" mnemonicParsing="false" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <Button id="searchBtn" fx:id="deleteBtn1" layoutX="165.0" layoutY="50.0" mnemonicParsing="false" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                <image>

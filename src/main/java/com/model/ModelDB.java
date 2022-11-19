@@ -1,5 +1,6 @@
 package com.model;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,8 +31,20 @@ public class ModelDB extends database <Model>{
         }
         return modelList;
     };
+    public void addData(Model model){
+        String data = model.toString();
+        System.out.println(data);
+        try{
+            FileWriter file = new FileWriter(path+fileName, true);
+            file.write(data);
+            file.close();
+            System.out.println("Done");
+        }catch (Exception e){
+            System.out.println("Database error");
+            e.printStackTrace();
+        }
+    };
 
     public void updateData(Object object){};
-    public void addData(Model model){};
     public void deleteData(String fileName){};
 }

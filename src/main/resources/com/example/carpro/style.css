@@ -39,7 +39,8 @@
     /*-fx-graphic: url(img/booking-hover.png);*/
 }
 
-.btnMenu, #reportBtn_menu, #editBtn_menu, #bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu{
+.btnMenu, #reportBtn_menu, #editBtn_menu,
+#bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu{
     -fx-background-color: #ffffff;
     -fx-text-fill: black;
     -fx-background-radius: 0px;
@@ -55,17 +56,19 @@
 }
 
 /*Add edit car page*/
-#addCarbtn:hover, #saveBtn:hover{
+#addCarbtn:hover, #saveBtn:hover, #addBrandInfoBtn:hover{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 }
 
-#deleteBtn, #returnBtn{
+#deleteBtn, #returnBtn, #searchBtn,
+#closeBtn, #editItemBtn{
     -fx-background-color: #ffffff;
     -fx-text-fill: #000000;
     -fx-font-size: 12px;
 }
 
-#deleteBtn:hover, #returnBtn:hover, #uploadPhotoBtn:hover{
+#deleteBtn:hover, #returnBtn:hover, #uploadPhotoBtn:hover,
+#searchBtn:hover, #closeBtn:hover, #editItemBtn:hover{
     -fx-background-color: #f3f5f7;
 }
 
@@ -133,7 +136,7 @@
     -fx-graphic: url(img/add-hover.png);
 }
 
-#carinfoLbl, #locationLbl, #pictureLbl{
+#carinfoLbl, #locationLbl, #pictureLbl, #addBrandLbl{
     -fx-background-color: #ffffff;
     -fx-font-size: 17px;
     -fx-font-weight: bold;
@@ -154,9 +157,17 @@
     -fx-text-fill: #000000;
 }
 
+#addBrandInfoBtn{
+    -fx-font-size: 14px;
+}
+
 #priceHint, #plateNumHint, #addressHint, #postCodeHint, #userRoleHint{
     -fx-text-fill: red;
     -fx-font-size: 9px;
+}
+
+#addBrandScrollPane{
+    -fx-background-color: #ffffff;
 }
 
 /*separator style*/

@@ -175,7 +175,7 @@ public class addeditcar_Main_Controller implements Initializable {
     }
 
     @FXML
-    private void switchtoNext (ActionEvent event) throws Exception{
+    public void switchtoCarInfo (ActionEvent event) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("addeditCar_info.fxml"));
 
@@ -187,4 +187,5 @@ public class addeditcar_Main_Controller implements Initializable {
             e.printStackTrace();
         }
     }
+
 }
