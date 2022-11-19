@@ -138,11 +138,19 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     @FXML
     private TextField ModelText;
 
+    @FXML
+    private TextField searchModelBar;
+
+    @FXML
+    private TextField searchBrandBar;
+
     private Image defaultImg = new Image("file:src/main/resources/com/example/carpro/img/car/default-image.png",212,212,true,true);
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        searchBrandBar.setVisible(false);
+        searchModelBar.setVisible(false);
         //add all item to combo box
         for(int i=0;i<brandList.size();i++){
             brandCmb.getItems().addAll(brandList.get(i).getBrandName());
@@ -368,6 +376,20 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         blurPane.setVisible(true);
         BrandListLayout.getChildren().clear();
 
+        displayBrand(brandList);
+    }
+
+    @FXML
+    private void handleAddModel(ActionEvent event) throws Exception{
+        addModelHint.setVisible(false);
+        selectBrandHint.setVisible(false);
+        AddModelPanel.setVisible(true);
+        blurPane.setVisible(true);
+        ModelListLayout.getChildren().clear();
+        displayModel(modelList);
+    }
+
+    private void displayBrand(List<Brand> brandList){
         for(int i=0;i<brandList.size();i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("addBrandModelItem.fxml"));
@@ -383,14 +405,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         }
     }
 
-    @FXML
-    private void handleAddModel(ActionEvent event) throws Exception{
-        addModelHint.setVisible(false);
-        selectBrandHint.setVisible(false);
-        AddModelPanel.setVisible(true);
-        blurPane.setVisible(true);
-        ModelListLayout.getChildren().clear();
-
+    private void displayModel(List<Model> modelList){
         for(int i=0;i<modelList.size();i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("addBrandModelItem.fxml"));
@@ -493,5 +508,56 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             refreshThisScene();
         }
 
+    }
+
+    /*handle search bar*/
+    private void handleSearchBrandResult(){
+        List<Brand> brands = new ArrayList<>();
+
+        //find the models in the model list
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("brand");
+        brands = db.searchData(searchBrandBar.getText());
+        BrandListLayout.getChildren().clear();
+
+        displayBrand(brands);
+    }
+
+    @FXML
+    public void searchBrandBar (ActionEvent event) throws Exception{
+        /*set search bar visible*/
+        if(searchBrandBar.isVisible()&&(searchBrandBar.getText()==null || searchBrandBar.getText().trim().isEmpty())){
+            searchBrandBar.setVisible(false);
+            displayBrand(brandList);
+        }else if(!searchBrandBar.isVisible()){
+            searchBrandBar.setVisible(true);
+        }else{
+            handleSearchBrandResult();
+        }
+    }
+
+    private void handleSearchModelResult(){
+        List<Model> models = new ArrayList<>();
+
+        //find the models in the model list
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("model");
+        models = db.searchData(searchModelBar.getText());
+        ModelListLayout.getChildren().clear();
+
+        displayModel(models);
+    }
+
+    @FXML
+    public void searchModelBar (ActionEvent event) throws Exception{
+        /*set search bar visible*/
+        if(searchModelBar.isVisible()&&(searchModelBar.getText()==null || searchModelBar.getText().trim().isEmpty())){
+            searchModelBar.setVisible(false);
+            displayModel(modelList);
+        }else if(!searchModelBar.isVisible()){
+            searchModelBar.setVisible(true);
+        }else{
+            handleSearchModelResult();
+        }
     }
 }

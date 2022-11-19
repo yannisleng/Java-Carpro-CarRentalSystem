@@ -294,6 +294,11 @@
       <StackPane fx:id="blurPane" opacity="0.75" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: black;" visible="false" />
       <StackPane fx:id="AddBrandPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" style="-fx-background-color: white;" StackPane.alignment="TOP_RIGHT">
          <children>
+            <TextField fx:id="searchBrandBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="155.0" top="53.0" />
+               </StackPane.margin>
+            </TextField>
             <Button id="closeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setAddBrandInvisible" prefHeight="27.0" prefWidth="28.0" StackPane.alignment="TOP_LEFT">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -316,12 +321,17 @@
                   <Insets left="33.0" top="96.0" />
                </StackPane.margin>
             </TextField>
+            <Label fx:id="addBrandHint" style="-fx-text-fill: red; -fx-font-size: 10px;" text="* Brand already exist" visible="false" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="33.0" top="130.0" />
+               </StackPane.margin>
+            </Label>
             <Button id="addBrandInfoBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveBrand" prefHeight="30.0" prefWidth="30.0" stylesheets="@style.css" text="+" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets left="283.0" top="94.0" />
                </StackPane.margin>
             </Button>
-            <Button id="searchBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+            <Button id="searchBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchBrandBar" prefHeight="24.0" prefWidth="24.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -333,45 +343,46 @@
                   <Insets left="283.0" top="57.0" />
                </StackPane.margin>
             </Button>
-            <ScrollPane id="addBrandScrollPane" fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="336.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="331.0" StackPane.alignment="TOP_LEFT">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" styleClass="HBox" stylesheets="@style.css">
+                     <children>
+                        <Label style="-fx-text-fill: #4E5969;" text="ID">
+                           <HBox.margin>
+                              <Insets left="28.0" top="18.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="BrandModelHeader" style="-fx-text-fill: #4E5969;" text="Brand">
+                           <HBox.margin>
+                              <Insets left="37.0" top="18.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label style="-fx-text-fill: #4E5969;" text="Action">
+                           <HBox.margin>
+                              <Insets left="135.0" top="18.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <ScrollPane id="addBrandScrollPane" fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
+                     <content>
+                        <VBox fx:id="BrandListLayout" prefHeight="424.0" prefWidth="331.0" style="-fx-background-color: white;" />
+                     </content>
+                  </ScrollPane>
+               </children>
                <StackPane.margin>
                   <Insets left="16.0" top="132.0" />
                </StackPane.margin>
-               <content>
-                  <VBox fx:id="BrandListLayout" prefHeight="466.0" prefWidth="331.0" style="-fx-background-color: white;">
-                     <children>
-                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" styleClass="HBox" stylesheets="@style.css">
-                           <children>
-                              <Label style="-fx-text-fill: #4E5969;" text="ID">
-                                 <HBox.margin>
-                                    <Insets left="28.0" top="18.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Label fx:id="BrandModelHeader" style="-fx-text-fill: #4E5969;" text="Brand">
-                                 <HBox.margin>
-                                    <Insets left="37.0" top="18.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Label style="-fx-text-fill: #4E5969;" text="Action">
-                                 <HBox.margin>
-                                    <Insets left="135.0" top="18.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
-            <Label fx:id="addBrandHint" style="-fx-text-fill: red; -fx-font-size: 10px;" text="* Brand already exist" visible="false" StackPane.alignment="TOP_LEFT">
-               <StackPane.margin>
-                  <Insets left="33.0" top="130.0" />
-               </StackPane.margin>
-            </Label>
+            </VBox>
          </children>
       </StackPane>
-      <StackPane fx:id="AddModelPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" style="-fx-background-color: white;" StackPane.alignment="TOP_RIGHT">
+      <StackPane fx:id="AddModelPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" style="-fx-background-color: white;" visible="false" StackPane.alignment="TOP_RIGHT">
          <children>
+            <TextField fx:id="searchModelBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="155.0" top="53.0" />
+               </StackPane.margin>
+            </TextField>
             <ComboBox id="brandCmb" fx:id="addModelBrandCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="118.0" promptText="Select Brand" styleClass="combo-box" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets left="25.0" top="96.0" />
@@ -404,7 +415,7 @@
                   <Insets left="283.0" top="94.0" />
                </StackPane.margin>
             </Button>
-            <Button id="searchBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+            <Button id="searchBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchModelBar" prefHeight="24.0" prefWidth="24.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -416,36 +427,37 @@
                   <Insets left="283.0" top="57.0" />
                </StackPane.margin>
             </Button>
-            <ScrollPane id="addBrandScrollPane" fx:id="scrollPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="336.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="331.0" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets left="16.0" top="132.0" />
                </StackPane.margin>
-               <content>
-                  <VBox fx:id="ModelListLayout" prefHeight="466.0" prefWidth="331.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" styleClass="HBox" stylesheets="@style.css">
                      <children>
-                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" styleClass="HBox" stylesheets="@style.css">
-                           <children>
-                              <Label style="-fx-text-fill: #4E5969;" text="ID">
-                                 <HBox.margin>
-                                    <Insets left="28.0" top="18.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Label style="-fx-text-fill: #4E5969;" text="Model">
-                                 <HBox.margin>
-                                    <Insets left="37.0" top="18.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Label style="-fx-text-fill: #4E5969;" text="Action">
-                                 <HBox.margin>
-                                    <Insets left="135.0" top="18.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
+                        <Label style="-fx-text-fill: #4E5969;" text="ID">
+                           <HBox.margin>
+                              <Insets left="28.0" top="18.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label style="-fx-text-fill: #4E5969;" text="Model">
+                           <HBox.margin>
+                              <Insets left="37.0" top="18.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label style="-fx-text-fill: #4E5969;" text="Action">
+                           <HBox.margin>
+                              <Insets left="135.0" top="18.0" />
+                           </HBox.margin>
+                        </Label>
                      </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
+                  </HBox>
+                  <ScrollPane id="addBrandScrollPane" fx:id="scrollPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
+                     <content>
+                        <VBox fx:id="ModelListLayout" prefHeight="415.0" prefWidth="331.0" style="-fx-background-color: white;" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
             <Label fx:id="addModelHint" prefHeight="15.0" prefWidth="145.0" style="-fx-text-fill: red; -fx-font-size: 10px;" text="* Model already exist" visible="false" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets left="155.0" top="130.0" />

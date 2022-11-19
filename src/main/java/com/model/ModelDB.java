@@ -45,6 +45,18 @@ public class ModelDB extends database <Model>{
         }
     };
 
+    public List<Model> searchData(String input){
+        List<Model> modelList = new ArrayList<>();
+        List<Model> newList = new ArrayList<>();
+        modelList = getAllData();
+        for(int i=0;i< modelList.size();i++){
+            if(modelList.get(i).getId().equals(input)){
+                newList.add(modelList.get(i));
+            }
+        }
+        return newList;
+    }
+
     public void updateData(Object object){};
     public void deleteData(String fileName){};
 }

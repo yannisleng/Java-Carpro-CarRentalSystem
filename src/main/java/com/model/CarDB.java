@@ -51,6 +51,18 @@ public class CarDB extends database <Car>{
         }
     };
 
+    public List<Car> searchData(String input){
+        List<Car> carList = new ArrayList<>();
+        List<Car> newList = new ArrayList<>();
+        carList = getAllData();
+        for(int i=0;i< carList.size();i++){
+            if(carList.get(i).getId().equals(input)){
+                newList.add(carList.get(i));
+            }
+        }
+        return newList;
+    }
+
     /*public void updateData(Car car){
         List<Car> carList = new ArrayList<>();
         carList = getAllData();

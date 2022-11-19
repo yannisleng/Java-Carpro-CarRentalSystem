@@ -45,6 +45,18 @@ public class BrandDB extends database <Brand>{
         }
     };
 
+    public List<Brand> searchData(String input){
+        List<Brand> brandList = new ArrayList<>();
+        List<Brand> newList = new ArrayList<>();
+        brandList = getAllData();
+        for(int i=0;i< brandList.size();i++){
+            if(brandList.get(i).getId().equals(input)){
+                newList.add(brandList.get(i));
+            }
+        }
+        return newList;
+    };
+
     public void updateData(Object object){};
     public void deleteData(String fileName){};
 }
