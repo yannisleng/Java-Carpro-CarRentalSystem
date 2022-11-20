@@ -56,7 +56,7 @@ public abstract class database<T> {
     public void editFile(String fileName){
 
     }
-
+    public abstract List<T> searchData(String input);
     public abstract List<T> getAllData();
     public abstract void updateData(Object object);
     public abstract void addData(T t);

@@ -51,6 +51,18 @@ public class UserDB extends database <User>{
         }
     };
 
+    public List<User> searchData(String input){
+        List<User> userList = new ArrayList<>();
+        List<User> newList = new ArrayList<>();
+        userList = getAllData();
+        for(int i=0;i< userList.size();i++){
+            if(userList.get(i).getUsername().equals(input)){
+                newList.add(userList.get(i));
+            }
+        }
+        return newList;
+    }
+
     public void updateData(Object object){};
     public void deleteData(String fileName){};
 }

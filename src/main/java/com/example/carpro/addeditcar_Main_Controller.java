@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -35,6 +37,12 @@ public class addeditcar_Main_Controller implements Initializable {
     @FXML
     private Pagination pagination;
 
+    @FXML
+    private TextField searchBar;
+
+    @FXML
+    private Label modelLbl;
+
     private final static int rowsPerPage = 8;
 
     protected List<Car> carList = new ArrayList<>(readcar());
@@ -45,6 +53,7 @@ public class addeditcar_Main_Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(this.pagination != null){
 
+            searchBar.setVisible(false);
             //add all item to combo box
             for(int i=0;i<brandList.size();i++){
                 brandCmb.getItems().addAll(brandList.get(i).getBrandName());
@@ -175,7 +184,7 @@ public class addeditcar_Main_Controller implements Initializable {
     }
 
     @FXML
-    private void switchtoNext (ActionEvent event) throws Exception{
+    public void switchtoCarInfo (ActionEvent event) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("addeditCar_info.fxml"));
 
@@ -187,4 +196,49 @@ public class addeditcar_Main_Controller implements Initializable {
             e.printStackTrace();
         }
     }
+
+    private void handleSearchResult(){
+        List<Car> cars = new ArrayList<>();
+
+        //find the cars in the car list
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("car");
+        cars = db.searchData(searchBar.getText());
+
+        carlistLayout.getChildren().clear();
+        createPage(pagination.getCurrentPageIndex(),cars);
+
+        setPaginationPageCount();
+    }
+
+    @FXML
+    public void searchBar (ActionEvent event) throws Exception{
+        /*set search bar visible*/
+        if(searchBar.isVisible()&&(searchBar.getText()==null || searchBar.getText().trim().isEmpty())){
+            searchBar.setVisible(false);
+            modelCmb.setVisible(true);
+            modelLbl.setVisible(true);
+            refreshThisScene();
+        }else if(!searchBar.isVisible()){
+            searchBar.setVisible(true);
+            modelCmb.setVisible(false);
+            modelLbl.setVisible(false);
+        }else{
+            handleSearchResult();
+        }
+    }
+
+    private void refreshThisScene(){
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("addeditCar_Main.fxml"));
+
+        try{
+            StackPane stackPane = fxmlLoader.load();
+            addeditcar_Main.getChildren().clear();
+            addeditcar_Main.getChildren().add(stackPane);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 }

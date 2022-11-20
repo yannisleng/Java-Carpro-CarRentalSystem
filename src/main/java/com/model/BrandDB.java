@@ -1,5 +1,6 @@
 package com.model;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +27,36 @@ public class BrandDB extends database <Brand>{
             }
             Brand brand = new Brand(arr[0],arr[1],modelList);
             brandList.add(brand);
-
         }
         return brandList;
     };
 
+    public void addData(Brand brand){
+        String data = brand.toString();
+        System.out.println(data);
+        try{
+            FileWriter file = new FileWriter(path+fileName, true);
+            file.write(data);
+            file.close();
+            System.out.println("Done");
+        }catch (Exception e){
+            System.out.println("Database error");
+            e.printStackTrace();
+        }
+    };
+
+    public List<Brand> searchData(String input){
+        List<Brand> brandList = new ArrayList<>();
+        List<Brand> newList = new ArrayList<>();
+        brandList = getAllData();
+        for(int i=0;i< brandList.size();i++){
+            if(brandList.get(i).getId().equals(input)){
+                newList.add(brandList.get(i));
+            }
+        }
+        return newList;
+    };
+
     public void updateData(Object object){};
-    public void addData(Brand brand){};
     public void deleteData(String fileName){};
 }

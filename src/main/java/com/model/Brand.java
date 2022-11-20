@@ -7,10 +7,16 @@ public class Brand {
     private String brandName;
     private List<Model> models;
 
-    Brand(String id,String brandName,List<Model> models){
+    public Brand(){}
+
+    public Brand(String id,String brandName,List<Model> models){
         this.id = id;
         this.brandName = brandName;
         this.models = models;
+    }
+    @Override
+    public String toString(){
+        return id+"`"+brandName+"\n";
     }
 
     public String getId() {

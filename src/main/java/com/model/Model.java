@@ -7,10 +7,17 @@ public class Model {
     private String modelName;
     private List<Car> cars;
 
-    Model(String id, String modelName, List<Car> cars){
+    public Model(){}
+
+    public Model(String id, String modelName, List<Car> cars){
         this.id = id;
         this.modelName = modelName;
         this.cars = cars;
+    }
+
+    @Override
+    public String toString(){
+        return id+"`"+modelName+"\n";
     }
 
     public String getId() {
