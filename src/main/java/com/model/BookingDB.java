@@ -6,7 +6,10 @@ import java.util.List;
 public class BookingDB extends database <Booking>{
     private final String fileName = "booking.txt";
 
-    private String file = "booking.txt";
+    @Override
+    public List<Booking> searchData(String input) {
+        return null;
+    }
 
     @Override
     public List<Booking> getAllData() {
@@ -31,7 +34,6 @@ public class BookingDB extends database <Booking>{
             System.out.println("Database error");
             e.printStackTrace();
         }
-
     }
 
     @Override
