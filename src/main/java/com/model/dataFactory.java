@@ -11,6 +11,10 @@ public class dataFactory {
             return new ModelDB();
         }else if(dataType == "brand"){
             return new BrandDB();
+        }else if(dataType == "booking"){
+            return new BookingDB();
+        }else if(dataType == "payment"){
+            return new PaymentDB();
         }
         return null;
     }

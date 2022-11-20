@@ -23,9 +23,27 @@ public class User {
 
     public User(){}
 
+    public User(String username, String firstName, String lastName, String dateOfBirth, String gender, String email, String phoneNum,
+                String address, String postCode, String state, String role, String password, String profilePic) {
+        this.username = username;
+        this.password = password;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.phoneNum = phoneNum;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.email = email;
+        this.address = address;
+        this.postCode = postCode;
+        this.state = state;
+        this.role = role;
+        this.profilePic = profilePic;
+    }
+
     @Override
     public String toString(){
-        return username+"`"+firstName+"`"+lastName+"`"+dateOfBirth+"`"+gender+"`"+email+"`"+phoneNum+"`"+address+"`"+postCode+"`"+state+"`"+password+"`"+profilePic+"\n";
+        return username+"`"+firstName+"`"+lastName+"`"+dateOfBirth+"`"+gender+"`"+email+"`"+phoneNum+"`"+address+"`"+
+                postCode+"`"+state+"`"+role+"`"+password+"`"+profilePic+"\n";
     }
 
     public String getUsername() {return username;}

@@ -24,7 +24,23 @@ public class Car {
         imgsrc = "default-image.png";
     }
 
-    public Car(String id,String brand,String model,String numPlate, float price, int seat,String address,String postCode,String state){
+    public Car(String id, String brand, String model, String numPlate, float price, int seat, int fuel, String status,
+               String address, String postCode, String state, String imgsrc) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.numPlate = numPlate;
+        this.price = price;
+        this.seat = seat;
+        this.fuel = fuel;
+        this.status = status;
+        this.address = address;
+        this.postCode = postCode;
+        this.state = state;
+        this.imgsrc = imgsrc;
+    }
+
+    public Car(String id, String brand, String model, String numPlate, float price, int seat, String address, String postCode, String state){
         this.id = id;
         this.brand = brand;
         this.model = model;
