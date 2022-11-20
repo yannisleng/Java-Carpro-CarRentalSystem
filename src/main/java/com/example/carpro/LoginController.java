@@ -1,5 +1,8 @@
 package com.example.carpro;
 
+import com.model.User;
+import com.model.dataFactory;
+import com.model.database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,11 +14,13 @@ import javafx.scene.layout.StackPane;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.*;
 
 public class LoginController implements Initializable {
+
+    public static User loginUser;
 
     @FXML
     private StackPane spLogin;
@@ -37,54 +42,38 @@ public class LoginController implements Initializable {
 
     //login
     @FXML
-    void login(ActionEvent event) {
+    private void login(ActionEvent event) {
         int count = 0;
-        try {
-            Scanner userFile = new Scanner(new File("src/main/resources/com/example/carpro/database/user.txt"));
-            while (userFile.hasNextLine()){
-                String userDetail = userFile.nextLine();
-                String[] userDetails = userDetail.split(",");
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("user");
+        List<User> users = new ArrayList<>(db.getAllData());
 
-                if(txtUsername.getText().equals(userDetails[2]) && txtPassword.getText().equals(userDetails[3])){
-                    count++;
-                    if(userDetails[1].equals("admin")){
-                        switchScene("main.fxml", spLogin);
-                    }else if(userDetails[1].equals("customer")){
-                        switchScene("cusMain.fxml", spLogin);
-                    }
+        for(User user: users){
+            if(txtUsername.getText().equals(user.getUsername()) && txtPassword.getText().equals(user.getPassword())){
+                count++;
+                loginUser = new User(user.getUsername(), user.getFirstName(), user.getLastName(), user.getDateOfBirth(),
+                        user.getGender(), user.getEmail(), user.getPhoneNum(), user.getAddress(), user.getPostCode(),
+                        user.getState(), user.getRole(), user.getPassword(), user.getProfilePic());
+                if(loginUser.getRole().equals("Admin")){
+                    Scene.switchScene("adminMain.fxml", spLogin);
+                }else if(loginUser.getRole().equals("Customer")){
+                    Scene.switchScene("cusMain.fxml", spLogin);
                 }
             }
-            userFile.close();
-
-            if(count==0){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Login failed");
-                alert.setHeaderText("Incorrect username or password.");
-                alert.setContentText("Please try again.");
-                alert.show();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
-    }
 
-    //switch scene
-    private void switchScene(String fxml, StackPane stackPane){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource(fxml));
-
-        try {
-            StackPane newStakePane = fxmlLoader.load();
-            stackPane.getChildren().clear();
-            stackPane.getChildren().add(newStakePane);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(count==0){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login failed");
+            alert.setHeaderText("Incorrect username or password.");
+            alert.setContentText("Please try again.");
+            alert.show();
         }
     }
 
     @FXML
     private void forgotPassword(MouseEvent event) {
-        switchScene("forgotPassword.fxml", spLogin2);
+        Scene.switchScene("forgotPassword.fxml", spLogin2);
     }
 
     //click button to show hidden password

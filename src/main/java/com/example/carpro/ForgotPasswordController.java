@@ -34,7 +34,7 @@ public class ForgotPasswordController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Forgot Password");
             alert.setHeaderText("Password reset request has been sent.");
-            alert.setContentText("You'll be directed to the login page. Press [Cancle] to stay.");
+            alert.setContentText("You'll be directed to the login page. Press [Cancel] to stay.");
 
             if(alert.showAndWait().get() == ButtonType.OK){
                 Parent root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
