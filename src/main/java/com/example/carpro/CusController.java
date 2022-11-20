@@ -1,5 +1,6 @@
 package com.example.carpro;
 
+import com.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,8 @@ import java.util.ResourceBundle;
 public class CusController implements Initializable {
 
     Stage stage;
+
+    User user;
 
     @FXML
     private Button bookingMenu;
@@ -76,10 +79,10 @@ public class CusController implements Initializable {
             switchScene("explore.fxml");
         }else if(event.getSource()==btnHistory || event.getSource()==bookingMenu){
             btnHistory.requestFocus();
-            //switchScene("cusHistory.fxml");
+            switchScene("cusHistory.fxml");
         }else if(event.getSource()==btnProfile || event.getSource()==profileMenu){
             btnProfile.requestFocus();
-            //switchScene("cusProfile.fxml");
+            switchScene("cusProfile.fxml");
         }
     }
 

@@ -1,6 +1,8 @@
 package com.example.carpro;
 
 import com.model.Car;
+import com.model.dataFactory;
+import com.model.database;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -60,7 +62,6 @@ public class SearchController implements Initializable {
                 }else{
                     GridPane.setMargin(carBox, new Insets(-25,0, 35,0));
                 }
-
             }
         }catch(IOException e){
             e.printStackTrace();
@@ -68,19 +69,15 @@ public class SearchController implements Initializable {
     }
 
     private List<Car> cars(){
-        List<Car> ls = new ArrayList<>();
-        Car car = new Car();
-        car.setModel("Toyota Vios");
-        car.setState("Kuala Lumpur");
-        ls.add(car);
-        ls.add(car);
-        ls.add(car);
-        ls.add(car);
-        ls.add(car);
-        ls.add(car);
-        ls.add(car);
-        ls.add(car);
-        ls.add(car);
-        return ls;
+        List<Car> carlist = new ArrayList<>();
+
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("car");
+        List<Car> recommandCars = new ArrayList<>(db.getAllData());
+
+        for(Car car: recommandCars){
+            carlist.add(car);
+        }
+        return carlist;
     }
 }

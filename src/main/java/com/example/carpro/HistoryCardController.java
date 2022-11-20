@@ -52,7 +52,7 @@ public class HistoryCardController {
 
     public void setData(Car car){
         lblBrandModelCarPlate.setText(car.getModel());
-        lblAddress.setText(car.getLocation());
+        lblAddress.setText(car.getState());
         //lblStartDate.setText(car.get);
     }
 }
