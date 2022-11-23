@@ -13,6 +13,10 @@ public class RecommendedCarController {
     @FXML
     private Button btnView;
 
+    public Button getBtnView() {
+        return btnView;
+    }
+
     @FXML
     private ImageView imgCar;
 
@@ -22,16 +26,10 @@ public class RecommendedCarController {
     @FXML
     private Label lblLocation;
 
-    @FXML
-    private StackPane spRecommend;
-
-    @FXML
-    private VBox vboxRecommend;
-
     public void setData(Car car){
-        //Image image = new Image(getClass().getResourceAsStream(car.getImgSrc()));
-        //imgCar.setImage(image);
-        lblBrandModel.setText(car.getModel());
+        Image image = new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc());
+        imgCar.setImage(image);
+        lblBrandModel.setText(car.getBrand() + " " + car.getModel());
         lblLocation.setText(car.getState());
     }
 }

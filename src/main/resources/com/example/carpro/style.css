@@ -2,12 +2,12 @@
     -fx-font-family: 'SF Pro Display';
 }
 
-.button{
+/*.button{
     -fx-background-color: #000000;
     -fx-text-fill: #ffffff;
     -fx-background-radius: 8px;
     -fx-font-size: 17px;
-}
+}*/
 
 /*Admin Navigation Bar*/
 #reportBtn:hover, #reportBtn:focused{
@@ -72,7 +72,7 @@
     -fx-background-color: #f3f5f7;
 }
 
-.ComboBox{
+/*.ComboBox{
     -fx-background-color: white;
     -fx-border-radius: 8px;
     -fx-border-color: black;
@@ -81,7 +81,7 @@
 .HBox{
     -fx-border-color: #f3f5f7;
     -fx-border-width: 0px 0px 1px 0px;
-}
+}*/
 
 .pagination > .pagination-control > .control-box {
     -fx-spacing: 0;
@@ -115,7 +115,7 @@
 }
 
 /*Add edit car info*/
-.label{
+/*.label{
     -fx-text-fill: #C2C2C2;
     -fx-font-size: 13px;
 }
@@ -125,7 +125,7 @@
     -fx-border-color: #dedede;
     -fx-border-radius: 8px;
     -fx-background-color: transparent;
-}
+}*/
 
 #carinfogrid, #locationgrid, #carpicVbox, #uploadPhotoLbl{
     -fx-border-color: #dedede;
@@ -185,6 +185,12 @@
     -fx-border-color: #e5e5e5;
 }
 
+.separatorBlackSmall *.line{
+    -fx-border-width: 1px;
+    -fx-border-radius: 8;
+    -fx-border-color: #000000;
+}
+
 /*login*/
 /*on-focused: hide prompt-text*/
 .txtPrompt{
@@ -218,7 +224,7 @@
 .date-picker{
     -fx-background-color: transparent;
     -fx-border-color: #000000;
-    -fx-border-radius: 8;
+    -fx-border-radius: 4;
     -fx-text-fill: #000000;
     -fx-font-weight: bold;
 }
@@ -238,7 +244,7 @@
 
 .date-picker .cell {
     -fx-background-color: transparent;
-    -fx-background-radius: 8;
+    -fx-background-radius: 4;
     -fx-text-fill: #000000;
 }
 
@@ -252,12 +258,12 @@
 
 .date-picker-popup  {
     -fx-border-color: transparent;
-    -fx-background-radius: 8;
+    -fx-background-radius: 4;
 }
 
 .date-picker-popup .month-year-pane {
     -fx-background-color: #000000;
-    -fx-background-radius: 8;
+    -fx-background-radius: 4;
 }
 
 .date-picker-popup .month-year-pane .label {
@@ -275,3 +281,24 @@
 .date-picker-popup .spinner .button .right-arrow:focused{
     -fx-background-color: #000000;
 }
+
+/*cus profile*/
+#cmbState{
+    -fx-opacity: 1.0;
+    -fx-background-color: transparent;
+    -fx-border-color: #c2c2c2;
+    -fx-border-radius: 8px;
+    -fx-prompt-text-fill: #000000;
+    -fx-font-size: 14px;
+}
+
+#cmbState .arrow, #cmbState .arrow-button {
+    -fx-background-color: transparent;
+}
+
+#btnUpdateProfile{
+    -fx-opacity: 1.0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+

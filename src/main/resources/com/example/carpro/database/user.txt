@@ -1,3 +1,3 @@
 yannis`Zhi Yan`Leng`2001-10-15`Female`lengzhiyan1015@gmail.com`0169985960`Sunshine Residence`57000`Kuala Lumpur`Admin`abc123`yannis.png
 pheymin`Phey Min`Foo`2000-12-23`Female`pheymin1223@gmail.com`0186651223`Rainbow Residence`47000`Kuala Lumpur`Admin`123abc`pheymin.png
-kexin`Ke Xin`Tan`2001-09-14`Female`kexin@gmail.com`0198765432`Sunflower Residence`52000`Kuala Lumpur`Customer`cba321`kexin.png
+kexin`Ke Xin`Tan`2001-09-14`Female`kexin@gmail.com`0198765432`Sunflower Residence`52000`Perak`Customer`cba321`kexin.png

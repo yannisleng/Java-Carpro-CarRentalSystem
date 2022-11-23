@@ -18,19 +18,20 @@ public class UserDB extends database <User>{
         data = readFile(fileName);
         for (int i=0;i< data.size();i++){
             User user = new User();
-            String[] arr = data.get(i).split( "`",12);
+            String[] arr = data.get(i).split( "`",13);
             user.setUsername(arr[0]);
             user.setFirstName(arr[1]);
             user.setLastName(arr[2]);
             user.setDateOfBirth(arr[3]);
             user.setGender(arr[4]);
             user.setEmail(arr[5]);
-            user.setAddress(arr[6]);
-            user.setPostCode(arr[7]);
-            user.setState(arr[8]);
-            user.setRole(arr[9]);
-            user.setPassword(arr[10]);
-            user.setProfilePic(arr[11]);
+            user.setPhoneNum(arr[6]);
+            user.setAddress(arr[7]);
+            user.setPostCode(arr[8]);
+            user.setState(arr[9]);
+            user.setRole(arr[10]);
+            user.setPassword(arr[11]);
+            user.setProfilePic(arr[12]);
             ls.add(user);
         }
         return ls;

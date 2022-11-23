@@ -1,31 +1,38 @@
 package com.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Booking {
     private String id;
-    //private User customer;
-    private Car car;
-    private Date startDate;
-    private Date startTime;
-    private Date endDate;
-    private Date endTime;
+    private String customerId;
+    private String carId;
+    private String startDate;
+    private String startTime;
+    private String endDate;
+    private String endTime;
     private String status;
-    private Payment payment = null; //update when it is paid
+    private String paymentId; //update when it is paid
 
     public Booking() {
     }
 
-    /*public Booking(String id, User customer, Car car, Date startDate, Date startTime, Date endDate, Date endTime, String status, Payment payment) {
+    public Booking(String customerId, String carId) {
+        this.id = "00001";
+        this.customerId = customerId;
+        this.carId = carId;
+        this.status = "Pending";
+    }
+
+    /*public Booking(String id, String customer, String car, String startDate, String startTime, String endDate, String endTime) {
         this.id = id;
-        this.customer = customer;
-        this.car = car;
+        this.customerId = customer;
+        this.carId = car;
         this.startDate = startDate;
         this.startTime = startTime;
         this.endDate = endDate;
         this.endTime = endTime;
-        this.status = status;
-        this.payment = payment;
+        this.status = "Pending";
+        this.paymentId = null;
     }*/
 
     public String getId() {
@@ -36,51 +43,51 @@ public class Booking {
         this.id = id;
     }
 
-    /*public User getCustomer() {
-        return customer;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(User customer) {
-        this.customer = customer;
-    }*/
-
-    public Car getCar() {
-        return car;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
-    public void setCar(Car car) {
-        this.car = car;
+    public String getCarId() {
+        return carId;
     }
 
-    public Date getStartDate() {
+    public void setCarId(String carId) {
+        this.carId = carId;
+    }
+
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndDate() {
+    public String  getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
@@ -92,26 +99,16 @@ public class Booking {
         this.status = status;
     }
 
-    public Payment getPayment() {
-        return payment;
+    public String getPaymentId() {
+        return paymentId;
     }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
     }
 
-    /*@Override
+    @Override
     public String toString() {
-        return "Booking{" +
-                "id='" + id + '\'' +
-                ", customer=" + customer +
-                ", car=" + car +
-                ", startDate=" + startDate +
-                ", startTime=" + startTime +
-                ", endDate=" + endDate +
-                ", endTime=" + endTime +
-                ", status='" + status + '\'' +
-                ", payment=" + payment +
-                '}';
-    }*/
+        return id+"`"+ customerId +"`"+ carId +"`"+startDate+"`"+startTime+"`"+endDate+"`"+endTime+"`"+status+"`"+ paymentId +"\n";
+    }
 }
