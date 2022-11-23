@@ -2,12 +2,13 @@
     -fx-font-family: 'SF Pro Display';
 }
 
-/*.button{
+#reportBtn,#editBtn,#bookingBtn,#addUserBtn,
+#addCarbtn, #logoBtn,#logoutBtn,#saveBtn, #addBrandInfoBtn{
     -fx-background-color: #000000;
     -fx-text-fill: #ffffff;
     -fx-background-radius: 8px;
     -fx-font-size: 17px;
-}*/
+}
 
 /*Admin Navigation Bar*/
 #reportBtn:hover, #reportBtn:focused{
@@ -72,16 +73,16 @@
     -fx-background-color: #f3f5f7;
 }
 
-/*.ComboBox{
+#brandCmbMain,#modelCmbMain{
     -fx-background-color: white;
     -fx-border-radius: 8px;
     -fx-border-color: black;
 }
 
-.HBox{
+#carItemHbox, #modelBrandHbox{
     -fx-border-color: #f3f5f7;
     -fx-border-width: 0px 0px 1px 0px;
-}*/
+}
 
 .pagination > .pagination-control > .control-box {
     -fx-spacing: 0;
@@ -118,14 +119,17 @@
 /*.label{
     -fx-text-fill: #C2C2C2;
     -fx-font-size: 13px;
-}
+}*/
 
-.text-field{
+#priceText, #plateNumText, #addressText,
+#postCodeText,#searchBarText, #addBrandText,
+#addModelText, #usernameText, #firstNameText,
+#lastNameText,#phoneNumText,#emailText{
     -fx-text-fill: #000000;
     -fx-border-color: #dedede;
     -fx-border-radius: 8px;
     -fx-background-color: transparent;
-}*/
+}
 
 #carinfogrid, #locationgrid, #carpicVbox, #uploadPhotoLbl{
     -fx-border-color: #dedede;

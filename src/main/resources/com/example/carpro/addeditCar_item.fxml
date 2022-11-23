@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_item_Controller">
+<HBox id="#carItemHbox" prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_item_Controller">
    <children>
       <CheckBox fx:id="id" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="1">
          <padding>

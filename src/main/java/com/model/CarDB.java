@@ -1,9 +1,6 @@
 package com.model;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -53,7 +50,7 @@ public class CarDB extends database <Car>{
 
     public List<Car> searchData(String input){
         List<Car> carList = new ArrayList<>();
-        List<Car> newList = new ArrayList<>();
+        List <Car> newList = new ArrayList<>();
         carList = getAllData();
         for(int i=0;i< carList.size();i++){
             if(carList.get(i).getId().equals(input)){
@@ -62,6 +59,36 @@ public class CarDB extends database <Car>{
         }
         return newList;
     }
+
+    public void deleteData(String removeData){
+        File currentFile = new File(path+fileName);
+        File tempFile = new File(path+"tempFile.txt");
+        String currentLine;
+
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader(currentFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+            System.out.println(removeData);
+
+            //rewrite data into new file
+            while ((currentLine = reader.readLine())!=null){
+                if(null!=currentLine && !currentLine.equalsIgnoreCase(removeData)){
+                    writer.write(currentLine + "\n");
+                }
+            }
+
+            writer.close();
+            reader.close();
+
+            currentFile.delete();
+            boolean successful = tempFile.renameTo(currentFile);
+            System.out.println(successful);
+        }catch (Exception e){
+            System.out.println("Delete data error");
+            e.printStackTrace();
+        }
+
+    };
 
     /*public void updateData(Car car){
         List<Car> carList = new ArrayList<>();
@@ -75,5 +102,5 @@ public class CarDB extends database <Car>{
         }
     };*/
     public void updateData(Object object){};
-    public void deleteData(String fileName){};
+
 }

@@ -1,5 +1,7 @@
 package com.example.carpro;
 import com.model.*;
+import javafx.animation.FadeTransition;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +11,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,7 +27,7 @@ public class addeditcar_Main_Controller implements Initializable {
     private VBox carlistLayout;
 
     @FXML
-    private StackPane addeditcar_Main;
+    public StackPane addeditcar_Main;
 
     @FXML
     private ComboBox<String> brandCmb;
@@ -41,7 +45,10 @@ public class addeditcar_Main_Controller implements Initializable {
     private Label modelLbl;
 
     @FXML
-    private CheckBox allCheckBox;
+    private CheckBox selectAllCheckBox;
+
+    @FXML
+    private Label nothingSelectedPrompt;
 
     private final static int rowsPerPage = 8;
 
@@ -241,8 +248,113 @@ public class addeditcar_Main_Controller implements Initializable {
         }
     }
 
-    private void tickAllCheckBox(){
+    @FXML
+    private void selectAll(ActionEvent event) throws Exception{
+        ObservableList<Node> children = carlistLayout.getChildren();
+        for (Node child:children) {
+            if(child instanceof HBox){
+                for(Node checkbox:((HBox)child).getChildren()){
+                    if(checkbox instanceof CheckBox){
+                        if(selectAllCheckBox.isSelected()){
+                            ((CheckBox) checkbox).setSelected(true);
+                        }else {
+                            ((CheckBox) checkbox).setSelected(false);
+                        }
 
+                    }
+                }
+
+            }
+        }
+    }
+
+    @FXML
+    private void deleteRow(ActionEvent event) throws Exception{
+        ObservableList<Node> children = carlistLayout.getChildren();
+        ArrayList<String> arrCarId = new ArrayList<>();
+
+        //identify selected checkbox id
+        for (Node child:children) {
+            if(child instanceof HBox){
+                for(Node checkbox:((HBox)child).getChildren()){
+                    if(checkbox instanceof CheckBox){
+                        if(((CheckBox) checkbox).isSelected()){
+                            arrCarId.add(((CheckBox) checkbox).getText());
+                        }
+
+                    }
+                }
+
+            }
+        }
+        if(arrCarId.size() != 0){
+            if(validateDelete(arrCarId)){
+                deleteAlert(arrCarId);
+                refreshThisScene();
+            }else{
+                deletePrompt("Car currently unavailable");
+            }
+        }else{
+            deletePrompt("Nothing been selected");
+        }
+    }
+
+    //if car currently been booked,can't delete
+    public boolean validateDelete(ArrayList<String> arrCarId){
+        for(int i=0;i< carList.size();i++){
+            for(int j=0;j<arrCarId.size();j++){
+                if(carList.get(i).getStatus().equals("Available")){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void deleteCarinFile(ArrayList<String> arrCarId){
+        Car car = new Car();
+        for(int i=0;i< carList.size();i++){
+            for(int j=0;j<arrCarId.size();j++){
+                if(carList.get(i).getId().equals(arrCarId.get(j))){
+                    car.setId(carList.get(i).getId());
+                    car.setBrand(carList.get(i).getBrand());
+                    car.setModel(carList.get(i).getModel());
+                    car.setNumPlate(carList.get(i).getNumPlate());
+                    car.setPrice(carList.get(i).getPrice());
+                    car.setSeat(carList.get(i).getSeat());
+                    car.setFuel(carList.get(i).getFuel());
+                    car.setStatus(carList.get(i).getStatus());
+                    car.setAddress(carList.get(i).getAddress());
+                    car.setPostCode(carList.get(i).getPostCode());
+                    car.setState(carList.get(i).getState());
+                    car.setImgsrc(carList.get(i).getImgsrc());
+
+                    dataFactory dataFactory = new dataFactory();
+                    database db = dataFactory.getDB("car");
+                    db.deleteData(car.toString().substring(0,car.toString().length()-1));
+                }
+            }
+        }
+    }
+
+    public void deleteAlert(ArrayList<String> arrCarId){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete");
+        alert.setHeaderText("Delete Confirmation");
+        alert.setContentText("Are you sure you want to delete those car?");
+
+        if(alert.showAndWait().get() == ButtonType.OK){
+            deleteCarinFile(arrCarId);
+        }
+    }
+
+    public void deletePrompt(String promptText){
+        nothingSelectedPrompt.setText(promptText);
+        nothingSelectedPrompt.setOpacity(1);
+        FadeTransition ft = new FadeTransition(Duration.millis(3000), nothingSelectedPrompt);
+        ft.setFromValue(1.0);
+        ft.setToValue(0);
+        ft.play();
     }
 
 }

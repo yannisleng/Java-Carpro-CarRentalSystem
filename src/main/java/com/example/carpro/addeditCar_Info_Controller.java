@@ -149,8 +149,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        searchBrandBar.setVisible(false);
-        searchModelBar.setVisible(false);
+
         //add all item to combo box
         for(int i=0;i<brandList.size();i++){
             brandCmb.getItems().addAll(brandList.get(i).getBrandName());
@@ -170,6 +169,9 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         AddBrandPanel.setVisible(false);
         AddModelPanel.setVisible(false);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
+        searchBrandBar.setVisible(false);
+        searchModelBar.setVisible(false);
     }
 
     @FXML

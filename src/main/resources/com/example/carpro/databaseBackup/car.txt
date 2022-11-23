@@ -1,0 +1,14 @@
+0010010001`Honda`Civic`DWE 123`15.00`5`100`Available`No. 63, Channel Road,`96000`Sarawak`0010010001.png
+0020010001`Toyota`Alphard`JVE 54`30.00`7`100`Available`No. 3498 Jln Ampang Hilir 5`28200`Pahang`0020010001.png
+0030010001`Mercedes-Benz`G-Class`RA 6571`85.00`5`100`Available`2 Blok C Jln 21/13 Seksyen 21 Petaling Jaya`40000`Selangor`0030010001.png
+0040010001`Perodua`Alza`VWM 654`12.00`5`100`Available`No. 37 Jln Pasir Merah New Pasir Puteh`16500`Kelantan`0040010001.jpg
+0050010001`BMW`1 Series`PFV 55`65.00`5`100`Available`Lot Off 3/4 Mile Jalan Bercham`80000`Johor`0050010001.png
+0060010001`Proton`Exora`LRM 54`25.00`5`100`Available`No. 563 Taman Clonlee`71760`Negeri Sembilan`0060010001.png
+0070010001`Porsche`Boxster`MVD 521`75.00`5`100`Available`443-63 Batu 2 1/2 Jalan Wilayah Persekutuan`02600`Perlis`0070010001.png
+0080010001`Volkswagen`Beetle`VSD 125`66.00`5`100`Available`Jalan Berkat 3, Taman Malim Jaya,`30000`Perak`0080010001.png
+0090010001`Bentley`Arnage`ABC 12`99.00`5`100`Available`B 5 Jln 7 Kaw 16 Taman Intan`75050`Melaka`0090010001.jpg
+0100010001`Audi`Q8`JK 12`129.00`5`100`Available`Tuaran Road, Jalan Kolombong,`88100`Sabah`0100010001.png
+0050020001`BMW`X Series`IJH 5`59.00`5`100`Available`3141 Jln Selangan Batu Kuching`93450`Sarawak`0050020001.png
+0010010002`Honda`Civic`LK 2`16.00`5`100`Available`39 Jln Midah 5 Taman Midah`81200`Johor`0010010002.png
+0070010002`Porsche`Boxster`JH 6`79.00`5`100`Available`2 1/2 Miles, Jalan , Wilayah Persekutuan`30250`Perak`0070010002.png
+0110010001`Mazda`3`LV 465`89.00`5`100`Unavailable`22 Jalan Sri Hartamas 14 Sri Hartamas 14 Sri Hartamas Malay`14000`Penang`0110010002.png
