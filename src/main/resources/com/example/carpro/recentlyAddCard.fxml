@@ -12,12 +12,12 @@
 <HBox fx:id="boxRecentlyAddCar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="350.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.RecentlyAddCardController">
    <StackPane fx:id="spRecentlyAddCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25),10,0.5,2.0,2.0);">
       <children>
-         <ImageView fx:id="imgRecentlyAddCar" fitHeight="80.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+         <ImageView fx:id="imgRecentlyAddCar" fitHeight="80.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
             <image>
                <Image url="@img/carVios.png" />
             </image>
             <StackPane.margin>
-               <Insets left="85.0" top="20.0" />
+               <Insets top="20.0" />
             </StackPane.margin>
          </ImageView>
          <Label fx:id="lblBrandModel" text="Toyota Vios" StackPane.alignment="TOP_LEFT">
@@ -36,7 +36,7 @@
                <Insets left="10.0" top="130.0" />
             </StackPane.margin>
          </Label>
-         <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #000000; -fx-background-radius: 8;" text="View" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+         <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #000000; -fx-background-radius: 8;" styleClass="btnHover" stylesheets="@style.css" text="View" textFill="WHITE" StackPane.alignment="TOP_LEFT">
             <font>
                <Font name="System Bold" size="17.0" />
             </font>
@@ -44,7 +44,6 @@
                <Insets left="250.0" top="110.0" />
             </StackPane.margin>
          </Button>
-         <Label fx:id="lblCar" disable="true" text="Label" />
       </children>
    </StackPane>
 </HBox>

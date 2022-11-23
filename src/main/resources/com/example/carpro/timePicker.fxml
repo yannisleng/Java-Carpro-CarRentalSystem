@@ -15,9 +15,9 @@
     <children>
         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="90.0">
             <children>
-                <Label fx:id="lblTime" maxHeight="-Infinity" minHeight="-Infinity" onMouseReleased="#showDropDown" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 4; -fx-border-color: #000000; -fx-border-radius: 4;" text="12:30PM">
+                <Label fx:id="lblTime" maxHeight="-Infinity" minHeight="-Infinity" onMouseReleased="#showDropDown" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 4; -fx-border-color: #000000; -fx-border-radius: 4; -fx-text-fill: transparent;" text="00:00 PM">
                     <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgTime" fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@img/time.png" />
                             </image>
@@ -27,7 +27,7 @@
                         </ImageView>
                     </graphic>
                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
+                        <Cursor fx:constant="HAND" />
                     </cursor>
                 </Label>
                 <VBox fx:id="vboxTimePicker" prefHeight="183.0" prefWidth="142.0" visible="false">

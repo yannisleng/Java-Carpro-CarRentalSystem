@@ -7,13 +7,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -29,10 +30,6 @@ public class CusProfileController implements Initializable {
 
     private User customer = LoginController.loginUser;
 
-    public User getCustomer() {
-        return customer;
-    }
-
     @FXML
     private Button btnEdit;
 
@@ -43,16 +40,79 @@ public class CusProfileController implements Initializable {
     private Button btnUpdateProfile;
 
     @FXML
+    private Button btnView;
+
+    @FXML
     private ComboBox<String> cmbState;
+
+    @FXML
+    private ImageView imgDone;
+
+    @FXML
+    private ImageView imgEdit;
 
     @FXML
     private ImageView imgProfile;
 
     @FXML
+    private ImageView imgView;
+
+    @FXML
+    private Label lblAAdrress;
+
+    @FXML
+    private Label lblAEmail;
+
+    @FXML
+    private Label lblAPhone;
+
+    @FXML
+    private Label lblAPosCode;
+
+    @FXML
+    private Label lblAPsw;
+
+    @FXML
+    private Label lblAState;
+
+    @FXML
+    private Label lblAddress;
+
+    @FXML
+    private Label lblDOB;
+
+    @FXML
+    private Label lblEmail;
+
+    @FXML
+    private Label lblGender;
+
+    @FXML
     private Label lblName;
 
     @FXML
+    private Label lblPSW;
+
+    @FXML
+    private Label lblPhoneNo;
+
+    @FXML
+    private Label lblPosCode;
+
+    @FXML
+    private Label lblState;
+
+    @FXML
+    private Label lblUserInformation;
+
+    @FXML
     private Label lblUsername;
+
+    @FXML
+    private Separator separatorGrey;
+
+    @FXML
+    private StackPane spCusProfile;
 
     @FXML
     private TextField txtAddress;
@@ -67,7 +127,7 @@ public class CusProfileController implements Initializable {
     private TextField txtGender;
 
     @FXML
-    private TextField txtPSW;
+    private PasswordField txtPSW;
 
     @FXML
     private TextField txtPhoneNo;
@@ -89,8 +149,6 @@ public class CusProfileController implements Initializable {
         cmbState.setItems(states);
 
         showUserInformation();
-
-        btnUpdateProfile.setStyle("-fx-opacity: 1.0; -fx-background-color: transparent; -fx-border-color: transparent;");
     }
 
     //update profile image
@@ -115,6 +173,7 @@ public class CusProfileController implements Initializable {
 
     @FXML
     private void editUserInformation(ActionEvent event) {
+        initializeStar(true);
         initializeTxt(true, Cursor.TEXT);
         initializeCmb(false, Cursor.HAND, "#c2c2c2");
         initializeBtnEdit(false, true);
@@ -125,20 +184,19 @@ public class CusProfileController implements Initializable {
 
     @FXML
     private void saveUserInformation(ActionEvent event){
-        customer.setPhoneNum(txtPhoneNo.getText());
-        customer.setEmail(txtEmail.getText());
-        customer.setPassword(txtPSW.getText());
-        customer.setAddress(txtAddress.getText());
-        customer.setPostCode(txtPosCode.getText());
-        customer.setState(cmbState.getValue());
-
-        boolean phoneVal = customer.commonValidation(customer.getPhoneNum(), "phoneNum");
-        boolean emailVal = customer.commonValidation(customer.getEmail(), "email");
-        boolean pswVal = customer.getPassword().length() >= 6;
-        boolean addressVal = customer.commonValidation(customer.getAddress(), "address");
-        boolean posCodeVale = customer.commonValidation(customer.getPostCode(), "postCode");
+        boolean phoneVal = customer.commonValidation(txtPhoneNo.getText(), "phoneNum");
+        boolean emailVal = customer.commonValidation(txtEmail.getText(), "email");
+        boolean pswVal = txtPSW.getText().length() >= 6 && txtPSW.getText().length() <= 20;
+        boolean addressVal = customer.commonValidation(txtAddress.getText(), "address");
+        boolean posCodeVale = customer.commonValidation(txtPosCode.getText(), "postCode");
 
         if (phoneVal && pswVal && emailVal && addressVal && posCodeVale){
+            customer.setPhoneNum(txtPhoneNo.getText());
+            customer.setEmail(txtEmail.getText());
+            customer.setPassword(txtPSW.getText());
+            customer.setAddress(txtAddress.getText());
+            customer.setPostCode(txtPosCode.getText());
+            customer.setState(cmbState.getValue());
             for(int i = 0; i < customers.size(); i++){
                 if(customer.getUsername().equals(customers.get(i).getUsername())){
                     customers.set(i,customer);
@@ -154,9 +212,14 @@ public class CusProfileController implements Initializable {
                 }
             }
         }else{
-            System.out.println("Invalid input");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Update failed");
+            alert.setHeaderText("Your provided information is invalid.");
+            alert.setContentText("Please try again.");
+            alert.show();
         }
-
+        showUserInformation();
+        initializeStar(false);
         initializeTxt(false, Cursor.DEFAULT);
         initializeCmb(true, Cursor.DEFAULT, "transparent");
         initializeBtnEdit(true, false);
@@ -193,6 +256,16 @@ public class CusProfileController implements Initializable {
         txtPosCode.setCursor(cursor);
     }
 
+    private void initializeStar(boolean visible){
+        lblAPhone.setVisible(visible);
+        lblAEmail.setVisible(visible);
+        lblAPsw.setVisible(visible);
+        btnView.setVisible(visible);
+        lblAAdrress.setVisible(visible);
+        lblAPosCode.setVisible(visible);
+        lblAState.setVisible(visible);
+    }
+
     private void initializeCmb(boolean disable, Cursor cursor, String color){
         cmbState.setDisable(disable);
         cmbState.setCursor(cursor);
@@ -207,5 +280,18 @@ public class CusProfileController implements Initializable {
     private void initializeBtnSave(boolean visible, boolean disable){
         btnSave.setVisible(visible);
         btnSave.setDisable(disable);
+    }
+
+    @FXML
+    private void showPassword(MouseEvent event) {
+        String password = txtPSW.getText();
+        txtPSW.clear();
+        txtPSW.setPromptText(password);
+    }
+
+    @FXML
+    private void hidePassword(MouseEvent event) {
+        String password = txtPSW.getPromptText();
+        txtPSW.setText(password);
     }
 }

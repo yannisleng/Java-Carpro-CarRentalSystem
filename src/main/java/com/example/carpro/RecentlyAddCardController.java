@@ -29,8 +29,6 @@ import java.util.ResourceBundle;
 
 public class RecentlyAddCardController implements Initializable {
 
-    private Car car = ExploreController.getSelectedCar();
-
     @FXML
     private HBox boxRecentlyAddCar;
 

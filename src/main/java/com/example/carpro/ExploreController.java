@@ -9,16 +9,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Stack;
 
 public class ExploreController implements Initializable {
 
@@ -28,17 +31,17 @@ public class ExploreController implements Initializable {
         return customer;
     }
 
-    private static Car selectedCar;
-
-    public static Car getSelectedCar() {
-        return selectedCar;
-    }
-
     private List<Car> recentlyAdded;
     private List<Car> recommended;
+    private List<Car> searchCars;
 
-    @FXML
-    private Button btnSearch;
+    private FXMLLoader recommendLoader;
+
+    private FXMLLoader timePickerLoader;
+    private TimePickerController timePickerController;
+
+    private FXMLLoader timePickerLoader2;
+    private TimePickerController timePickerController2;
 
     @FXML
     private HBox cardLayout;
@@ -53,40 +56,22 @@ public class ExploreController implements Initializable {
     private GridPane gridRecommendCar;
 
     @FXML
-    private ImageView imgLocation;
-
-    @FXML
-    private Label lblDropOff;
-
-    @FXML
-    private Label lblLocation;
-
-    @FXML
-    private Label lblPickUp;
-
-    @FXML
-    private Label lblRecentlyAdd;
-
-    @FXML
     private Label lblRecommend;
 
     @FXML
-    private Pane pExplore;
+    private Label lblSearchLocation;
 
     @FXML
-    private ScrollPane scrollPaneRecentlyAdd;
+    private Label lblSelectDO;
+
+    @FXML
+    private Label lblSelectPU;
 
     @FXML
     public StackPane spExplore;
 
     @FXML
     private StackPane spExploreC1;
-
-    @FXML
-    private Separator spr1;
-
-    @FXML
-    private Separator spr2;
 
     @FXML
     private StackPane tpDropOff;
@@ -97,13 +82,13 @@ public class ExploreController implements Initializable {
     @FXML
     private TextField txtLocation;
 
+    public static String searchTxt;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         recentlyAdded = new ArrayList<>(recentlyAdded());
         recommended = new ArrayList<>(cars());
-
-        int column = 0;
-        int row = 1;
 
         try{
             for(Car car: recentlyAdded){
@@ -113,16 +98,13 @@ public class ExploreController implements Initializable {
                 RecentlyAddCardController recentlyAddCardController = fxmlLoader.getController();
                 recentlyAddCardController.setData(car);
                 recentlyAddCardController.getBtnView().setOnAction(event -> {
-                    /*Scene.switchScene("cusBooking.fxml", spExplore);*/
-
-                    FXMLLoader fxmlLoader2 = new FXMLLoader();
-                    fxmlLoader2.setLocation( Scene.class.getResource("cusBooking.fxml"));
-
+                    FXMLLoader cusBookingLoader = new FXMLLoader();
+                    cusBookingLoader.setLocation( Scene.class.getResource("cusBooking.fxml"));
                     try {
-                        StackPane newStakePane = fxmlLoader2.load();
+                        StackPane newStakePane = cusBookingLoader.load();
                         spExplore.getChildren().clear();
                         spExplore.getChildren().add(newStakePane);
-                        CusBookingController cusBookingController = fxmlLoader2.getController();
+                        CusBookingController cusBookingController = cusBookingLoader.getController();
                         cusBookingController.setCar(customer, car);
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -131,47 +113,36 @@ public class ExploreController implements Initializable {
                 cardLayout.getChildren().add(cardBox);
             }
 
-            for(Car car: recommended){
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("recommendedCar.fxml"));
-                VBox carBox = fxmlLoader.load();
-                RecommendedCarController recommendedCarController = fxmlLoader.getController();
-                recommendedCarController.setData(car);
-                recommendedCarController.getBtnView().setOnAction(event -> {
-                    Scene.switchScene("cusBooking.fxml", spExplore);
-                    selectedCar = car;
-                });
+            loadHorizontalCars(recommended);
 
-                if(column == 3){
-                    column = 0;
-                    ++row;
-                }
-
-                gridRecommendCar.add(carBox, column++, row);
-
-                if(column % 3 != 0){
-                    GridPane.setMargin(carBox, new Insets(-25,53, 55,0));
-                }else{
-                    GridPane.setMargin(carBox, new Insets(-25,0, 55,0));
-                }
-            }
-
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("timePicker.fxml"));
-            StackPane timePicker = fxmlLoader.load();
+            timePickerLoader = new FXMLLoader();
+            timePickerLoader.setLocation(getClass().getResource("timePicker.fxml"));
+            StackPane timePicker = timePickerLoader.load();
             tpPickUp.getChildren().add(timePicker);
 
-            FXMLLoader fxmlLoader2 = new FXMLLoader();
-            fxmlLoader2 = new FXMLLoader();
-            fxmlLoader2.setLocation(getClass().getResource("timePicker.fxml"));
-            StackPane timePicker2 = fxmlLoader2.load();
+            timePickerLoader2 = new FXMLLoader();
+            timePickerLoader2.setLocation(getClass().getResource("timePicker.fxml"));
+            StackPane timePicker2 = timePickerLoader2.load();
             tpDropOff.getChildren().add(timePicker2);
+
         }catch(IOException e){
             e.printStackTrace();
         }
     }
+    private List<Car> searchCars(){
+        List<Car> searchCars = new ArrayList<>();
 
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("car");
+        List<Car> cars = new ArrayList<>(db.getAllData());
+
+        for(Car car: cars){
+            if(car.getState().equalsIgnoreCase(searchTxt) && car.getStatus().equals("Available")){
+                searchCars.add(car);
+            }
+        }
+        return searchCars;
+    }
     private List<Car> recentlyAdded(){
         List<Car> carlist = new ArrayList<>();
 
@@ -204,23 +175,115 @@ public class ExploreController implements Initializable {
     }
 
     @FXML
-    private void search(ActionEvent event) {
+    private void search(ActionEvent event) throws IOException {
+        timePickerController = timePickerLoader.getController();
+        timePickerController2 = timePickerLoader2.getController();
+
+        if(!txtLocation.getText().equals("") && dpPickUp.getValue() != null && !timePickerController.getTime().equals("00:00 PM") &&
+                dpDropOff.getValue() != null && !timePickerController2.getTime().equals("00:00 PM")){
+            if(carVal(txtLocation.getText())){
+                if(timeVal(dpPickUp.getValue(), dpDropOff.getValue(), timePickerController.getTime(),
+                        timePickerController2.getTime())){
+                    searchTxt = txtLocation.getText();
+                    lblRecommend.setText("Results of ‘" + searchTxt + "’");
+                    loadHorizontalCars(searchCars());
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Time error");
+                    alert.setHeaderText("Pick-up time must be scheduled before the drop-off time.");
+                    alert.setContentText("Please try again.");
+                    alert.show();
+                }
+            }else{
+                noResultScene();
+            }
+        }else{
+            lblSearchLocation.setVisible(true);
+            lblSelectPU.setVisible(true);
+            lblSelectDO.setVisible(true);
+        }
+    }
+
+    private void noResultScene(){
+        try{
+            FXMLLoader noResultLoader = new FXMLLoader();
+            noResultLoader.setLocation(getClass().getResource("noResult.fxml"));
+            StackPane spNoResult = noResultLoader.load();
+            NoResultController noResultController = noResultLoader.getController();
+            noResultController.setText(txtLocation.getText());
+            spExploreC1.getChildren().add(spNoResult);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private boolean carVal(String text){
         dataFactory dataFactory = new dataFactory();
         database db = dataFactory.getDB("car");
         List<Car> recommandCars = new ArrayList<>(db.getAllData());
-
-        int count = 0;
-
-
-
         for(Car car: recommandCars){
-            if(car.getState().equals(txtLocation.getText()) && car.getStatus().equals("Available")){
-                count++;
+            if(car.getState().equalsIgnoreCase(text) && car.getStatus().equals("Available")){
+                return true;
             }
         }
+        return false;
+    }
 
-        if(count != 0){
-            Scene.switchScene("searchResult.fxml", spExploreC1);
+    private boolean timeVal(LocalDate puDate, LocalDate doDate, String puTime, String doTime){
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm aa");
+
+        if(puDate.isAfter(doDate)){
+            return false;
+        }else if(puDate.isEqual(doDate)){
+            try {
+                if(df.parse(puTime).compareTo(df.parse(doTime)) >= 0){
+                    return false;
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return true;
+    }
+
+    private void loadHorizontalCars(List<Car> list) throws IOException {
+        gridRecommendCar.getChildren().clear();
+
+        int column = 0;
+        int row = 1;
+
+        for(Car car: list){
+            recommendLoader = new FXMLLoader();
+            recommendLoader.setLocation(getClass().getResource("recommendedCar.fxml"));
+            VBox carBox = recommendLoader.load();
+            RecommendedCarController recommendedCarController = recommendLoader.getController();
+            recommendedCarController.setData(car);
+            recommendedCarController.getBtnView().setOnAction(event -> {
+                FXMLLoader cusBookingLoader = new FXMLLoader();
+                cusBookingLoader.setLocation( Scene.class.getResource("cusBooking.fxml"));
+                try {
+                    StackPane newStakePane = cusBookingLoader.load();
+                    spExplore.getChildren().clear();
+                    spExplore.getChildren().add(newStakePane);
+                    CusBookingController cusBookingController = cusBookingLoader.getController();
+                    cusBookingController.setCar(customer, car);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
+            if(column == 3){
+                column = 0;
+                ++row;
+            }
+
+            gridRecommendCar.add(carBox, column++, row);
+
+            if(column % 3 != 0){
+                GridPane.setMargin(carBox, new Insets(-25,53, 55,0));
+            }else{
+                GridPane.setMargin(carBox, new Insets(-25,0, 55,0));
+            }
         }
     }
 }

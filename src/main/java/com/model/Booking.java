@@ -6,9 +6,9 @@ public class Booking {
     private String id;
     private String customerId;
     private String carId;
-    private String startDate;
+    private LocalDate startDate;
     private String startTime;
-    private String endDate;
+    private LocalDate endDate;
     private String endTime;
     private String status;
     private String paymentId; //update when it is paid
@@ -59,11 +59,11 @@ public class Booking {
         this.carId = carId;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
@@ -75,11 +75,11 @@ public class Booking {
         this.startTime = startTime;
     }
 
-    public String  getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

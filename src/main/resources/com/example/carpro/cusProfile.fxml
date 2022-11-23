@@ -31,7 +31,7 @@
             <Insets left="50.0" top="118.0" />
          </StackPane.margin>
       </Label>
-      <Button fx:id="btnUpdateProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateProfileImg" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 8;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <Button fx:id="btnUpdateProfile" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateProfileImg" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 8;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <graphic>
             <ImageView fx:id="imgProfile" disable="true" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -91,6 +91,14 @@
             <Insets left="50.0" top="228.0" />
          </StackPane.margin>
       </Label>
+      <Label fx:id="lblAPhone" text="*" textFill="RED" visible="false" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="166.0" top="227.0" />
+         </StackPane.margin>
+      </Label>
       <TextField fx:id="txtPhoneNo" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #C2C2C2; -fx-border-radius: 8;" styleClass="txtProfile" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <font>
             <Font size="14.0" />
@@ -127,6 +135,14 @@
          </font>
          <StackPane.margin>
             <Insets left="50.0" top="302.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblAEmail" text="*" textFill="RED" visible="false" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="156.0" top="301.0" />
          </StackPane.margin>
       </Label>
       <TextField fx:id="txtEmail" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #C2C2C2; -fx-border-radius: 8;" styleClass="txtProfile" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
@@ -167,12 +183,54 @@
             <Insets left="50.0" top="376.0" />
          </StackPane.margin>
       </Label>
+      <Label fx:id="lblAPsw" text="*" textFill="RED" visible="false" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="121.0" top="375.0" />
+         </StackPane.margin>
+      </Label>
+      <PasswordField id="txtPassword" fx:id="txtPSW" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #c2c2c2; -fx-border-radius: 8;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <StackPane.margin>
+            <Insets left="50.0" top="402.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#showPassword" onMouseReleased="#hidePassword" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;" styleClass="btnHover" stylesheets="@style.css" visible="false" StackPane.alignment="TOP_LEFT">
+         <graphic>
+            <ImageView fx:id="imgView" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/view.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <StackPane.margin>
+            <Insets left="323.0" top="405.0" />
+         </StackPane.margin>
+      </Button>
       <Label fx:id="lblAddress" text="Address" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
          <font>
             <Font size="17.0" />
          </font>
          <StackPane.margin>
             <Insets left="50.0" top="450.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblAAdrress" text="*" textFill="RED" visible="false" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="111.0" top="449.0" />
          </StackPane.margin>
       </Label>
       <TextField fx:id="txtAddress" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="680.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #C2C2C2; -fx-border-radius: 8;" styleClass="txtProfile" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
@@ -191,7 +249,15 @@
             <Font size="17.0" />
          </font>
          <StackPane.margin>
-            <Insets left="50.0" top="524.0" />
+            <Insets left="50.0" top="520.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblAState" text="*" textFill="RED" visible="false" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="471.0" top="519.0" />
          </StackPane.margin>
       </Label>
       <TextField fx:id="txtPosCode" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #C2C2C2; -fx-border-radius: 8;" styleClass="txtProfile" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
@@ -199,7 +265,7 @@
             <Font size="14.0" />
          </font>
          <StackPane.margin>
-            <Insets left="50.0" top="550.0" />
+            <Insets left="50.0" top="546.0" />
          </StackPane.margin>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
@@ -213,7 +279,15 @@
             <Insets left="432.0" top="520.0" />
          </StackPane.margin>
       </Label>
-      <ComboBox id="cmbState" fx:id="cmbState" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #c2c2c2; -fx-border-radius: 8;" styleClass="txtProfile" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <Label fx:id="lblAPosCode" text="*" textFill="RED" visible="false" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="140.0" top="519.0" />
+         </StackPane.margin>
+      </Label>
+      <ComboBox fx:id="cmbState" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #c2c2c2; -fx-border-radius: 8;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="432.0" top="546.0" />
          </StackPane.margin>
@@ -221,17 +295,6 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ComboBox>
-      <PasswordField id="txtPassword" fx:id="txtPSW" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #c2c2c2; -fx-border-radius: 8;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-         <StackPane.margin>
-            <Insets left="50.0" top="402.0" />
-         </StackPane.margin>
-         <font>
-            <Font size="14.0" />
-         </font>
-      </PasswordField>
    </children>
    <cursor>
       <Cursor fx:constant="DEFAULT" />
