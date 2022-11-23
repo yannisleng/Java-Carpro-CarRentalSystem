@@ -67,7 +67,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </PasswordField>
-      <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#showPassword" onMouseReleased="#hidePassword" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: transparent;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#showPassword" onMouseReleased="#hidePassword" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: transparent;" styleClass="btnHover" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <graphic>
             <ImageView fx:id="imgView" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@img/view.png" />

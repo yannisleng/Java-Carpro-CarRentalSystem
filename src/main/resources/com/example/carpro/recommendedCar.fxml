@@ -29,15 +29,15 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <ImageView fx:id="imgCar" fitHeight="80.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+            <ImageView fx:id="imgCar" fitHeight="80.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
                <image>
                   <Image url="@img/carVios.png" />
                </image>
                <StackPane.margin>
-                  <Insets left="10.0" top="90.0" />
+                  <Insets top="90.0" />
                </StackPane.margin>
             </ImageView>
-            <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="170.0" style="-fx-background-radius: 8; -fx-background-color: #000000;" text="View" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+            <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="170.0" style="-fx-background-radius: 8; -fx-background-color: #000000;" styleClass="btnHover" stylesheets="@style.css" text="View" textFill="WHITE" StackPane.alignment="TOP_LEFT">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>

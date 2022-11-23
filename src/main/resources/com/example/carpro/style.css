@@ -206,8 +206,8 @@
 }
 
 /*hover: button effect*/
-#btnView:hover{
-    -fx-opacity: 38%;
+.btnHover:hover{
+    -fx-opacity: 60%;
 }
 
 .btnLogin{
@@ -226,11 +226,11 @@
 
 /*date picker style*/
 .date-picker{
-    -fx-background-color: transparent;
+    -fx-background-color: #ffffff;
     -fx-border-color: #000000;
     -fx-border-radius: 4;
     -fx-text-fill: #000000;
-    -fx-font-weight: bold;
+    -fx-cursor: default;
 }
 
 .date-picker .arrow-button {
@@ -247,9 +247,9 @@
 }
 
 .date-picker .cell {
-    -fx-background-color: transparent;
-    -fx-background-radius: 4;
+    -fx-background-color: #ffffff;
     -fx-text-fill: #000000;
+    -fx-font-weight: bold;
 }
 
 .date-picker .cell:hover,
@@ -257,6 +257,7 @@
 .date-picker .selected,
 .date-picker .selected:focused{
     -fx-background-color: #000000;
+    -fx-background-radius: 4px;
     -fx-text-fill: #ffffff;
 }
 
@@ -272,6 +273,7 @@
 
 .date-picker-popup .month-year-pane .label {
     -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
 }
 
 .date-picker-popup .spinner .button .left-arrow,
@@ -279,20 +281,14 @@
     -fx-background-color: #ffffff;
 }
 
-.date-picker-popup .spinner .button .left-arrow:hover,
-.date-picker-popup .spinner .button .right-arrow:hover,
-.date-picker-popup .spinner .button .left-arrow:focused,
-.date-picker-popup .spinner .button .right-arrow:focused{
-    -fx-background-color: #000000;
-}
-
 /*cus profile*/
-#cmbState{
+#cmbState, #cmbState:disabled{
     -fx-opacity: 1.0;
     -fx-background-color: transparent;
     -fx-border-color: #c2c2c2;
     -fx-border-radius: 8px;
     -fx-prompt-text-fill: #000000;
+    -fx-text-fill: #000000;
     -fx-font-size: 14px;
 }
 

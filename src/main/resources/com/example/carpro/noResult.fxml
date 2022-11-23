@@ -7,12 +7,15 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="spExloreC3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="spExloreC3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.NoResultController">
    <children>
       <Label fx:id="lblResult" text="0 result of ‘Tokyo’" StackPane.alignment="TOP_LEFT">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
+         <StackPane.margin>
+            <Insets top="15.0" />
+         </StackPane.margin>
       </Label>
       <Label fx:id="lblNotMatch" text="Your search ‘Tokyo’ did not match any cars" StackPane.alignment="TOP_LEFT">
          <font>
