@@ -75,7 +75,7 @@
          <children>
             <HBox prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css">
                <children>
-                  <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
+                  <CheckBox fx:id="allCheckBox" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
