@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.image.Image;
@@ -24,6 +25,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -190,13 +192,18 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
 
     @FXML
     private void brandComboBoxSelection(ActionEvent event) throws Exception{
+        brandComboBoxSelect();
+    }
+
+    protected void brandComboBoxSelect(){
         List<Model> models = new ArrayList<>();
-        if(brandCmb.getValue() != null & !brandCmb.getValue().toString().isEmpty()){
+        if(brandCmb.getValue() != null){
             modelCmb.setDisable(false);
 
             //find the brand name in the brand list
             for(int i=0;i<brandList.size();i++){
                 if(brandList.get(i).getBrandName().equals(brandCmb.getValue())){
+                    System.out.println(brandList.get(i).getModels());
                     models = brandList.get(i).getModels();
                 }
             }
@@ -212,6 +219,10 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
 
     @FXML
     private void uploadPhoto(ActionEvent event) throws Exception{
+        uploadPic(addeditcar_info);
+    }
+
+    protected void uploadPic(Node node){
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select a car picture");
         fileChooser.getExtensionFilters().addAll(
@@ -219,14 +230,14 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
                 new FileChooser.ExtensionFilter("PNG", "*.png")
         );
-        File file = fileChooser.showOpenDialog(addeditcar_info.getScene().getWindow());
+        File file = fileChooser.showOpenDialog(node.getScene().getWindow());
         if (file!=null){
             carPicimgView.setImage(new Image("file:"+file.getAbsolutePath(),212,212,true,true));
             pathLbl.setText(file.getAbsolutePath());
         }
     }
 
-    private boolean validation() {
+    protected boolean validation() {
         priceHint.setVisible(false);
         plateNumHint.setVisible(false);
         addressHint.setVisible(false);
@@ -282,7 +293,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         }
     }
 
-    private void successAction(){
+    protected void successAction(){
         //prompt updated success message
         successMsg.setOpacity(1);
         FadeTransition ft = new FadeTransition(Duration.millis(3000), successMsg);
@@ -304,12 +315,16 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         Car car = new Car();
         ArrayList <String> arr = new ArrayList<>();
 
-        boolean validate = validation();
-        if(validate){
+        if(validation()){
             for(int i=0; i< carList.size();i++){
-
                 if(carList.get(i).getBrand().equals(brandCmb.getValue()) & carList.get(i).getModel().equals(modelCmb.getValue())){
                     arr.add(carList.get(i).getId());
+                }else{
+                    for(Model model:modelList){
+                        if(modelCmb.getValue().equals(model.getModelName())){
+                            arr.add(model.getId()+"0000");
+                        }
+                    }
                 }
             }
 
@@ -322,7 +337,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             Path from = Paths.get(oriPath);
             String fileExtension = oriPath.substring(oriPath.lastIndexOf("."), pathLbl.getText().length());
             Path to = Paths.get("src/main/resources/com/example/carpro/img/car/"+id+fileExtension);
-            Files.copy(from,to);
+            Files.copy(from,to, StandardCopyOption.REPLACE_EXISTING);
 
             //set car data
             car.setId(id);
@@ -356,19 +371,6 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     private void setAddModelInvisible(){
         AddModelPanel.setVisible(false);
         blurPane.setVisible(false);
-    }
-
-    private void refreshThisScene(){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("addeditCar_info.fxml"));
-
-        try{
-            StackPane stackPane = fxmlLoader.load();
-            addeditcar_info.getChildren().clear();
-            addeditcar_info.getChildren().add(stackPane);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
     @FXML
@@ -455,7 +457,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             dataFactory dataFactory = new dataFactory();
             database db = dataFactory.getDB("brand");
             db.addData(brand);
-            refreshThisScene();
+            Scene.switchScene("addeditCar_info.fxml",addeditcar_info);
         }
 
     }
@@ -490,15 +492,18 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
                 if(brandList.get(i).getBrandName().equals(addModelBrandCmb.getValue())){
                     String brandId = brandList.get(i).getId();
 
-                    for(int j=0; j< modelList.size();j++){
-                        if(modelList.get(i).getId().substring(0,3).equals(brandId)){
-                            arr.add(modelList.get(j).getId());
+                    for(Model model1 : modelList){
+                        if(model1.getId().substring(0,3).equals(brandId)){
+                            arr.add(model1.getId());
                         }
+                    }
+                    if(arr.size()==0){
+                        arr.add(brandId+"000");
                     }
                 }
             }
 
-            //generate brand id
+            //generate model id
             int intId = Integer.parseInt(arr.get(arr.size()-1))+1;
             String id = String.format("%06d",intId);
             model.setId(id);
@@ -507,7 +512,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             dataFactory dataFactory = new dataFactory();
             database db = dataFactory.getDB("model");
             db.addData(model);
-            refreshThisScene();
+            Scene.switchScene("addeditCar_info.fxml",addeditcar_info);
         }
 
     }

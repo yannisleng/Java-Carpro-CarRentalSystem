@@ -79,9 +79,14 @@
     -fx-border-color: black;
 }
 
-#carItemHbox, #modelBrandHbox{
+#carItemHbox, #modelBrandHbox, #addeditMainTitle,
+#modelTitleHbox, #brandTitleHbox{
     -fx-border-color: #f3f5f7;
     -fx-border-width: 0px 0px 1px 0px;
+}
+
+#carItemHbox:hover{
+    -fx-border-width: 0px 0px 1.5px 0px;
 }
 
 .pagination > .pagination-control > .control-box {

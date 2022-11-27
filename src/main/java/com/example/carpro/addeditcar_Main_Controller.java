@@ -1,13 +1,17 @@
 package com.example.carpro;
 import com.model.*;
 import javafx.animation.FadeTransition;
+import javafx.beans.binding.IntegerBinding;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -20,6 +24,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class addeditcar_Main_Controller implements Initializable {
 
@@ -56,6 +61,7 @@ public class addeditcar_Main_Controller implements Initializable {
     protected List <Model> modelList = new ArrayList<>(readModel());
     protected List <Brand> brandList = new ArrayList<>(readBrand());
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(this.pagination != null){
@@ -80,6 +86,7 @@ public class addeditcar_Main_Controller implements Initializable {
 
             setPaginationPageCount();
         }
+
     }
 
     protected List<Car> readcar(){
@@ -123,6 +130,34 @@ public class addeditcar_Main_Controller implements Initializable {
 
             try{
                 HBox hBox = fxmlLoader.load();
+                hBox.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        FXMLLoader fxmlLoader = new FXMLLoader();
+                        fxmlLoader.setLocation(getClass().getResource("addeditCar_update.fxml"));
+
+                        ObservableList<Node> children = hBox.getChildren();
+
+                        //identify selected checkbox id
+                        for (Node child:children) {
+                            if(child instanceof CheckBox){
+                                dataFactory dataFactory = new dataFactory();
+                                database db = dataFactory.getDB("car");
+                                List<Car> cars = new ArrayList<>(db.searchData(((CheckBox) child).getText()));
+
+                                try {
+                                    StackPane stackPane = fxmlLoader.load();
+                                    addeditCar_Update_Controller auc = fxmlLoader.getController();
+                                    auc.setData(cars.get(0));
+                                    addeditcar_Main.getChildren().clear();
+                                    addeditcar_Main.getChildren().add(stackPane);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    }
+                });
                 addeditCar_item_Controller aic = fxmlLoader.getController();
                 aic.setData(carList.get(i));
                 carlistLayout.getChildren().add(hBox);
@@ -192,16 +227,7 @@ public class addeditcar_Main_Controller implements Initializable {
 
     @FXML
     public void switchtoCarInfo (ActionEvent event) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("addeditCar_info.fxml"));
-
-        try{
-            StackPane stackPane = fxmlLoader.load();
-            addeditcar_Main.getChildren().clear();
-            addeditcar_Main.getChildren().add(stackPane);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        Scene.switchScene("addeditCar_info.fxml",addeditcar_Main);
     }
 
     private void handleSearchResult(){
@@ -225,26 +251,13 @@ public class addeditcar_Main_Controller implements Initializable {
             searchBar.setVisible(false);
             modelCmb.setVisible(true);
             modelLbl.setVisible(true);
-            refreshThisScene();
+            Scene.switchScene("addeditCar_Main.fxml",addeditcar_Main);
         }else if(!searchBar.isVisible()){
             searchBar.setVisible(true);
             modelCmb.setVisible(false);
             modelLbl.setVisible(false);
         }else{
             handleSearchResult();
-        }
-    }
-
-    private void refreshThisScene(){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("addeditCar_Main.fxml"));
-
-        try{
-            StackPane stackPane = fxmlLoader.load();
-            addeditcar_Main.getChildren().clear();
-            addeditcar_Main.getChildren().add(stackPane);
-        }catch (IOException e){
-            e.printStackTrace();
         }
     }
 
@@ -290,7 +303,7 @@ public class addeditcar_Main_Controller implements Initializable {
         if(arrCarId.size() != 0){
             if(validateDelete(arrCarId)){
                 deleteAlert(arrCarId);
-                refreshThisScene();
+                Scene.switchScene("addeditCar_Main.fxml",addeditcar_Main);
             }else{
                 deletePrompt("Car currently unavailable");
             }

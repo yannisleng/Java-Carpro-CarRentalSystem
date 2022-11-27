@@ -70,37 +70,37 @@
             <Insets left="562.0" top="28.0" />
          </StackPane.margin>
       </Label>
-      <VBox fx:id="carlistLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" />
+      <VBox fx:id="carlistLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" />
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="721.0">
          <children>
-            <HBox prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css">
+            <HBox id="addeditMainTitle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css">
                <children>
-                  <CheckBox fx:id="selectAllCheckBox" mnemonicParsing="false" onAction="#selectAll" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
+                  <CheckBox fx:id="selectAllCheckBox" mnemonicParsing="false" onAction="#selectAll" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </CheckBox>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Brand">
+                  <Label id="#addeditMainTitle" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Brand">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Model">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-text-fill: black;" stylesheets="@style.css" text="Model">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Plate">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Plate">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Price">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Price">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Location">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Location">
                      <padding>
                         <Insets right="30.0" />
                      </padding>

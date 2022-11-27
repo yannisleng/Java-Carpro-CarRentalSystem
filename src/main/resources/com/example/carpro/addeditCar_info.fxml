@@ -345,7 +345,7 @@
             </Button>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="331.0" StackPane.alignment="TOP_LEFT">
                <children>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" styleClass="HBox" stylesheets="@style.css">
+                  <HBox id="brandTitleHbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" stylesheets="@style.css">
                      <children>
                         <Label style="-fx-text-fill: #4E5969;" text="ID">
                            <HBox.margin>
@@ -432,7 +432,7 @@
                   <Insets left="16.0" top="132.0" />
                </StackPane.margin>
                <children>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" styleClass="HBox" stylesheets="@style.css">
+                  <HBox id="modelTitleHbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="314.0" stylesheets="@style.css">
                      <children>
                         <Label style="-fx-text-fill: #4E5969;" text="ID">
                            <HBox.margin>

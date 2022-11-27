@@ -7,13 +7,11 @@ import java.util.Scanner;
 
 public class CarDB extends database <Car>{
 
-    private final String fileName = "car.txt";
-
     public List<Car> getAllData(){
         List<Car> ls= new ArrayList<Car>();
         ArrayList<String> data = new ArrayList<String>();
 
-        data = readFile(fileName);
+        data = readFile(carPath);
         for (int i=0;i< data.size();i++){
             Car car = new Car();
             String[] arr = data.get(i).split( "`",12);
@@ -38,7 +36,7 @@ public class CarDB extends database <Car>{
         String data = car.toString();
         System.out.println(data);
         try{
-            FileWriter file = new FileWriter(path+fileName, true);
+            FileWriter file = new FileWriter(carPath, true);
             file.write(data);
             file.close();
             System.out.println("Done");
@@ -61,7 +59,7 @@ public class CarDB extends database <Car>{
     }
 
     public void deleteData(String removeData){
-        File currentFile = new File(path+fileName);
+        File currentFile = new File(carPath);
         File tempFile = new File(path+"tempFile.txt");
         String currentLine;
 
@@ -90,17 +88,22 @@ public class CarDB extends database <Car>{
 
     };
 
-    /*public void updateData(Car car){
-        List<Car> carList = new ArrayList<>();
-        carList = getAllData();
-
-        //for loop for replacing new car with the old one with same ID
-        for(int i=0;i<carList.size();i++){
-            if(carList.get(i).getId() == car.getId()){
-                carList.set(i,car);
+    public void updateData(Car car){
+        List<Car> cars = new ArrayList<>(getAllData());
+        for(int i = 0; i < cars.size(); i++){
+            if(car.getId().equals(cars.get(i).getId())){
+                cars.set(i,car);
+                try {
+                    FileWriter file = new FileWriter(carPath);
+                    for(Car item: cars){
+                        file.write(String.valueOf(item));
+                    }
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
-    };*/
-    public void updateData(Object object){};
+    };
 
 }

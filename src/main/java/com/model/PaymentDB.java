@@ -16,7 +16,7 @@ public class PaymentDB extends database <Payment>{
     }
 
     @Override
-    public void updateData(Object object) {
+    public void updateData(Payment payment) {
 
     }
 

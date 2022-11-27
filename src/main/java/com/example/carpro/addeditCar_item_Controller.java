@@ -1,21 +1,29 @@
 package com.example.carpro;
 
+import com.model.User;
+import com.model.dataFactory;
+import com.model.database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import com.model.Car;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
-public class addeditCar_item_Controller implements Initializable {
+public class addeditCar_item_Controller extends addeditcar_Main_Controller implements Initializable{
 
     @FXML
     private Label brand;
