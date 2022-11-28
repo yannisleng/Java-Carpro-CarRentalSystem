@@ -41,7 +41,12 @@
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
-            <Region prefHeight="140.0" />
+            <Region prefHeight="76.0" prefWidth="250.0" />
+            <Button id="profileBtn_menu" fx:id="profileMenu" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Profile">
+               <VBox.margin>
+                  <Insets left="86.0" />
+               </VBox.margin>
+            </Button>
             <Button id="logoutBtn_menu" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Logout">
                <VBox.margin>
                   <Insets left="86.0" />
@@ -112,7 +117,16 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Region prefHeight="200.0" prefWidth="200.0" />
+            <Region prefHeight="79.0" prefWidth="46.0" />
+            <Button id="profileBtn" fx:id="profile" mnemonicParsing="false" onAction="#handleMenuAction">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Button id="logoutBtn" fx:id="logout" layoutX="32.0" layoutY="583.0" mnemonicParsing="false" stylesheets="@style.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">

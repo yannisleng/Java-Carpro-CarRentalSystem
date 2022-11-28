@@ -3,7 +3,8 @@
 }
 
 #reportBtn,#editBtn,#bookingBtn,#addUserBtn,
-#addCarbtn, #logoBtn,#logoutBtn,#saveBtn, #addBrandInfoBtn{
+#addCarbtn, #logoBtn,#logoutBtn,#saveBtn, #addBrandInfoBtn,
+#profileBtn{
     -fx-background-color: #000000;
     -fx-text-fill: #ffffff;
     -fx-background-radius: 8px;
@@ -27,6 +28,14 @@
     -fx-graphic: url(img/add-user-hover.png);
 }
 
+#profileBtn:hover, #profileBtn:focused{
+    -fx-graphic: url(img/user-hover.png);
+}
+
+#logoutBtn:hover, #logoutBtn:focused{
+    -fx-graphic: url(img/logout-hover.png);
+}
+
 /*customer navigation buttons*/
 #btnExplore:hover, #btnExplore:focused{
     /*-fx-graphic: url(img/analytics-hover.png);*/
@@ -41,7 +50,8 @@
 }
 
 .btnMenu, #reportBtn_menu, #editBtn_menu,
-#bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu{
+#bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu,
+#profileBtn_menu{
     -fx-background-color: #ffffff;
     -fx-text-fill: black;
     -fx-background-radius: 0px;
