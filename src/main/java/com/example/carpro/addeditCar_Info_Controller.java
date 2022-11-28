@@ -108,7 +108,10 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     private VBox BrandListLayout;
 
     @FXML
-    private ScrollPane scrollPane;
+    private ScrollPane BrandScrollPane;
+
+    @FXML
+    private ScrollPane ModelScrollPane;
 
     @FXML
     private StackPane AddBrandPanel;
@@ -170,7 +173,8 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
 
         AddBrandPanel.setVisible(false);
         AddModelPanel.setVisible(false);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        BrandScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        ModelScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         searchBrandBar.setVisible(false);
         searchModelBar.setVisible(false);
@@ -375,25 +379,29 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
 
     @FXML
     private void handleAddBrand(ActionEvent event) throws Exception{
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("brand");
+
         addBrandHint.setVisible(false);
         AddBrandPanel.setVisible(true);
         blurPane.setVisible(true);
-        BrandListLayout.getChildren().clear();
-
-        displayBrand(brandList);
+        displayBrand(db.getAllData());
     }
 
     @FXML
     private void handleAddModel(ActionEvent event) throws Exception{
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("model");
+
         addModelHint.setVisible(false);
         selectBrandHint.setVisible(false);
         AddModelPanel.setVisible(true);
         blurPane.setVisible(true);
-        ModelListLayout.getChildren().clear();
-        displayModel(modelList);
+        displayModel(db.getAllData());
     }
 
     private void displayBrand(List<Brand> brandList){
+        BrandListLayout.getChildren().clear();
         for(int i=0;i<brandList.size();i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("addBrandModelItem.fxml"));
@@ -410,6 +418,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     }
 
     private void displayModel(List<Model> modelList){
+        ModelListLayout.getChildren().clear();
         for(int i=0;i<modelList.size();i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("addBrandModelItem.fxml"));
@@ -457,7 +466,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             dataFactory dataFactory = new dataFactory();
             database db = dataFactory.getDB("brand");
             db.addData(brand);
-            Scene.switchScene("addeditCar_info.fxml",addeditcar_info);
+            displayBrand(db.getAllData());
         }
 
     }
@@ -512,7 +521,8 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             dataFactory dataFactory = new dataFactory();
             database db = dataFactory.getDB("model");
             db.addData(model);
-            Scene.switchScene("addeditCar_info.fxml",addeditcar_info);
+
+            displayModel(db.getAllData());
         }
 
     }

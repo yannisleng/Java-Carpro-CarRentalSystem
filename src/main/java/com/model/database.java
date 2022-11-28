@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public abstract class database<T> {
 
-    final String path = "src/main/resources/com/example/carpro/database/";
     static String carPath = "src/main/resources/com/example/carpro/database/car.txt";
     static String brandPath = "src/main/resources/com/example/carpro/database/brand.txt";
     static String modelPath = "src/main/resources/com/example/carpro/database/model.txt";
@@ -47,6 +46,35 @@ public abstract class database<T> {
                 fw.close();
             }
         }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteFile(String path, String removeData){
+        File currentFile = new File(path);
+        File tempFile = new File(path+"tempFile.txt");
+        String currentLine;
+
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader(currentFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+            System.out.println(removeData);
+
+            //rewrite data into new file
+            while ((currentLine = reader.readLine())!=null){
+                if(null!=currentLine && !currentLine.equalsIgnoreCase(removeData)){
+                    writer.write(currentLine + "\n");
+                }
+            }
+
+            writer.close();
+            reader.close();
+
+            currentFile.delete();
+            boolean successful = tempFile.renameTo(currentFile);
+            System.out.println(successful);
+        }catch (Exception e){
+            System.out.println("Delete data error");
             e.printStackTrace();
         }
     }

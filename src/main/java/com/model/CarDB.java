@@ -59,33 +59,7 @@ public class CarDB extends database <Car>{
     }
 
     public void deleteData(String removeData){
-        File currentFile = new File(carPath);
-        File tempFile = new File(path+"tempFile.txt");
-        String currentLine;
-
-        try{
-            BufferedReader reader = new BufferedReader(new FileReader(currentFile));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-            System.out.println(removeData);
-
-            //rewrite data into new file
-            while ((currentLine = reader.readLine())!=null){
-                if(null!=currentLine && !currentLine.equalsIgnoreCase(removeData)){
-                    writer.write(currentLine + "\n");
-                }
-            }
-
-            writer.close();
-            reader.close();
-
-            currentFile.delete();
-            boolean successful = tempFile.renameTo(currentFile);
-            System.out.println(successful);
-        }catch (Exception e){
-            System.out.println("Delete data error");
-            e.printStackTrace();
-        }
-
+        deleteFile(carPath,removeData);
     };
 
     public void updateData(Car car){

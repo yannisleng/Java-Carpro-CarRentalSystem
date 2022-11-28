@@ -87,5 +87,7 @@ public class ModelDB extends database <Model>{
         }
     };
 
-    public void deleteData(String fileName){};
+    public void deleteData(String removeData){
+        deleteFile(modelPath,removeData);
+    };
 }

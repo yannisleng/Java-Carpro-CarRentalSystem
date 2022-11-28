@@ -364,7 +364,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <ScrollPane id="addBrandScrollPane" fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
+                  <ScrollPane id="addBrandScrollPane" fx:id="BrandScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
                      <content>
                         <VBox fx:id="BrandListLayout" prefHeight="424.0" prefWidth="331.0" style="-fx-background-color: white;" />
                      </content>
@@ -451,7 +451,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <ScrollPane id="addBrandScrollPane" fx:id="scrollPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
+                  <ScrollPane id="addBrandScrollPane" fx:id="ModelScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
                      <content>
                         <VBox fx:id="ModelListLayout" prefHeight="415.0" prefWidth="331.0" style="-fx-background-color: white;" />
                      </content>

@@ -86,5 +86,7 @@ public class BrandDB extends database <Brand>{
         }
 
     };
-    public void deleteData(String fileName){};
+    public void deleteData(String removeData){
+        deleteFile(brandPath,removeData);
+    };
 }

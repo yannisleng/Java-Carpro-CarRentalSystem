@@ -84,7 +84,7 @@ public class addeditcar_Main_Controller implements Initializable {
                 }
             });
 
-            setPaginationPageCount();
+            setPaginationPageCount(carList);
         }
 
     }
@@ -110,7 +110,7 @@ public class addeditcar_Main_Controller implements Initializable {
         return modelList;
     }
 
-    private void setPaginationPageCount(){
+    private void setPaginationPageCount(List<Car> carList){
         int pageCount = carList.size()/rowsPerPage;
         int remain = carList.size()%rowsPerPage;
         if(remain!=0){
@@ -130,6 +130,8 @@ public class addeditcar_Main_Controller implements Initializable {
 
             try{
                 HBox hBox = fxmlLoader.load();
+
+                //add listener to each hBox
                 hBox.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
@@ -188,11 +190,12 @@ public class addeditcar_Main_Controller implements Initializable {
                 modelCmb.getItems().addAll(models.get(j).getModelName());
 
                 carlist.addAll(models.get(j).getCars());
+                System.out.println("test");
                 carlistLayout.getChildren().clear();
                 createPage(pagination.getCurrentPageIndex(),carlist);
             }
 
-            setPaginationPageCount();
+            setPaginationPageCount(carlist);
         }
     }
 
@@ -212,7 +215,8 @@ public class addeditcar_Main_Controller implements Initializable {
                 carlistLayout.getChildren().clear();
                 createPage(pagination.getCurrentPageIndex(),carlist);
             }
-            setPaginationPageCount();
+
+            setPaginationPageCount(carlist);
         }
     }
 
@@ -241,7 +245,7 @@ public class addeditcar_Main_Controller implements Initializable {
         carlistLayout.getChildren().clear();
         createPage(pagination.getCurrentPageIndex(),cars);
 
-        setPaginationPageCount();
+        setPaginationPageCount(cars);
     }
 
     @FXML
@@ -354,7 +358,8 @@ public class addeditcar_Main_Controller implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete");
         alert.setHeaderText("Delete Confirmation");
-        alert.setContentText("Are you sure you want to delete those car?");
+        alert.setContentText("Do you really want to delete these records? " +
+                "This process cannot be undone.");
 
         if(alert.showAndWait().get() == ButtonType.OK){
             deleteCarinFile(arrCarId);
