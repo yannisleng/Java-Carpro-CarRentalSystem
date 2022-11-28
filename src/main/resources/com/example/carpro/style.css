@@ -72,18 +72,19 @@
 }
 
 #deleteBtn, #returnBtn, #searchBtn,
-#closeBtn, #editItemBtn{
-    -fx-background-color: #ffffff;
+#closeBtn, #editItemBtn, #bookingSearchBtn{
+    -fx-background-color: transparent;
     -fx-text-fill: #000000;
     -fx-font-size: 12px;
 }
 
 #deleteBtn:hover, #returnBtn:hover, #uploadPhotoBtn:hover,
-#searchBtn:hover, #closeBtn:hover, #editItemBtn:hover{
+#searchBtn:hover, #closeBtn:hover, #editItemBtn:hover,
+#bookingSearchBtn:hover{
     -fx-background-color: #f3f5f7;
 }
 
-#brandCmbMain,#modelCmbMain{
+#brandCmbMain,#modelCmbMain, #bookingSearchBar{
     -fx-background-color: white;
     -fx-border-radius: 8px;
     -fx-border-color: black;
@@ -130,12 +131,6 @@
     -fx-text-fill: #000000;
 }
 
-/*Add edit car info*/
-/*.label{
-    -fx-text-fill: #C2C2C2;
-    -fx-font-size: 13px;
-}*/
-
 #priceText, #plateNumText, #addressText,
 #postCodeText,#searchBarText, #addBrandText,
 #addModelText, #usernameText, #firstNameText,
@@ -155,8 +150,9 @@
     -fx-graphic: url(img/add-hover.png);
 }
 
-#carinfoLbl, #locationLbl, #pictureLbl, #addBrandLbl{
-    -fx-background-color: #ffffff;
+#carinfoLbl, #locationLbl, #pictureLbl,
+#addBrandLbl, #bookingLbl{
+    -fx-background-color: transparent;
     -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-text-fill: #000000;
@@ -185,8 +181,23 @@
     -fx-font-size: 9px;
 }
 
-#addBrandScrollPane{
-    -fx-background-color: #ffffff;
+#addBrandScrollPane, #bookingScrollPane > .viewport{
+    -fx-background-color: transparent;
+}
+
+#addBrandScrollPane, #bookingScrollPane{
+    -fx-background-color: transparent;
+}
+
+/*Admin Booking Page*/
+#pendingBtn,#ongoingBtn,#endedBtn{
+    -fx-background-color: #d9d9d9;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 8px;
+}
+
+#pendingBtn:hover,#ongoingBtn:hover,#endedBtn:hover{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0.0, 0.0);
 }
 
 /*separator style*/

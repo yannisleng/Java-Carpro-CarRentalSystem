@@ -1,11 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-           prefHeight="600.0" prefWidth="780.0"
-           xmlns:fx="http://javafx.com/fxml/1">
-   <Label text="Customer Booking"/>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.carpro.adminCusBookingController">
+   <children>
+      <TextField id="bookingSearchBar" fx:id="searchBar" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="350.0" promptText="Search by booking number" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="31.0" top="31.0" />
+         </StackPane.margin>
+      </TextField>
+      <Button id="bookingSearchBtn" mnemonicParsing="false" onAction="#searchBooking" prefHeight="30.0" prefWidth="30.0" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="35.0" top="34.0" />
+         </StackPane.margin>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/search_admin.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label id="bookingLbl" text="Booking" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="31.0" top="84.0" />
+         </StackPane.margin>
+      </Label>
+      <Button id="pendingBtn" fx:id="pendingBtn" mnemonicParsing="false" onAction="#changeStatus" prefHeight="26.0" prefWidth="80.0" text="Pending" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="116.0" top="84.0" />
+         </StackPane.margin>
+      </Button>
+      <Button id="ongoingBtn" fx:id="ongoingBtn" mnemonicParsing="false" onAction="#changeStatus" prefHeight="26.0" prefWidth="80.0" text="Ongoing" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="206.0" top="84.0" />
+         </StackPane.margin>
+      </Button>
+      <Button id="endedBtn" fx:id="endedBtn" mnemonicParsing="false" onAction="#changeStatus" prefHeight="26.0" prefWidth="80.0" text="Ended" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="296.0" top="84.0" />
+         </StackPane.margin>
+      </Button>
+      <ScrollPane id="bookingScrollPane" fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="750.0" StackPane.alignment="TOP_RIGHT">
+         <StackPane.margin>
+            <Insets top="136.0" />
+         </StackPane.margin>
+         <content>
+            <GridPane fx:id="bookingContainer" prefHeight="0.0" prefWidth="2.0">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
 </StackPane>

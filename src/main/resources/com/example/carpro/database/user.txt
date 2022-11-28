@@ -1,3 +1,7 @@
 yannis`Zhi Yan`Leng`2001-10-15`Female`lengzhiyan1015@gmail.com`0169985960`Sunshine Residence`57000`Kuala Lumpur`Admin`abc123`yannis.png
 pheymin`Phey Min`Foo`2000-12-23`Female`pheymin1223@gmail.com`0186651223`Rainbow Residence`47000`Kuala Lumpur`Admin`123abc`pheymin.png
 kexin`Ke Xin`Tan`2001-09-14`Female`kexin123@gmail.com`0198765431`Sunflower Residence`52000`Johor`Customer`cba321`kexin.png
+Reynard`Reynard`Kassandra`1996-11-29`Male`ReynardKassandra@hotmail.com`0123456789`220 Jalan Pasai Sri Petaling`57000`Kuala Lumpur`Customer`961129`Reynard.jpg
+Morgan`Morgan`Frederik`1994-11-11`Female`MorganFrederik@hotmail.com`0198541236`301 G Lrg 9 Off Jalan Rubber Kuching`93400`Sarawak`Customer`941111`Morgan.jpg
+Amar`Amar`Tshering`1992-11-06`Rather not say`AmarTshering@gmail.com`0165421365`No. 63 Jln Bijeh Timah`30000`Perak`Customer`921106`Amar.jpg
+Pasha`Pasha`Fareed`1995-11-10`Rather not say`PashaFareed@hotmail.com`0178541236`16 Jalan Mutiara Emas 6/1 Taman Mount Austin`81100`Johor`Customer`951110`Pasha.jpg

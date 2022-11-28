@@ -75,7 +75,7 @@ public class AdminController implements Initializable {
             edit.requestFocus();editMenu.requestFocus();
             Scene.switchScene("addeditCar_Main.fxml",switchScene);
         } else if (event.getSource()==booking || event.getSource()==bookingMenu) {
-            booking.requestFocus();bookingMenu.requestFocus();
+            //booking.requestFocus();bookingMenu.requestFocus();
             Scene.switchScene("customerBooking.fxml",switchScene);
         } else if (event.getSource()==addUser || event.getSource()==addUserMenu) {
             addUser.requestFocus();addUserMenu.requestFocus();

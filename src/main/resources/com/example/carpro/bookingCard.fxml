@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" style="-fx-background-radius: 8px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.BookingCardController">
+   <children>
+      <StackPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #dedede; -fx-border-radius: 8px;">
+         <children>
+            <Label fx:id="name" contentDisplay="RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="232.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Brand - Model" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="23.0" top="20.0" />
+               </StackPane.margin>
+               <graphic>
+                  <Label fx:id="plateNum" style="-fx-text-fill: #C2C2C2; -fx-font-size: 12px; -fx-font-weight: 400;" text="Label">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </graphic>
+            </Label>
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Booking From" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="23.0" top="49.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="bookingFrom" style="-fx-font-size: 12px;" text="Date, Time" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="23.0" top="65.0" />
+               </StackPane.margin>
+            </Label>
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Booking To" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="23.0" top="97.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="bookingTo" style="-fx-font-size: 12px;" text="Date,Time" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="23.0" top="113.0" />
+               </StackPane.margin>
+            </Label>
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Location" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="23.0" top="145.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="location" style="-fx-font-size: 12px;" text="Location" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="23.0" top="161.0" />
+               </StackPane.margin>
+            </Label>
+            <Label fx:id="orderId" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="#0001" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="270.0" top="20.0" />
+               </StackPane.margin>
+            </Label>
+            <ImageView fx:id="carImg" fitHeight="150.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+               <StackPane.margin>
+                  <Insets left="133.0" top="49.0" />
+               </StackPane.margin>
+               <image>
+                  <Image url="@img/carVios.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+   </children>
+</VBox>
