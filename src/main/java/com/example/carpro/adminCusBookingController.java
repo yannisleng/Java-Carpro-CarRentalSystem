@@ -133,11 +133,10 @@ public class adminCusBookingController implements Initializable {
                         carBookingInfo.setVisible(false);
                     });
 
-                    //refresh scene
                     cbi.getApproveBtn().setOnAction(event -> {
                         handleAction("Approve",cbi.getOrderIdLbl().getText().substring(1));
                     });
-                    //refresh scene
+
                     cbi.getRejectBtn().setOnAction(event -> {
                         handleAction("Reject",cbi.getOrderIdLbl().getText().substring(1));
                     });

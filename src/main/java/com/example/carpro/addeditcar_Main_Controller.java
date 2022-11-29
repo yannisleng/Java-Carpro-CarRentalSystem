@@ -190,7 +190,6 @@ public class addeditcar_Main_Controller implements Initializable {
                 modelCmb.getItems().addAll(models.get(j).getModelName());
 
                 carlist.addAll(models.get(j).getCars());
-                System.out.println("test");
                 carlistLayout.getChildren().clear();
                 createPage(pagination.getCurrentPageIndex(),carlist);
             }

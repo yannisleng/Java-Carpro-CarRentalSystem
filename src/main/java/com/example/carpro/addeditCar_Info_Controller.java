@@ -105,52 +105,18 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     private Label successMsg;
 
     @FXML
-    private VBox BrandListLayout;
+    private Button addBrandBtn;
 
     @FXML
-    private ScrollPane BrandScrollPane;
-
-    @FXML
-    private ScrollPane ModelScrollPane;
-
-    @FXML
-    private StackPane AddBrandPanel;
+    private Button addModelBtn;
 
     @FXML
     private StackPane blurPane;
 
     @FXML
-    private TextField BrandText;
-
-    @FXML
-    private Label addBrandHint;
-
-    @FXML
-    private Label addModelHint;
-
-    @FXML
-    private Label selectBrandHint;
-
-    @FXML
-    private StackPane AddModelPanel;
-
-    @FXML
-    private ComboBox<String> addModelBrandCmb;
-
-    @FXML
-    private VBox ModelListLayout;
-
-    @FXML
-    private TextField ModelText;
-
-    @FXML
-    private TextField searchModelBar;
-
-    @FXML
-    private TextField searchBrandBar;
+    private StackPane BrandModelPane;
 
     private Image defaultImg = new Image("file:src/main/resources/com/example/carpro/img/car/default-image.png",212,212,true,true);
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -158,7 +124,6 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         //add all item to combo box
         for(int i=0;i<brandList.size();i++){
             brandCmb.getItems().addAll(brandList.get(i).getBrandName());
-            addModelBrandCmb.getItems().addAll(brandList.get(i).getBrandName());
         }
 
         for (int j=0;j<modelList.size();j++){
@@ -170,28 +135,11 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
 
         ObservableList<String> state = FXCollections.observableArrayList("Johor","Kedah","Kelantan","Kuala Lumpur","Melaka","Negeri Sembilan","Pahang","Penang","Perak","Perlis","Sabah","Sarawak","Selangor","Terengganu");
         stateCmb.setItems(state);
-
-        AddBrandPanel.setVisible(false);
-        AddModelPanel.setVisible(false);
-        BrandScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        ModelScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-
-        searchBrandBar.setVisible(false);
-        searchModelBar.setVisible(false);
     }
 
     @FXML
     private void switchtoBefore (ActionEvent event) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("addeditCar_Main.fxml"));
-
-        try{
-            StackPane stackPane = fxmlLoader.load();
-            addeditcar_info.getChildren().clear();
-            addeditcar_info.getChildren().add(stackPane);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        Scene.switchScene("addeditCar_Main.fxml",addeditcar_info);
     }
 
     @FXML
@@ -314,27 +262,34 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         pathLbl.setText("src/main/resources/com/example/carpro/img/car/default-image.png");
     }
 
+    private String generateCarId(){
+        ArrayList <String> arr = new ArrayList<>();
+
+        for(Car car:carList){
+            if(car.getBrand().equals(brandCmb.getValue()) & car.getModel().equals(modelCmb.getValue())){
+                arr.add(car.getId());
+            }else{
+                for(Model model:modelList){
+                    if(modelCmb.getValue().equals(model.getModelName())){
+                        arr.add(model.getId()+"0000");
+                    }
+                }
+            }
+        }
+
+        //generate car id
+        int intId = Integer.parseInt(arr.get(arr.size()-1))+1;
+        String id = String.format("%010d",intId);
+        return id;
+    }
+
     @FXML
     private void saveData(ActionEvent event) throws Exception{
         Car car = new Car();
         ArrayList <String> arr = new ArrayList<>();
 
         if(validation()){
-            for(int i=0; i< carList.size();i++){
-                if(carList.get(i).getBrand().equals(brandCmb.getValue()) & carList.get(i).getModel().equals(modelCmb.getValue())){
-                    arr.add(carList.get(i).getId());
-                }else{
-                    for(Model model:modelList){
-                        if(modelCmb.getValue().equals(model.getModelName())){
-                            arr.add(model.getId()+"0000");
-                        }
-                    }
-                }
-            }
-
-            //generate car id
-            int intId = Integer.parseInt(arr.get(arr.size()-1))+1;
-            String id = String.format("%010d",intId);
+            String id = generateCarId();
 
             //copy file to local storage
             String oriPath = pathLbl.getText();
@@ -364,217 +319,45 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     }
 
     /*Add/Edit Brand & Model*/
-
     @FXML
-    private void setAddBrandInvisible(){
-        AddBrandPanel.setVisible(false);
-        blurPane.setVisible(false);
-    }
-
-    @FXML
-    private void setAddModelInvisible(){
-        AddModelPanel.setVisible(false);
-        blurPane.setVisible(false);
-    }
-
-    @FXML
-    private void handleAddBrand(ActionEvent event) throws Exception{
-        dataFactory dataFactory = new dataFactory();
-        database db = dataFactory.getDB("brand");
-
-        addBrandHint.setVisible(false);
-        AddBrandPanel.setVisible(true);
+    private void handleAddBrandModel(ActionEvent event) throws Exception{
         blurPane.setVisible(true);
-        displayBrand(db.getAllData());
+        BrandModelPane.setVisible(true);
+        if(event.getSource()==addBrandBtn){
+            addBrandModelPane("addeditBrand.fxml","brand");
+        }else if(event.getSource()==addModelBtn){
+            addBrandModelPane("addeditModel.fxml","model");
+        }
     }
 
-    @FXML
-    private void handleAddModel(ActionEvent event) throws Exception{
-        dataFactory dataFactory = new dataFactory();
-        database db = dataFactory.getDB("model");
+    private void addBrandModelPane(String fxml, String type){
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation( Scene.class.getResource(fxml));
 
-        addModelHint.setVisible(false);
-        selectBrandHint.setVisible(false);
-        AddModelPanel.setVisible(true);
-        blurPane.setVisible(true);
-        displayModel(db.getAllData());
-    }
+        try {
+            StackPane stackPane = fxmlLoader.load();
+            if(type.equals("brand")){
+                AddEditBrandController addEditBrandController = fxmlLoader.getController();
+                addEditBrandController.getCloseBtn().setOnAction(event -> {
+                    BrandModelPane.setVisible(false);
+                    blurPane.setVisible(false);
+                    Scene.switchScene("addeditCar_info.fxml",addeditcar_info);
+                });
 
-    private void displayBrand(List<Brand> brandList){
-        BrandListLayout.getChildren().clear();
-        for(int i=0;i<brandList.size();i++){
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("addBrandModelItem.fxml"));
-            try{
-                HBox hBox = fxmlLoader.load();
-                AddModelItemController amc = fxmlLoader.getController();
-                amc.setData(brandList.get(i));
-                BrandListLayout.getChildren().add(hBox);
-
-            }catch (IOException e){
-                e.printStackTrace();
+            }else if(type.equals("model")){
+                AddEditModelController addEditModelController = fxmlLoader.getController();
+                addEditModelController.getCloseBtn().setOnAction(event -> {
+                    BrandModelPane.setVisible(false);
+                    blurPane.setVisible(false);
+                    Scene.switchScene("addeditCar_info.fxml",addeditcar_info);
+                });
             }
+            BrandModelPane.getChildren().clear();
+            BrandModelPane.getChildren().add(stackPane);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    private void displayModel(List<Model> modelList){
-        ModelListLayout.getChildren().clear();
-        for(int i=0;i<modelList.size();i++){
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("addBrandModelItem.fxml"));
-            try{
-                HBox hBox = fxmlLoader.load();
-                AddModelItemController amc = fxmlLoader.getController();
-                amc.setData(modelList.get(i));
-                ModelListLayout.getChildren().add(hBox);
-
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @FXML
-    private void saveBrand(ActionEvent event) throws Exception{
-        List <Brand> brandList = new ArrayList<>(readBrand());
-        addBrandHint.setVisible(false);
-        boolean validate = true;
-
-        if(!BrandText.getText().isEmpty() && BrandText.getText() != null){
-            for(int i=0;i<brandList.size();i++){
-                if(brandList.get(i).getBrandName().equals(BrandText.getText())){
-                    validate = false;
-                    addBrandHint.setVisible(true);
-                }
-            }
-        }else{
-            BrandText.setPromptText("Please enter brand name");
-            validate = false;
-        }
-
-        if(validate){
-            Brand brand = new Brand();
-
-            //generate brand id
-            String brandLastID = brandList.get(brandList.size()-1).getId();
-            int intNewID = Integer.parseInt(brandLastID)+1;
-            String newID = String.format("%03d",intNewID);
-
-            brand.setId(newID);
-            brand.setBrandName(BrandText.getText());
-
-            dataFactory dataFactory = new dataFactory();
-            database db = dataFactory.getDB("brand");
-            db.addData(brand);
-            displayBrand(db.getAllData());
-        }
-
-    }
-
-    @FXML
-    private void saveModel(ActionEvent event) throws Exception{
-        List <Model> modelList = new ArrayList<>(readModel());
-        List <Brand> brandList = new ArrayList<>(readBrand());
-        addModelHint.setVisible(false);
-        selectBrandHint.setVisible(false);
-        boolean validate = true;
-
-        if(!ModelText.getText().isEmpty() && ModelText.getText() != null && addModelBrandCmb.getValue() !=null){
-            for(int i=0;i<modelList.size();i++){
-                if(modelList.get(i).getModelName().equals(ModelText.getText())){
-                    validate = false;
-                    addModelHint.setVisible(true);
-                }
-            }
-        }else{
-            addModelHint.setVisible(true);
-            selectBrandHint.setVisible(true);
-            ModelText.setPromptText("Please enter model name");
-            validate = false;
-        }
-
-        ArrayList <String> arr = new ArrayList<>();
-        Model model = new Model();
-
-        if(validate){
-            for(int i=0; i< brandList.size();i++){
-                if(brandList.get(i).getBrandName().equals(addModelBrandCmb.getValue())){
-                    String brandId = brandList.get(i).getId();
-
-                    for(Model model1 : modelList){
-                        if(model1.getId().substring(0,3).equals(brandId)){
-                            arr.add(model1.getId());
-                        }
-                    }
-                    if(arr.size()==0){
-                        arr.add(brandId+"000");
-                    }
-                }
-            }
-
-            //generate model id
-            int intId = Integer.parseInt(arr.get(arr.size()-1))+1;
-            String id = String.format("%06d",intId);
-            model.setId(id);
-            model.setModelName(ModelText.getText());
-
-            dataFactory dataFactory = new dataFactory();
-            database db = dataFactory.getDB("model");
-            db.addData(model);
-
-            displayModel(db.getAllData());
-        }
-
-    }
-
-    /*handle search bar*/
-    private void handleSearchBrandResult(){
-        List<Brand> brands = new ArrayList<>();
-
-        //find the models in the model list
-        dataFactory dataFactory = new dataFactory();
-        database db = dataFactory.getDB("brand");
-        brands = db.searchData(searchBrandBar.getText());
-        BrandListLayout.getChildren().clear();
-
-        displayBrand(brands);
-    }
-
-    @FXML
-    public void searchBrandBar (ActionEvent event) throws Exception{
-        /*set search bar visible*/
-        if(searchBrandBar.isVisible()&&(searchBrandBar.getText()==null || searchBrandBar.getText().trim().isEmpty())){
-            searchBrandBar.setVisible(false);
-            displayBrand(brandList);
-        }else if(!searchBrandBar.isVisible()){
-            searchBrandBar.setVisible(true);
-        }else{
-            handleSearchBrandResult();
-        }
-    }
-
-    private void handleSearchModelResult(){
-        List<Model> models = new ArrayList<>();
-
-        //find the models in the model list
-        dataFactory dataFactory = new dataFactory();
-        database db = dataFactory.getDB("model");
-        models = db.searchData(searchModelBar.getText());
-        ModelListLayout.getChildren().clear();
-
-        displayModel(models);
-    }
-
-    @FXML
-    public void searchModelBar (ActionEvent event) throws Exception{
-        /*set search bar visible*/
-        if(searchModelBar.isVisible()&&(searchModelBar.getText()==null || searchModelBar.getText().trim().isEmpty())){
-            searchModelBar.setVisible(false);
-            displayModel(modelList);
-        }else if(!searchModelBar.isVisible()){
-            searchModelBar.setVisible(true);
-        }else{
-            handleSearchModelResult();
-        }
-    }
 }
