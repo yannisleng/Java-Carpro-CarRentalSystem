@@ -32,4 +32,5 @@ public class RecommendedCarController {
         lblBrandModel.setText(car.getBrand() + " " + car.getModel());
         lblLocation.setText(car.getState());
     }
+
 }

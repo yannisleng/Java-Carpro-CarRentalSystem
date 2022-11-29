@@ -44,10 +44,19 @@ public class CusController implements Initializable {
     private StackPane spCusDefault;
 
     @FXML
+    private StackPane spCusMain;
+
+    @FXML
+    public static StackPane spCus;
+
+    @FXML
     private VBox vboxCusMenu;
+    public static CusController instance;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        instance = this;
+        spCus = spCusMain;
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("explore.fxml"));
 
@@ -57,6 +66,22 @@ public class CusController implements Initializable {
         }catch(IOException e){
             e.printStackTrace();
         }
+    }
+
+    public static Receipt receipt(){
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation( Scene.class.getResource("receipt.fxml"));
+
+        try {
+            StackPane newStakePane = fxmlLoader.load();
+            spCus.getChildren().clear();
+            spCus.getChildren().add(newStakePane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Receipt receipt = fxmlLoader.getController();
+        return receipt;
     }
 
     public void switchScene(String fxml){

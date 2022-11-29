@@ -74,6 +74,6 @@ public class CarDB extends database <Car>{
             }
         }
     };*/
-    public void updateData(Object object){};
+    public void updateData(List list){};
     public void deleteData(String fileName){};
 }

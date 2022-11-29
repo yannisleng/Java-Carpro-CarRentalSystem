@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vboxHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="710.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryCardController">
+<VBox fx:id="vboxHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="723.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryCardController">
    <children>
-      <StackPane fx:id="spHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="710.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 8; -fx-border-style: dotted;">
+      <StackPane fx:id="spHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="723.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 8; -fx-border-style: dotted;">
          <children>
             <Separator fx:id="separatorBlack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="130.0" prefWidth="5.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
@@ -47,41 +47,41 @@
                <StackPane.margin>
                   <Insets left="30.0" top="90.0" />
                </StackPane.margin></ImageView>
-            <Button fx:id="btnReturn" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #000000; -fx-background-radius: 8;" text="Return Car" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+            <Button fx:id="btnReturn" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #000000; -fx-background-radius: 8;" styleClass="btnHover" stylesheets="@style.css" text="Return Car" textFill="WHITE" StackPane.alignment="TOP_LEFT">
                <font>
                   <Font size="17.0" />
                </font>
                <StackPane.margin>
                   <Insets left="560.0" top="100.0" />
                </StackPane.margin></Button>
-            <Label fx:id="lblStartDate" text="Fri, Oct 28, 2022 " StackPane.alignment="TOP_LEFT">
+            <Label fx:id="lblStartDate" text="2022-11-10" textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <StackPane.margin>
-                  <Insets left="110.0" top="118.0" />
+                  <Insets left="118.0" top="118.0" />
                </StackPane.margin></Label>
-            <Label fx:id="lblStartTime" text="16:00PM " StackPane.alignment="TOP_LEFT">
+            <Label fx:id="lblStartTime" text="16:00 PM " textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <StackPane.margin>
-                  <Insets left="130.0" top="130.0" />
+                  <Insets left="124.0" top="131.0" />
                </StackPane.margin>
             </Label>
-            <Label fx:id="lblEndDate" text="Fri, Oct 28, 2022 " StackPane.alignment="TOP_LEFT">
+            <Label fx:id="lblEndDate" text="2022-11-18" textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <StackPane.margin>
-                  <Insets left="350.0" top="118.0" />
+                  <Insets left="356.0" top="118.0" />
                </StackPane.margin></Label>
-            <Label fx:id="lblEndTime" text="16:00PM " StackPane.alignment="TOP_LEFT">
+            <Label fx:id="lblEndTime" text="16:00 PM " textAlignment="CENTER" StackPane.alignment="TOP_LEFT">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
                <StackPane.margin>
-                  <Insets left="365.0" top="130.0" />
+                  <Insets left="363.0" top="131.0" />
                </StackPane.margin></Label>
             <Label fx:id="lblRoundArrow" text="o························································································&gt;" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>

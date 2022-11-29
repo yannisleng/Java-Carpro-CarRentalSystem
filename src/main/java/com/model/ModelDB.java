@@ -57,6 +57,6 @@ public class ModelDB extends database <Model>{
         return newList;
     }
 
-    public void updateData(Object object){};
+    public void updateData(List list){};
     public void deleteData(String fileName){};
 }

@@ -298,3 +298,25 @@
     -fx-border-color: transparent;
 }
 
+/*cus history*/
+#btnPending, #btnOngoing, #btnEnded{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 8px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+#btnPending:focused, #btnOngoing:focused, #btnEnded:focused{
+    -fx-background-color: #000000;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+#scrollHistory > .viewport{
+    -fx-background-color: #ffffff;
+}

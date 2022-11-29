@@ -58,7 +58,7 @@ public abstract class database<T> {
     }
     public abstract List<T> searchData(String input);
     public abstract List<T> getAllData();
-    public abstract void updateData(Object object);
+    public abstract void updateData(List<Object> list);
     public abstract void addData(T t);
     public abstract void deleteData(String fileName);
 }

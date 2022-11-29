@@ -8,9 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -150,13 +148,14 @@ public class CusBookingController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Booking failed");
                 alert.setHeaderText("You're having a car on the road/ pending payment.");
-                alert.setContentText("Booking a new car once order completed.");
+                alert.setContentText("Book a new car once order completed.");
                 alert.show();
             }
         });
     }
 
     private boolean hisVal(){
+        bookingList = new ArrayList<>(db.getAllData());
         for(Booking booking: bookingList){
             if(booking.getCustomerId().equals(customer.getUsername())){
                 if(booking.getStatus().equals("Pending")){

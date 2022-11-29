@@ -63,6 +63,6 @@ public class UserDB extends database <User>{
         return newList;
     }
 
-    public void updateData(Object object){};
+    public void updateData(List list){};
     public void deleteData(String fileName){};
 }

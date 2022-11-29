@@ -37,7 +37,11 @@
                   <Insets top="90.0" />
                </StackPane.margin>
             </ImageView>
-            <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="170.0" style="-fx-background-radius: 8; -fx-background-color: #000000;" styleClass="btnHover" stylesheets="@style.css" text="View" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+            <Button fx:id="btnView" maxHeight="-Infinity" maxWidth="-Infinity"
+                    minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                    prefHeight="35.0" prefWidth="170.0" style="-fx-background-radius: 8; -fx-background-color: #000000;"
+                    styleClass="btnHover" stylesheets="@style.css" text="View" textFill="WHITE"
+                    StackPane.alignment="TOP_LEFT">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
