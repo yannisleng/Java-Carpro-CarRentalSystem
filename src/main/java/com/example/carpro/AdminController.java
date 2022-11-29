@@ -38,9 +38,14 @@ public class AdminController implements Initializable {
     @FXML
     private Button editMenu;
 
+    @FXML
+    private Button profile;
 
     @FXML
     private Button reportMenu;
+
+    @FXML
+    private Button profileMenu;
 
     @FXML
     private StackPane switchScene;
@@ -61,33 +66,23 @@ public class AdminController implements Initializable {
         }
     }
 
-    public void switchscene(String fxml){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource(fxml));
-
-        try{
-            StackPane stackPane = fxmlLoader.load();
-            switchScene.getChildren().clear();
-            switchScene.getChildren().add(stackPane);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
     @FXML
     private void handleMenuAction(ActionEvent event) throws Exception{
         if (event.getSource()==report || event.getSource()==reportMenu){
             report.requestFocus();reportMenu.requestFocus();
-            switchscene("adminReport.fxml");
+            Scene.switchScene("adminReport.fxml",switchScene);
         }else if(event.getSource()==edit || event.getSource()==editMenu){
             edit.requestFocus();editMenu.requestFocus();
-            switchscene("addeditCar_Main.fxml");
+            Scene.switchScene("addeditCar_Main.fxml",switchScene);
         } else if (event.getSource()==booking || event.getSource()==bookingMenu) {
-            booking.requestFocus();bookingMenu.requestFocus();
-            switchscene("customerBooking.fxml");
+            //booking.requestFocus();bookingMenu.requestFocus();
+            Scene.switchScene("customerBooking.fxml",switchScene);
         } else if (event.getSource()==addUser || event.getSource()==addUserMenu) {
             addUser.requestFocus();addUserMenu.requestFocus();
-            switchscene("registerUser.fxml");
+            Scene.switchScene("registerUser.fxml",switchScene);
+        } else if (event.getSource() == profile || event.getSource() == profileMenu){
+            profile.requestFocus();profileMenu.requestFocus();
+            Scene.switchScene("cusProfile.fxml",switchScene);
         }
     }
 
@@ -99,4 +94,5 @@ public class AdminController implements Initializable {
             menu.setVisible(true);
         }
     }
+
 }

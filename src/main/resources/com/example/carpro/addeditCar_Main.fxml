@@ -21,7 +21,7 @@
             <Insets left="29.0" top="37.0" />
          </StackPane.margin>
       </Button>
-      <Button id="deleteBtn" fx:id="deleteBtn" mnemonicParsing="false" stylesheets="@style.css" text="Delete" StackPane.alignment="TOP_LEFT">
+      <Button id="deleteBtn" fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteRow" stylesheets="@style.css" text="Delete" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="155.0" top="40.0" />
          </StackPane.margin>
@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField fx:id="searchBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="205.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <TextField id="searchBarText" fx:id="searchBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="205.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="553.0" top="45.0" />
          </StackPane.margin>
@@ -70,37 +70,37 @@
             <Insets left="562.0" top="28.0" />
          </StackPane.margin>
       </Label>
-      <VBox fx:id="carlistLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" />
+      <VBox fx:id="carlistLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" />
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="721.0">
          <children>
-            <HBox prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css">
+            <HBox id="addeditMainTitle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css">
                <children>
-                  <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
+                  <CheckBox fx:id="selectAllCheckBox" mnemonicParsing="false" onAction="#selectAll" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="ID">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </CheckBox>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Brand">
+                  <Label id="#addeditMainTitle" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Brand">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Model">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-text-fill: black;" stylesheets="@style.css" text="Model">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Plate">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Plate">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Price">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Price">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
                   </Label>
-                  <Label prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Location">
+                  <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Location">
                      <padding>
                         <Insets right="30.0" />
                      </padding>
@@ -119,5 +119,10 @@
             <Insets left="29.0" top="83.0" />
          </StackPane.margin>
       </VBox>
+      <Label fx:id="nothingSelectedPrompt" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="40.0" prefWidth="130.0" style="-fx-text-fill: black; -fx-font-size: 12px; -fx-background-color: #e5e5e5;" text="No Item Been Selected" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="245.0" top="35.0" />
+         </StackPane.margin>
+      </Label>
    </children>
 </StackPane>

@@ -5,34 +5,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox prefHeight="47.0" prefWidth="721.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_item_Controller">
+<HBox id="carItemHbox" fx:id="hbox" prefHeight="45.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_item_Controller">
    <children>
-      <CheckBox fx:id="id" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@style.css" text="1">
+      <CheckBox fx:id="id" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="1">
          <padding>
             <Insets right="30.0" />
          </padding>
       </CheckBox>
-      <Label fx:id="brand" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Honda">
+      <Label fx:id="brand" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Honda">
          <padding>
             <Insets right="30.0" />
          </padding>
       </Label>
-      <Label fx:id="model" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Civic">
+      <Label fx:id="model" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Civic">
          <padding>
             <Insets right="30.0" />
          </padding>
       </Label>
-      <Label fx:id="plate" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="DWE 123">
+      <Label fx:id="plate" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="DWE 123">
          <padding>
             <Insets right="30.0" />
          </padding>
       </Label>
-      <Label fx:id="price" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="RM 15.00">
+      <Label fx:id="price" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="RM 15.00">
          <padding>
             <Insets right="30.0" />
          </padding>
       </Label>
-      <Label fx:id="location" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Kuala Lumpur">
+      <Label fx:id="location" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Kuala Lumpur">
          <padding>
             <Insets right="30.0" />
          </padding>

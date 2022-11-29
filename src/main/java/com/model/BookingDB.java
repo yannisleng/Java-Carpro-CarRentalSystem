@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingDB extends database <Booking>{
-    private final String fileName = "booking.txt";
-
     @Override
     public List<Booking> searchData(String input) {
         return null;
@@ -19,7 +17,7 @@ public class BookingDB extends database <Booking>{
         List<Booking> ls= new ArrayList<Booking>();
         ArrayList<String> data = new ArrayList<String>();
 
-        data = readFile(fileName);
+        data = readFile(bookingPath);
         for (int i=0;i< data.size();i++){
             Booking booking = new Booking();
             String[] arr = data.get(i).split( "`",9);
@@ -38,7 +36,22 @@ public class BookingDB extends database <Booking>{
     }
 
     @Override
-    public void updateData(List<Object> list) {
+    public void updateData(Booking booking) {
+        List<Booking> bookings = new ArrayList<>(getAllData());
+        for(int i = 0; i < bookings.size(); i++){
+            if(booking.getId().equals(bookings.get(i).getId())){
+                bookings.set(i,booking);
+                try {
+                    FileWriter file = new FileWriter(bookingPath);
+                    for(Booking item: bookings){
+                        file.write(String.valueOf(item));
+                    }
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override
@@ -46,7 +59,7 @@ public class BookingDB extends database <Booking>{
         String data = booking.toString();
         System.out.println(data);
         try{
-            FileWriter file = new FileWriter(path+fileName, true);
+            FileWriter file = new FileWriter(bookingPath, true);
             file.write(data);
             file.close();
             System.out.println("Done");

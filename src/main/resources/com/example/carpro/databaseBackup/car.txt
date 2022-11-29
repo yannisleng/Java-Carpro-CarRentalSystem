@@ -15,4 +15,3 @@
 0130010001`MINI`Cooper`V 78`88.00`5`100`Available`71 1St Floor Jln Mustapha Al-Bakri`30300`Perak`0130010001.png
 0010020001`Honda`CR-V`VBN 123`89.00`7`100`Available`No. 39 Jln Tanjong Taman Dato Penggawa Barat`81200`Johor`0010020001.png
 0010030001`Honda`NSX`BJ 15`122.00`5`100`Available`No. 19 Jln Jujur 2 Bandar Tun Abdul Razak`56000`Kuala Lumpur`0010030001.png
-0120010001`Lamborghini`Aventador`VGH 45`98.00`5`100`Available`B 33 Ground Floor Lorong Seri Kuantan 25`25250`Pahang`0120010001.png

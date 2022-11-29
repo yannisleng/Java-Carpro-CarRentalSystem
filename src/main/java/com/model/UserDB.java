@@ -9,13 +9,11 @@ import java.util.Scanner;
 
 public class UserDB extends database <User>{
 
-    private final String fileName = "user.txt";
-
     public List<User> getAllData(){
         List<User> ls= new ArrayList<User>();
         ArrayList<String> data = new ArrayList<String>();
 
-        data = readFile(fileName);
+        data = readFile(userPath);
         for (int i=0;i< data.size();i++){
             User user = new User();
             String[] arr = data.get(i).split( "`",13);
@@ -41,7 +39,7 @@ public class UserDB extends database <User>{
         String data = user.toString();
         System.out.println(data);
         try{
-            FileWriter file = new FileWriter(path+fileName, true);
+            FileWriter file = new FileWriter(userPath, true);
             file.write(data);
             file.close();
             System.out.println("Done");
@@ -63,6 +61,6 @@ public class UserDB extends database <User>{
         return newList;
     }
 
-    public void updateData(List list){};
+    public void updateData(User user){};
     public void deleteData(String fileName){};
 }

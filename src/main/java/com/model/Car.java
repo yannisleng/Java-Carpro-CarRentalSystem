@@ -1,5 +1,7 @@
 package com.model;
 
+import javafx.scene.control.CheckBox;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -57,7 +59,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return id+"`"+brand+"`"+model+"`"+numPlate+"`"+price+"`"+seat+"`"+fuel+"`"+status+"`"+address+"`"+postCode+"`"+state+"`"+imgsrc+"\n";
+        return id+"`"+brand+"`"+model+"`"+numPlate+"`"+String.format("%.02f",price)+"`"+seat+"`"+fuel+"`"+status+"`"+address+"`"+postCode+"`"+state+"`"+imgsrc+"\n";
     }
 
     public String getBrand() {return brand;}

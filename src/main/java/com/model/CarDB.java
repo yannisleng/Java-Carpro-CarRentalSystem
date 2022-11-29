@@ -1,22 +1,17 @@
 package com.model;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CarDB extends database <Car>{
 
-    private final String fileName = "car.txt";
-
     public List<Car> getAllData(){
         List<Car> ls= new ArrayList<Car>();
         ArrayList<String> data = new ArrayList<String>();
 
-        data = readFile(fileName);
+        data = readFile(carPath);
         for (int i=0;i< data.size();i++){
             Car car = new Car();
             String[] arr = data.get(i).split( "`",12);
@@ -41,7 +36,7 @@ public class CarDB extends database <Car>{
         String data = car.toString();
         System.out.println(data);
         try{
-            FileWriter file = new FileWriter(path+fileName, true);
+            FileWriter file = new FileWriter(carPath, true);
             file.write(data);
             file.close();
             System.out.println("Done");
@@ -53,7 +48,7 @@ public class CarDB extends database <Car>{
 
     public List<Car> searchData(String input){
         List<Car> carList = new ArrayList<>();
-        List<Car> newList = new ArrayList<>();
+        List <Car> newList = new ArrayList<>();
         carList = getAllData();
         for(int i=0;i< carList.size();i++){
             if(carList.get(i).getId().equals(input)){
@@ -63,17 +58,26 @@ public class CarDB extends database <Car>{
         return newList;
     }
 
-    /*public void updateData(Car car){
-        List<Car> carList = new ArrayList<>();
-        carList = getAllData();
+    public void deleteData(String removeData){
+        deleteFile(carPath,removeData);
+    };
 
-        //for loop for replacing new car with the old one with same ID
-        for(int i=0;i<carList.size();i++){
-            if(carList.get(i).getId() == car.getId()){
-                carList.set(i,car);
+    public void updateData(Car car){
+        List<Car> cars = new ArrayList<>(getAllData());
+        for(int i = 0; i < cars.size(); i++){
+            if(car.getId().equals(cars.get(i).getId())){
+                cars.set(i,car);
+                try {
+                    FileWriter file = new FileWriter(carPath);
+                    for(Car item: cars){
+                        file.write(String.valueOf(item));
+                    }
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
-    };*/
-    public void updateData(List list){};
-    public void deleteData(String fileName){};
+    };
+
 }

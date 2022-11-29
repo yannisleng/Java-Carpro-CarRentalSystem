@@ -268,6 +268,7 @@ public class RegisterUserController implements Initializable {
             user.setPostCode(postCodeText.getText());
             user.setState(stateCmb.getValue());
             user.setPassword(pw);
+            user.setRole(userRoleCmb.getValue());
             user.setProfilePic(usernameText.getText() + fileExtension);
 
             dataFactory dataFactory = new dataFactory();

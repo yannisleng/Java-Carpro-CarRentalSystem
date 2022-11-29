@@ -1,12 +1,10 @@
 package com.model;
 
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BrandDB extends database <Brand>{
-
-    private String fileName = "brand.txt";
 
     public List<Brand> getAllData(){
         List<Brand> brandList= new ArrayList<Brand>();
@@ -15,7 +13,7 @@ public class BrandDB extends database <Brand>{
         ModelDB modeldb = new ModelDB();
         List<Model> allModels = new ArrayList<>(modeldb.getAllData());
 
-        branddata = readFile(fileName);
+        branddata = readFile(brandPath);
 
         for (int i=0;i< branddata.size();i++){
             String[] arr = branddata.get(i).split( "`",3);
@@ -35,7 +33,7 @@ public class BrandDB extends database <Brand>{
         String data = brand.toString();
         System.out.println(data);
         try{
-            FileWriter file = new FileWriter(path+fileName, true);
+            FileWriter file = new FileWriter(brandPath, true);
             file.write(data);
             file.close();
             System.out.println("Done");
@@ -57,6 +55,38 @@ public class BrandDB extends database <Brand>{
         return newList;
     };
 
-    public void updateData(List list){};
-    public void deleteData(String fileName){};
+    public void updateData(Brand brand){
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("car");
+        List<Car> cars = new ArrayList<>(db.getAllData());
+        String stringToReplace = "";
+        for(Car car: cars){
+            if(brand.getId().equals(car.getId().substring(0,3))){
+                stringToReplace = car.getBrand();
+            }
+        }
+
+        updateFile(carPath,stringToReplace,brand.getBrandName());
+
+        List<Brand> brands = new ArrayList<>(getAllData());
+        for(int i = 0; i < brands.size(); i++){
+            if(brand.getId().equals(brands.get(i).getId())){
+                brands.set(i,brand);
+                try {
+                    FileWriter file = new FileWriter(brandPath);
+                    for(Brand item: brands){
+                        file.write(String.valueOf(item));
+                    }
+                    file.close();
+                    System.out.println("brand updated");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    };
+    public void deleteData(String removeData){
+        deleteFile(brandPath,removeData);
+    };
 }

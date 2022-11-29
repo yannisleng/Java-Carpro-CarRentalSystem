@@ -12,11 +12,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<StackPane fx:id="addeditcar_info" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_Info_Controller">
+<StackPane fx:id="addeditcar_update" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_Update_Controller">
    <children>
-      <Button id="returnBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchtoBefore" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <Button id="returnBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchtoMain" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,15 +33,15 @@
          </StackPane.margin>
       </Label>
       <GridPane id="carinfogrid" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="256.0" prefWidth="409.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <StackPane.margin>
             <Insets left="64.0" top="96.0" />
          </StackPane.margin>
@@ -75,12 +74,12 @@
                   <Insets left="21.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox id="brandCmb" fx:id="brandCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#brandComboBoxSelection" prefHeight="30.0" prefWidth="179.0" promptText="Select Brand" styleClass="combo-box" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+            <ComboBox id="brandCmb" fx:id="brandCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#brandCmbSelected" prefHeight="30.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="20.0" top="51.0" />
                </GridPane.margin>
             </ComboBox>
-            <ComboBox id="modelCmb" fx:id="modelCmb" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" promptText="Select Model" styleClass="combo-box" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+            <ComboBox id="modelCmb" fx:id="modelCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="14.0" top="51.0" />
                </GridPane.margin>
@@ -95,34 +94,7 @@
                   <Insets left="20.0" top="21.0" />
                </GridPane.margin>
             </TextField>
-            <Button id="addbrandBtn" fx:id="addBrandBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddBrandModel" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: white;" stylesheets="@style.css" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="LEFT" GridPane.valignment="TOP">
-               <GridPane.margin>
-                  <Insets left="176.0" top="27.0" />
-               </GridPane.margin>
-               <font>
-                  <Font size="4.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/add.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="addmodelBtn" fx:id="addModelBtn" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddBrandModel" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: white;" stylesheets="@style.css" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
-               <GridPane.margin>
-                  <Insets left="170.0" top="27.0" />
-               </GridPane.margin>
-               <graphic>
-                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/add.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <ComboBox id="seatsCmb" fx:id="seatsCmb" prefWidth="179.0" promptText="Select Number of Seats" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <ComboBox id="seatsCmb" fx:id="seatsCmb" prefWidth="179.0" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="20.0" top="39.0" />
                </GridPane.margin>
@@ -170,14 +142,14 @@
          </StackPane.margin>
       </Label>
       <GridPane id="locationgrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="409.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <StackPane.margin>
             <Insets left="64.0" top="416.0" />
          </StackPane.margin>
@@ -207,7 +179,7 @@
                   <Insets left="14.0" top="8.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox id="stateCmb" fx:id="stateCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" promptText="Select State" styleClass="combo-box" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <ComboBox id="stateCmb" fx:id="stateCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="combo-box" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="14.0" top="33.0" />
                </GridPane.margin>
@@ -271,7 +243,7 @@
             </Label>
             <Label id="uploadPhotoLbl" fx:id="pathLbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="33.0" prefWidth="216.0" stylesheets="@style.css" text="src/main/resources/com/example/carpro/img/car/default-image.png">
                <graphic>
-                  <Button id="uploadPhotoBtn" fx:id="uploadPhoBtn" mnemonicParsing="false" onAction="#uploadPhoto" stylesheets="@style.css" text="Upload photo ·" />
+                  <Button id="uploadPhotoBtn" fx:id="uploadPhoBtn" mnemonicParsing="false" onAction="#setUploadPhoBtn" stylesheets="@style.css" text="Upload photo ·" />
                </graphic>
                <VBox.margin>
                   <Insets left="14.0" top="6.0" />
@@ -279,7 +251,7 @@
             </Label>
          </children>
       </VBox>
-      <Button id="saveBtn" mnemonicParsing="false" onAction="#saveData" prefHeight="40.0" prefWidth="160.0" stylesheets="@style.css" text="Save" StackPane.alignment="TOP_LEFT">
+      <Button id="saveBtn" mnemonicParsing="false" onAction="#updateData" prefHeight="40.0" prefWidth="160.0" stylesheets="@style.css" text="Update" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="584.0" top="536.0" />
          </StackPane.margin>
@@ -289,7 +261,5 @@
             <Insets left="584.0" top="480.0" />
          </StackPane.margin>
       </Label>
-      <StackPane fx:id="blurPane" opacity="0.75" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: black;" visible="false" />
-      <StackPane fx:id="BrandModelPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" visible="false" StackPane.alignment="TOP_RIGHT" />
    </children>
 </StackPane>

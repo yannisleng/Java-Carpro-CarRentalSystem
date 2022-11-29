@@ -1,12 +1,11 @@
 package com.model;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModelDB extends database <Model>{
-
-    private final String fileName = "model.txt";
 
     public List<Model> getAllData(){
         List<Model> modelList= new ArrayList<Model>();
@@ -15,7 +14,7 @@ public class ModelDB extends database <Model>{
         CarDB cardb = new CarDB();
         List<Car> allCars = new ArrayList<>(cardb.getAllData());
 
-        modeldata = readFile(fileName);
+        modeldata = readFile(modelPath);
 
         for (int i=0;i< modeldata.size();i++){
             String[] arr = modeldata.get(i).split( "`",3);
@@ -35,7 +34,7 @@ public class ModelDB extends database <Model>{
         String data = model.toString();
         System.out.println(data);
         try{
-            FileWriter file = new FileWriter(path+fileName, true);
+            FileWriter file = new FileWriter(modelPath, true);
             file.write(data);
             file.close();
             System.out.println("Done");
@@ -57,6 +56,38 @@ public class ModelDB extends database <Model>{
         return newList;
     }
 
-    public void updateData(List list){};
-    public void deleteData(String fileName){};
+    public void updateData(Model model){
+        dataFactory dataFactory = new dataFactory();
+        database db = dataFactory.getDB("car");
+        List<Car> cars = new ArrayList<>(db.getAllData());
+        String stringToReplace = "";
+        for(Car car: cars){
+            if(model.getId().equals(car.getId().substring(0,6))){
+                stringToReplace = car.getModel();
+            }
+        }
+
+        updateFile(carPath,stringToReplace,model.getModelName());
+
+        List<Model> models = new ArrayList<>(getAllData());
+        for(int i = 0; i < models.size(); i++){
+            if(model.getId().equals(models.get(i).getId())){
+                models.set(i,model);
+                try {
+                    FileWriter file = new FileWriter(modelPath);
+                    for(Model item: models){
+                        file.write(String.valueOf(item));
+                    }
+                    file.close();
+                    System.out.println("model updated");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    };
+
+    public void deleteData(String removeData){
+        deleteFile(modelPath,removeData);
+    };
 }
