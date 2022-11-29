@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" style="-fx-background-radius: 8px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.BookingCardController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" style="-fx-background-radius: 8px;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.BookingCardController">
    <children>
-      <StackPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #dedede; -fx-border-radius: 8px;">
+      <StackPane id="bookingCard" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #dedede; -fx-border-radius: 8px;" stylesheets="@style.css">
          <children>
             <Label fx:id="name" contentDisplay="RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="232.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Brand - Model" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
@@ -23,7 +23,7 @@
                   </Label>
                </graphic>
             </Label>
-            <Label style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Booking From" StackPane.alignment="TOP_LEFT">
+            <Label fx:id="fromLbl" style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Booking From" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets left="23.0" top="49.0" />
                </StackPane.margin>
@@ -33,7 +33,7 @@
                   <Insets left="23.0" top="65.0" />
                </StackPane.margin>
             </Label>
-            <Label style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Booking To" StackPane.alignment="TOP_LEFT">
+            <Label fx:id="toLbl" style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Booking To" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets left="23.0" top="97.0" />
                </StackPane.margin>
@@ -43,7 +43,7 @@
                   <Insets left="23.0" top="113.0" />
                </StackPane.margin>
             </Label>
-            <Label style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Location" StackPane.alignment="TOP_LEFT">
+            <Label fx:id="stateLbl" style="-fx-font-size: 12px; -fx-text-fill: #C2C2C2;" text="Location" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets left="23.0" top="145.0" />
                </StackPane.margin>

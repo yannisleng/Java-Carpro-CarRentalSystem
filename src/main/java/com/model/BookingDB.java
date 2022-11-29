@@ -1,6 +1,7 @@
 package com.model;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,21 @@ public class BookingDB extends database <Booking>{
 
     @Override
     public void updateData(Booking booking) {
-
+        List<Booking> bookings = new ArrayList<>(getAllData());
+        for(int i = 0; i < bookings.size(); i++){
+            if(booking.getId().equals(bookings.get(i).getId())){
+                bookings.set(i,booking);
+                try {
+                    FileWriter file = new FileWriter(bookingPath);
+                    for(Booking item: bookings){
+                        file.write(String.valueOf(item));
+                    }
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override

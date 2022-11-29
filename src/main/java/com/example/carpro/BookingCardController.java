@@ -35,6 +35,8 @@ public class BookingCardController implements Initializable {
 
     private String imgPath = "file:src/main/resources/com/example/carpro/img/car/";
 
+    public Label getOrderId(){return  orderId;}
+
     public void setData(Booking booking, Car car){
         bookingFrom.setText(booking.getStartDate()+" "+booking.getStartTime());
         bookingTo.setText(booking.getEndDate()+" "+booking.getEndTime());

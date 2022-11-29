@@ -4,10 +4,18 @@
 
 #reportBtn,#editBtn,#bookingBtn,#addUserBtn,
 #addCarbtn, #logoBtn,#logoutBtn,#saveBtn, #addBrandInfoBtn,
-#profileBtn{
+#profileBtn, #approveBtn{
     -fx-background-color: #000000;
     -fx-text-fill: #ffffff;
     -fx-background-radius: 8px;
+    -fx-font-size: 17px;
+}
+
+#rejectBtn{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-border-color: #000000;
+    -fx-border-radius: 8px;
     -fx-font-size: 17px;
 }
 
@@ -67,12 +75,15 @@
 }
 
 /*Add edit car page*/
-#addCarbtn:hover, #saveBtn:hover, #addBrandInfoBtn:hover{
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+#addCarbtn:hover, #saveBtn:hover, #addBrandInfoBtn:hover,
+#bookingCard:hover,#cusBookingInfo, #approveBtn:hover,
+#rejectBtn:hover{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0.0, 0.0);
 }
 
 #deleteBtn, #returnBtn, #searchBtn,
-#closeBtn, #editItemBtn, #bookingSearchBtn{
+#closeBtn, #editItemBtn, #bookingSearchBtn,
+#exitBtn{
     -fx-background-color: transparent;
     -fx-text-fill: #000000;
     -fx-font-size: 12px;

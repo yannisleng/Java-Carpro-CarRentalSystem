@@ -1,18 +1,19 @@
 package com.example.carpro;
 
-import com.model.Booking;
-import com.model.Car;
-import com.model.dataFactory;
-import com.model.database;
+import com.model.*;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -41,6 +42,22 @@ public class adminCusBookingController implements Initializable {
     @FXML
     private TextField searchBar;
 
+    @FXML
+    private StackPane carBookingInfo;
+
+    @FXML
+    private StackPane customerBookingLayout;
+
+    dataFactory dataFactory = new dataFactory();
+
+    database carDb = dataFactory.getDB("car");
+    database bookingDb = dataFactory.getDB("booking");
+    database userDb = dataFactory.getDB("user");
+
+    List<Car> cars = new ArrayList<>(carDb.getAllData());
+    List<Booking> bookings = new ArrayList<>(bookingDb.getAllData());
+    List<User> users = new ArrayList<>(userDb.getAllData());
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -48,10 +65,6 @@ public class adminCusBookingController implements Initializable {
     }
 
     private void loadBooking(List<Booking> bookings)throws IOException{
-        dataFactory dataFactory = new dataFactory();
-        database db = dataFactory.getDB("car");
-        List<Car> cars = new ArrayList<>(db.getAllData());
-
         bookingContainer.getChildren().clear();
 
         int column = 0;
@@ -67,6 +80,15 @@ public class adminCusBookingController implements Initializable {
                     BookingCardController bcc = fxmlLoader.getController();
                     bcc.setData(booking,car);
 
+                    bookingCard.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            String id = bcc.getOrderId().getText().substring(1,bcc.getOrderId().getText().length());
+                            BookingCardEventHandler(id);
+                            carBookingInfo.setVisible(true);
+                        }
+                    });
+
                     if(column == 2){
                         column = 0;
                         ++row;
@@ -79,12 +101,79 @@ public class adminCusBookingController implements Initializable {
         }
     }
 
-    private List<Booking> getBookingList(String status){
-        List<Booking> bookingList = new ArrayList<>();
+    private void BookingCardEventHandler(String orderId){
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("carBookingInfo.fxml"));
+
+        Car thisCar = new Car();
+        User thisUser = new User();
+
+        for (Booking booking:bookings){
+            if(booking.getId().equals(orderId)){
+
+                for (Car car:cars){
+                    if (booking.getCarId().equals(car.getId())){
+                        thisCar = car;
+                    }
+                }
+                for (User user:users){
+                    if(booking.getCustomerId().equals(user.getUsername())){
+                        thisUser = user;
+                    }
+                }
+
+                try {
+                    StackPane stackPane = fxmlLoader.load();
+                    CarBookingInfoController cbi = fxmlLoader.getController();
+                    cbi.setData(booking,thisCar,thisUser);
+                    carBookingInfo.getChildren().clear();
+                    carBookingInfo.getChildren().add(stackPane);
+
+                    cbi.getExitBtn().setOnAction(event -> {
+                        carBookingInfo.setVisible(false);
+                    });
+
+                    //refresh scene
+                    cbi.getApproveBtn().setOnAction(event -> {
+                        handleAction("Approve",cbi.getOrderIdLbl().getText().substring(1));
+                    });
+                    //refresh scene
+                    cbi.getRejectBtn().setOnAction(event -> {
+                        handleAction("Reject",cbi.getOrderIdLbl().getText().substring(1));
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void handleAction(String action, String orderId){
+        Booking booking = new Booking();
 
         dataFactory dataFactory = new dataFactory();
-        database db = dataFactory.getDB("booking");
-        List<Booking> bookings = new ArrayList<>(db.getAllData());
+        database bookingDb = dataFactory.getDB("booking");
+        List<Booking> bookings = new ArrayList<>(bookingDb.getAllData());
+
+        for(Booking book:bookings){
+            if (book.getId().equals(orderId)){
+                booking = book;
+            }
+        }
+
+        if(action=="Approve"){
+            booking.setStatus("Approved");
+            bookingDb.updateData(booking);
+        }else if(action=="Reject"){
+            booking.setStatus("Rejected");
+            bookingDb.updateData(booking);
+        }
+
+        Scene.switchScene("customerBooking.fxml",customerBookingLayout);
+    }
+
+    private List<Booking> getBookingList(String status){
+        List<Booking> bookingList = new ArrayList<>();
 
         for(Booking booking:bookings){
             if(booking.getStatus().equals(status)){
@@ -136,10 +225,7 @@ public class adminCusBookingController implements Initializable {
 
     private List<Booking> getSearchList(String bookingId){
         List<Booking> bookingList = new ArrayList<>();
-
-        dataFactory dataFactory = new dataFactory();
-        database db = dataFactory.getDB("booking");
-        List<Booking> bookings = new ArrayList<>(db.getAllData());
+        List<Booking> bookings = new ArrayList<>(bookingDb.getAllData());
 
         for(Booking booking:bookings){
             if(booking.getId().equals(bookingId)){
