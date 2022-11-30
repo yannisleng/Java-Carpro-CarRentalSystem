@@ -143,7 +143,7 @@ public class Receipt {
                         lblLocation.setText("Location: " + car.getAddress() + ",");
                         lblLocationState.setText(car.getPostCode() + " " + car.getState() + ".");
                         lblTotalHour.setText(String.valueOf(payment.getTotal()/car.getPrice()));
-                        lblFarePerHour.setText(car.getPrice() + ".0");
+                        lblFarePerHour.setText(car.getPrice() + "0");
                         lblTotalPrice.setText(payment.getTotal() + "0");
                         lblFinalPrice.setText(payment.getTotal() + "0");
                         lblSelectedPaymentMethod.setText(payment.getMethod());

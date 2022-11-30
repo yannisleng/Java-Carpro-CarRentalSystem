@@ -57,12 +57,10 @@ public class BookingDB extends database <Booking>{
     @Override
     public void addData(Booking booking) {
         String data = booking.toString();
-        System.out.println(data);
         try{
             FileWriter file = new FileWriter(bookingPath, true);
             file.write(data);
             file.close();
-            System.out.println("Done");
         }catch (Exception e){
             System.out.println("Database error");
             e.printStackTrace();

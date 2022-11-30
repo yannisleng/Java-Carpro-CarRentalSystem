@@ -27,5 +27,4 @@ public class Scene {
             e.printStackTrace();
         }
     }
-
 }

@@ -4,7 +4,8 @@
 
 #reportBtn,#editBtn,#bookingBtn,#addUserBtn,
 #addCarbtn, #logoBtn,#logoutBtn,#saveBtn, #addBrandInfoBtn,
-#profileBtn, #approveBtn{
+#profileBtn, #approveBtn, #btnExplore, #btnHistory, #btnProfile,
+#btnLogout, #btnCarPro{
     -fx-background-color: #000000;
     -fx-text-fill: #ffffff;
     -fx-background-radius: 8px;
@@ -46,31 +47,37 @@
 
 /*customer navigation buttons*/
 #btnExplore:hover, #btnExplore:focused{
-    /*-fx-graphic: url(img/analytics-hover.png);*/
+    -fx-graphic: url(img/explore.png);
 }
 
 #btnHistory:hover, #btnHistory:focused{
-    /*-fx-graphic: url(img/settings-hover.png);*/
+    -fx-graphic: url(img/order.png);
 }
 
 #btnProfile:hover, #btnProfile:focused{
-    /*-fx-graphic: url(img/booking-hover.png);*/
+    -fx-graphic: url(img/profile3.png);
+}
+
+#btnLogout:hover, #btnLogout:focused{
+    -fx-graphic: url(img/logout-hover.png);
 }
 
 .btnMenu, #reportBtn_menu, #editBtn_menu,
 #bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu,
-#profileBtn_menu{
+#profileBtn_menu, #bookingMenu, #exploreMenu, #logoutMenu, #profileMenu, #logoutMenu{
     -fx-background-color: #ffffff;
     -fx-text-fill: black;
     -fx-background-radius: 0px;
 }
 
 .btnMenu:hover, .btnMenu:focused, #reportBtn_menu:hover, #editBtn_menu:hover, #bookingBtn_menu:hover, #addUserBtn_menu:hover, #logoutBtn_menu:hover,
-#reportBtn_menu:focused, #editBtn_menu:focused, #bookingBtn_menu:focused, #addUserBtn_menu:focused, #logoutBtn_menu:focused{
+#reportBtn_menu:focused, #editBtn_menu:focused, #bookingBtn_menu:focused, #addUserBtn_menu:focused, #logoutBtn_menu:focused,
+#bookingMenu:hover, #exploreMenu:hover, #logoutMenu:hover, #profileMenu:hover, #bookingMenu:focused, #exploreMenu:focused,
+#logoutMenu:focused, #profileMenu:focused, #logoutMenu:hover, #logoutMenu:focused{
     -fx-background-color: #e7e3e3;
 }
 
-#logoutBtn_menu{
+#logoutBtn_menu, #logoutMenu{
     -fx-background-radius: 0px 0px 24px 0px;
 }
 

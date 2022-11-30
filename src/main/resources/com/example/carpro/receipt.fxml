@@ -33,12 +33,12 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblBookingNo" layoutX="629.0" layoutY="78.0" text="Booking No. : #O00001" textFill="WHITE">
+            <Label fx:id="lblBookingNo" alignment="CENTER_RIGHT" layoutX="629.0" layoutY="78.0" text="Booking No. : #O00001" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="lblPayment" layoutX="595.0" layoutY="106.0" text="Payment Date: 30/10/2022" textAlignment="RIGHT" textFill="WHITE">
+            <Label fx:id="lblPayment" alignment="CENTER_RIGHT" layoutX="595.0" layoutY="106.0" text="Payment Date: 30/10/2022" textAlignment="RIGHT" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -99,7 +99,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblTotalPrice" layoutX="760.0" layoutY="297.0" text="120.00" textFill="WHITE">
+            <Label fx:id="lblTotalPrice" alignment="CENTER_RIGHT" layoutX="760.0" layoutY="297.0" text="120.00" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -109,7 +109,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="lblFinalPrice" layoutX="767.0" layoutY="475.0" text="135.00" textAlignment="RIGHT" textFill="WHITE">
+            <Label fx:id="lblFinalPrice" alignment="CENTER_RIGHT" layoutX="767.0" layoutY="475.0" text="135.00" textAlignment="RIGHT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -120,7 +120,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="lblSelectedPaymentMethod" layoutX="764.0" layoutY="519.0" text=" eWallet" textAlignment="RIGHT" textFill="WHITE">
+            <Label fx:id="lblSelectedPaymentMethod" alignment="CENTER_RIGHT" layoutX="716.0" layoutY="519.0" prefHeight="30.0" prefWidth="120.0" text=" eWallet" textAlignment="RIGHT" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

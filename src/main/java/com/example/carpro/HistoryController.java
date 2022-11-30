@@ -121,8 +121,8 @@ public class HistoryController implements Initializable {
                     HistoryCardController historyCardController = fxmlLoader.getController();
                     historyCardController.setData(booking);
                     if(booking.getStatus().equals("Completed") && booking.getPaymentId().equals("null")){
+                        historyCardController.getBtnReturn().setText("Pay");
                         historyCardController.getBtnReturn().setOnAction(event -> {
-                            historyCardController.getBtnReturn().setText("Pay");
                             FXMLLoader fxmlLoader2 = new FXMLLoader();
                             fxmlLoader2.setLocation( Scene.class.getResource("payment.fxml"));
 
@@ -157,6 +157,7 @@ public class HistoryController implements Initializable {
                                         updateDb("src/main/resources/com/example/carpro/database/booking.txt", fullBookings);
                                     }
                                 }
+                                loadBookingCard(bookingList("Ended"));
                             }
                         });
                     }else if(booking.getStatus().equals("Rejected")){
