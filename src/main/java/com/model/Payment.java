@@ -50,11 +50,6 @@ public class Payment {
 
     @Override
     public String toString() {
-        return "Payment{" +
-                "id='" + id + '\'' +
-                ", status='" + status + '\'' +
-                ", method='" + method + '\'' +
-                ", total=" + total +
-                '}';
+        return id+"`"+status+"`"+method+"`"+total+"\n";
     }
 }

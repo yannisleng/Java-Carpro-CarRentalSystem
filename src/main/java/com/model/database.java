@@ -11,6 +11,7 @@ public abstract class database<T> {
     static String modelPath = "src/main/resources/com/example/carpro/database/model.txt";
     static String userPath = "src/main/resources/com/example/carpro/database/user.txt";
     static String bookingPath = "src/main/resources/com/example/carpro/database/booking.txt";
+    static String paymentPath = "src/main/resources/com/example/carpro/database/payment.txt";
 
     public ArrayList<String> readFile(String fileName){
         ArrayList<String> data = new ArrayList<String>();

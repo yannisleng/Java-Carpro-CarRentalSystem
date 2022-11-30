@@ -4,9 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -48,10 +51,15 @@ public class AdminController implements Initializable {
     private Button profileMenu;
 
     @FXML
+    private StackPane spAdminMain;
+
+    @FXML
     private StackPane switchScene;
 
     @FXML
     private VBox menu;
+
+    Stage stage;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -92,6 +100,18 @@ public class AdminController implements Initializable {
             menu.setVisible(false);
         }else{
             menu.setVisible(true);
+        }
+    }
+
+    public void exit(ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit Car Pro");
+        alert.setHeaderText("You're about to logout.");
+        alert.setContentText("Are you sure you want to exit Car Pro?");
+
+        if(alert.showAndWait().get() == ButtonType.OK){
+            stage = (Stage) spAdminMain.getScene().getWindow();
+            stage.close();
         }
     }
 

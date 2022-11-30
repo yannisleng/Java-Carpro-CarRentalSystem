@@ -149,6 +149,8 @@ public class CusProfileController implements Initializable {
         cmbState.setItems(states);
 
         showUserInformation();
+
+        //btnUpdateProfile.setStyle("-fx-opacity: 1.0; -fx-background-color: transparent; -fx-border-color: transparent;");
     }
 
     //update profile image

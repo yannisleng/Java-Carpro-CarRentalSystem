@@ -61,7 +61,7 @@
       <StackPane.margin>
          <Insets left="29.0" top="22.0" />
       </StackPane.margin>
-      <Button mnemonicParsing="false" onAction="#setMenuVisible">
+      <Button fx:id="btnCarPro" mnemonicParsing="false" onAction="#setMenuVisible">
          <graphic>
             <ImageView fitHeight="55.61" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -74,7 +74,7 @@
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/explore.png" />
+                  <Image url="@img/navigation.png" />
                </image>
             </ImageView>
          </graphic>

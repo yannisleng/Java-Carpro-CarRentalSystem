@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<StackPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AdminController">
+<StackPane fx:id="spAdminMain" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AdminController">
    <children>
       <StackPane fx:id="switchScene" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" StackPane.alignment="TOP_RIGHT">
       </StackPane>
@@ -47,7 +47,7 @@
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
-            <Button id="logoutBtn_menu" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Logout">
+            <Button id="logoutBtn_menu" mnemonicParsing="false" onAction="#exit" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Logout">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>
@@ -127,7 +127,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="logoutBtn" fx:id="logout" layoutX="32.0" layoutY="583.0" mnemonicParsing="false" stylesheets="@style.css">
+            <Button id="logoutBtn" fx:id="logout" layoutX="32.0" layoutY="583.0" mnemonicParsing="false" onAction="#exit" stylesheets="@style.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>

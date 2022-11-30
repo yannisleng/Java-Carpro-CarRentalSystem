@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.GridPane?>
@@ -8,33 +9,42 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryController">
+<StackPane fx:id="spHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryController">
    <children>
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 8;" text="Pending" StackPane.alignment="TOP_LEFT">
+      <Button fx:id="btnPending" mnemonicParsing="false" onAction="#view" prefHeight="50.0" prefWidth="250.0" style="-fx-border-color: #000000; -fx-border-radius: 8;" stylesheets="@style.css" text="Pending" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="20.0" top="22.0" />
          </StackPane.margin>
          <font>
             <Font size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 8;" text="Ended" StackPane.alignment="TOP_LEFT">
+      <Button fx:id="btnEnded" mnemonicParsing="false" onAction="#view" prefHeight="50.0" prefWidth="250.0" style="-fx-border-color: #000000; -fx-border-radius: 8;" stylesheets="@style.css" text="Ended" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="500.0" top="22.0" />
          </StackPane.margin>
          <font>
             <Font size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #000000; -fx-background-radius: 8;" text="Ongoing" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+      <Button fx:id="btnOngoing" mnemonicParsing="false" onAction="#view" prefHeight="50.0" prefWidth="250.0" style="-fx-background-radius: 8;" stylesheets="@style.css" text="Ongoing" textFill="WHITE" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="260.0" top="22.0" />
          </StackPane.margin>
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="730.0" style="-fx-background-color: #ffffff;" StackPane.alignment="TOP_LEFT">
+      <ScrollPane fx:id="scrollHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="730.0" style="-fx-background-color: #ffffff;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="20.0" top="95.0" />
          </StackPane.margin>

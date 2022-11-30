@@ -68,10 +68,7 @@ public class ExploreController implements Initializable {
     private Label lblSelectPU;
 
     @FXML
-    public StackPane spExplore;
-
-    @FXML
-    private StackPane spExploreC1;
+    private StackPane spExplore,spExploreC1;
 
     @FXML
     private StackPane tpDropOff;
@@ -84,9 +81,10 @@ public class ExploreController implements Initializable {
 
     public static String searchTxt;
 
+    public static ExploreController instance ;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         recentlyAdded = new ArrayList<>(recentlyAdded());
         recommended = new ArrayList<>(cars());
 
@@ -129,6 +127,7 @@ public class ExploreController implements Initializable {
             e.printStackTrace();
         }
     }
+
     private List<Car> searchCars(){
         List<Car> searchCars = new ArrayList<>();
 

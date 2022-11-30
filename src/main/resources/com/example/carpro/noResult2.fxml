@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vboxNoResult" prefHeight="475.0" prefWidth="720.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane fx:id="spNoResult" prefHeight="475.0" prefWidth="720.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fx:id="imgCar" fitHeight="200.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+               <image>
+                  <Image url="@img/notFoundCar.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets top="90.0" />
+               </StackPane.margin>
+            </ImageView>
+            <Label fx:id="lblShowText" text="Empty order records. No bookings found." StackPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="280.0" />
+               </StackPane.margin>
+            </Label>
+         </children>
+      </StackPane>
+   </children>
+</VBox>

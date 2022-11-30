@@ -60,11 +60,17 @@
                <image>
                   <Image url="@img/edit2.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
             </ImageView>
          </graphic>
          <StackPane.margin>
             <Insets left="210.0" top="181.0" />
          </StackPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btnSave" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveUserInformation" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" visible="false" StackPane.alignment="TOP_LEFT">
          <graphic>
@@ -77,6 +83,9 @@
          <StackPane.margin>
             <Insets left="213.0" top="181.0" />
          </StackPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Separator fx:id="separatorGrey" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="690.0" styleClass="separatorGrey" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
