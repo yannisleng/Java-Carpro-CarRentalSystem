@@ -188,7 +188,6 @@ public class addeditcar_Main_Controller implements Initializable {
             List<Car> carlist = new ArrayList<>();
             for (int j=0;j<models.size();j++) {
                 modelCmb.getItems().addAll(models.get(j).getModelName());
-
                 carlist.addAll(models.get(j).getCars());
                 carlistLayout.getChildren().clear();
                 createPage(pagination.getCurrentPageIndex(),carlist);
