@@ -1,1 +1,97 @@
-P00001`Paid`Transfer`8950.0
+P00001`Paid`Transfer`3540.0
+P00002`Paid`Credit Card`2295.0
+P00003`Paid`E-wallet`2280.0
+P00004`Paid`E-wallet`25.0
+P00005`Paid`E-wallet`2025.0
+P00006`Paid`Transfer`42306.0
+P00007`Paid`Credit Card`99.0
+P00008`Paid`Credit Card`11739.0
+P00009`Paid`Transfer`6844.0
+P00010`Paid`E-wallet`352.0
+P00011`Paid`E-wallet`237.0
+P00012`Paid`Transfer`23318.0
+P00013`Paid`Credit Card`20416.0
+P00014`Paid`E-wallet`29993.0
+P00015`Paid`Credit Card`8722.0
+P00016`Paid`E-wallet`1548.0
+P00017`Paid`Transfer`89.0
+P00018`Paid`E-wallet`1740.0
+P00019`Paid`Credit Card`2100.0
+P00020`Paid`E-wallet`10455.0
+P00021`Paid`Credit Card`1620.0
+P00022`Paid`Transfer`6336.0
+P00023`Paid`Credit Card`1225.0
+P00024`Paid`Credit Card`14625.0
+P00025`Paid`E-wallet`66.0
+P00026`Paid`Transfer`708.0
+P00027`Paid`E-wallet`3376.0
+P00028`Paid`E-wallet`22420.0
+P00029`Paid`Transfer`736.0
+P00030`Paid`Credit Card`2133.0
+P00031`Paid`Credit Card`23318.0
+P00032`Paid`E-wallet`3520.0
+P00033`Paid`E-wallet`12905.0
+P00034`Paid`E-wallet`3294.0
+P00035`Paid`Transfer`98.0
+P00036`Paid`Credit Card`3564.0
+P00037`Paid`E-wallet`17931.0
+P00038`Paid`E-wallet`660.0
+P00039`Paid`Transfer`20655.0
+P00040`Paid`Transfer`1992.0
+P00041`Paid`Credit Card`3960.0
+P00042`Paid`Credit Card`1122.0
+P00043`Paid`E-wallet`99.0
+P00044`Paid`Transfer`2451.0
+P00045`Paid`Transfer`11092.0
+P00046`Paid`Credit Card`1120.0
+P00047`Paid`Transfer`2133.0
+P00048`Paid`E-wallet`1958.0
+P00049`Paid`Credit Card`16192.0
+P00050`Paid`Transfer`8633.0
+P00051`Paid`E-wallet`387.0
+P00052`Paid`E-wallet`4500.0
+P00053`Paid`E-wallet`66.0
+P00054`Paid`Credit Card`2820.0
+P00055`Paid`Transfer`10740.0
+P00056`Paid`E-wallet`20655.0
+P00057`Paid`Credit Card`3960.0
+P00058`Paid`Transfer`625.0
+P00059`Paid`Credit Card`2025.0
+P00060`Paid`Transfer`20130.0
+P00061`Paid`E-wallet`1188.0
+P00062`Paid`Transfer`1180.0
+P00063`Paid`E-wallet`2656.0
+P00064`Paid`Transfer`13509.0
+P00065`Paid`Credit Card`1958.0
+P00066`Paid`Transfer`3520.0
+P00067`Paid`Credit Card`4361.0
+P00068`Paid`E-wallet`3294.0
+P00069`Paid`Transfer`4018.0
+P00070`Paid`E-wallet`1188.0
+P00071`Paid`Transfer`8275.0
+P00072`Paid`E-wallet`5700.0
+P00073`Paid`E-wallet`8415.0
+P00074`Paid`Credit Card`3960.0
+P00075`Paid`Transfer`625.0
+P00076`Paid`Credit Card`12210.0
+P00077`Paid`Credit Card`20196.0
+P00078`Paid`Transfer`5547.0
+P00079`Paid`E-wallet`11092.0
+P00080`Paid`Credit Card`736.0
+P00081`Paid`Transfer`11613.0
+P00082`Paid`Transfer`4094.0
+P00083`Paid`Credit Card`3520.0
+P00084`Paid`Credit Card`2225.0
+P00085`Paid`E-wallet`1666.0
+P00086`Paid`Credit Card`9180.0
+P00087`Paid`Transfer`1380.0
+P00088`Paid`E-wallet`2133.0
+P00089`Paid`Transfer`2568.0
+P00090`Paid`Transfer`3960.0
+P00091`Paid`Credit Card`625.0
+P00092`Paid`Transfer`2025.0
+P00093`Paid`E-wallet`7458.0
+P00094`Paid`Transfer`18612.0
+P00095`Paid`Credit Card`1958.0
+P00096`Paid`Transfer`34594.0
+P00097`Paid`Credit Card`3294.0

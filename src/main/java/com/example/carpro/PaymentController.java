@@ -146,6 +146,11 @@ public class PaymentController {
                     updateDb("src/main/resources/com/example/carpro/database/booking.txt", bookings);
                 }
             }
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Payment done");
+            alert.setHeaderText("You've paid for your order.");
+            alert.setContentText("Receipt will be shown in a while.");
+            alert.show();
             Receipt receipt = CusController.instance.receipt();
             receipt.setData(bookingToPay, payment);
         }else{
