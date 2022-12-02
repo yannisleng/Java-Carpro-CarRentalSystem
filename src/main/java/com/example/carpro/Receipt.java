@@ -136,7 +136,7 @@ public class Receipt {
                         lblAddress.setText(user.getAddress() + ",");
                         lblState.setText(user.getPostCode() + " " + user.getState() + ".");
                         lblBookingNo.setText("Booking No. : #" + booking.getId());
-                        lblPayment.setText("Payment Date: " + java.time.LocalDate.now());
+                        lblPayment.setText("Payment Date: " + payment.getDate());
                         lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate() + " - " + car.getSeat() + "seats");
                         lblPickUpTime.setText("Pick-up: " + booking.getStartDate() + " " + booking.getStartTime());
                         lblDropOffTime.setText("Drop-off: " + booking.getEndDate() + " " + booking.getEndTime());
