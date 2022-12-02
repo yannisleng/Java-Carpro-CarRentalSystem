@@ -22,7 +22,7 @@ public class PaymentDB extends database <Payment>{
             Payment payment = new Payment();
             String[] arr = data.get(i).split( "`",4);
             payment.setId(arr[0]);
-            payment.setStatus(arr[1]);
+            payment.setDate(LocalDate.parse(arr[1]));
             payment.setMethod(arr[2]);
             payment.setTotal(Float.parseFloat(arr[3]));
             ls.add(payment);

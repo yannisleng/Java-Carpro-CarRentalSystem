@@ -1,17 +1,19 @@
 package com.model;
 
+import java.time.LocalDate;
+
 public class Payment {
     private String id;
-    private String status;
+    private LocalDate date = LocalDate.now();
     private String method;
     private float total;
 
     public Payment() {
     }
 
-    public Payment(String id, String status, String method, float total) {
+    public Payment(String id, LocalDate date, String method, float total) {
         this.id = id;
-        this.status = status;
+        this.date = date;
         this.method = method;
         this.total = total;
     }
@@ -24,12 +26,12 @@ public class Payment {
         this.id = id;
     }
 
-    public String getStatus() {
-        return status;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public String getMethod() {
@@ -50,6 +52,6 @@ public class Payment {
 
     @Override
     public String toString() {
-        return id+"`"+status+"`"+method+"`"+total+"\n";
+        return id+"`"+date+"`"+method+"`"+total+"\n";
     }
 }

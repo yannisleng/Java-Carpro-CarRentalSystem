@@ -116,15 +116,15 @@ public class PaymentController {
     @FXML
     private VBox vboxTransfer1;
 
-    private com.model.dataFactory dataFactory = new dataFactory();
+    private static com.model.dataFactory dataFactory = new dataFactory();
     private database dbCar = dataFactory.getDB("car");
     private List<Car> cars = new ArrayList<>(dbCar.getAllData());
 
     private database dbBooking = dataFactory.getDB("booking");
     private List<Booking> bookings = new ArrayList<>(dbBooking.getAllData());
 
-    private database dbPayment = dataFactory.getDB("payment");
-    private List<Payment> payments = new ArrayList<>(dbPayment.getAllData());
+    private static database dbPayment = dataFactory.getDB("payment");
+    private static List<Payment> payments = new ArrayList<>(dbPayment.getAllData());
 
     private Booking bookingToPay = new Booking();
     private Payment payment = new Payment();
@@ -135,7 +135,6 @@ public class PaymentController {
     private void pay(ActionEvent event) throws IOException {
         if(payment.getMethod() != null){
             payment.setId(generateId());
-            payment.setStatus("Paid");
             payment.setTotal(total);
             dbPayment.addData(payment);
             bookingToPay.setPaymentId(payment.getId());
@@ -146,11 +145,6 @@ public class PaymentController {
                     updateDb("src/main/resources/com/example/carpro/database/booking.txt", bookings);
                 }
             }
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Payment done");
-            alert.setHeaderText("You've paid for your order.");
-            alert.setContentText("Receipt will be shown in a while.");
-            alert.show();
             Receipt receipt = CusController.instance.receipt();
             receipt.setData(bookingToPay, payment);
         }else{
@@ -216,7 +210,7 @@ public class PaymentController {
         button.setStyle(button.getStyle() + "-fx-border-width: 1px;");
     }
 
-    private int toHours(Booking booking){
+    public static int toHours(Booking booking){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         long diff = 0;
         try {
@@ -229,7 +223,7 @@ public class PaymentController {
         return (int) diff;
     }
 
-    private String generateId(){
+    public static String generateId(){
         String paymentId;
         if(!payments.isEmpty()){
             Payment payment = payments.get(payments.size()-1);
@@ -242,7 +236,7 @@ public class PaymentController {
         return paymentId;
     }
 
-    private void updateDb(String fileStr, List<Booking> list){
+    public static void updateDb(String fileStr, List<Booking> list){
         try {
             FileWriter file = new FileWriter(fileStr);
             for(Booking booking: list){
@@ -252,5 +246,33 @@ public class PaymentController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        com.model.dataFactory dataFactory = new dataFactory();
+
+        database dbCar = dataFactory.getDB("car");
+        List<Car> cars = new ArrayList<>(dbCar.getAllData());
+
+        database dbBooking = dataFactory.getDB("booking");
+        List<Booking> bookings = new ArrayList<>(dbBooking.getAllData());
+
+        database dbPayment = dataFactory.getDB("payment");
+        List<Payment> payments = new ArrayList<>(dbPayment.getAllData());
+
+        for(Booking booking: bookings){
+            if(booking.getPaymentId().equals("P00053")){
+                for(Car car: cars){
+                    if(booking.getCarId().equals(car.getId())){
+                        Payment payment = new Payment();
+                        payment.setId(PaymentController.generateId());
+                        payment.setMethod("Transfer");
+                        payment.setTotal(PaymentController.toHours(booking)*car.getPrice());
+                        System.out.println(payment);
+                    }
+                }
+            }
+        }
+
     }
 }
