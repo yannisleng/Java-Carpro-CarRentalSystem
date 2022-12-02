@@ -268,11 +268,13 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         for(Car car:carList){
             if(car.getBrand().equals(brandCmb.getValue()) & car.getModel().equals(modelCmb.getValue())){
                 arr.add(car.getId());
-            }else{
-                for(Model model:modelList){
-                    if(modelCmb.getValue().equals(model.getModelName())){
-                        arr.add(model.getId()+"0000");
-                    }
+            }
+        }
+
+        if(arr.isEmpty()){
+            for(Model model:modelList){
+                if(model.getModelName().equals(modelCmb.getValue())){
+                    arr.add(model.getId()+"0000");
                 }
             }
         }

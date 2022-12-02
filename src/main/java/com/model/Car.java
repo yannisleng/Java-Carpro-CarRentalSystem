@@ -128,7 +128,11 @@ public class Car {
     public boolean priceValidation(String input){
         try{
             float price = Float.parseFloat(input);
-            return true;
+            if(price>0){
+                return true;
+            }else{
+                return false;
+            }
         }catch (NumberFormatException e){
             return false;
         }
