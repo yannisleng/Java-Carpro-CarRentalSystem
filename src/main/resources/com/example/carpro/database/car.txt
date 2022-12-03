@@ -1,4 +1,4 @@
-0010010001`Honda`Civic`DWE 123`15.00`5`100`Available`No. 63, Channel Road,`96000`Sarawak`0010010001.png
+0010010001`Honda`Civic`DWE 123`15.00`5`27`Available`No. 63, Channel Road,`96000`Sarawak`0010010001.png
 0020010001`Toyota`Alphard`JVE 545`30.00`7`33`Available`No. 3498 Jln Ampang Hilir 5`28200`Pahang`0020010001.png
 0030010001`Mercedes-Benz`G-Class`RA 6571`85.00`5`100`Available`2 Blok C Jln 21/13 Seksyen 21 Petaling Jaya`40000`Selangor`0030010001.png
 0040010001`Perodua`Alza`VWM 654`12.00`5`100`Available`No. 37 Jln Pasir Merah New Pasir Puteh`16500`Kelantan`0040010001.jpg
@@ -13,6 +13,6 @@
 0070010002`Porsche`Boxster`JH 6`79.00`5`100`Available`2 1/2 Miles, Jalan , Wilayah Persekutuan`30250`Perak`0070010002.png
 0110010001`Mazda`3`LV 465`89.00`5`100`Available`22 Jalan Sri Hartamas 14 Sri Hartamas 14 Sri Hartamas Malay`14000`Penang`0110010001.png
 0130010001`MINI`Cooper`V 78`88.00`5`100`Available`71 1St Floor Jln Mustapha Al-Bakri`30300`Perak`0130010001.png
-0010020001`Honda`CR-V`VBN 123`89.00`7`100`Available`No. 39 Jln Tanjong Taman Dato Penggawa Barat`81200`Johor`0010020001.png
+0010020001`Honda`CR-V`VBN 123`89.00`7`70`Available`No. 39 Jln Tanjong Taman Dato Penggawa Barat`81200`Johor`0010020001.png
 0010030001`Honda`NSX`BJ 15`122.00`5`51`Available`No. 19 Jln Jujur 2 Bandar Tun Abdul Razak`56000`Kuala Lumpur`0010030001.png
-0120010001`Lamborghini`Aventador`VGH 45`98.00`5`56`Available`B 33 Ground Floor Lorong Seri Kuantan 25`25250`Pahang`0120010001.png
+0120010001`Lamborghini`Aventador`VGH 45`98.00`5`92`Unavailable`B 33 Ground Floor Lorong Seri Kuantan 25`25250`Pahang`0120010001.png

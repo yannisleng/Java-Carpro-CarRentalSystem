@@ -20,13 +20,15 @@ public class CusController implements Initializable {
 
     Stage stage;
 
-    User user;
-
     @FXML
     private Button bookingMenu;
 
     @FXML
     private Button btnExplore;
+
+    public Button getBtnHistory() {
+        return btnHistory;
+    }
 
     @FXML
     private Button btnHistory;
@@ -39,6 +41,10 @@ public class CusController implements Initializable {
 
     @FXML
     private Button profileMenu;
+
+    public StackPane getSpCusDefault() {
+        return spCusDefault;
+    }
 
     @FXML
     private StackPane spCusDefault;
@@ -57,57 +63,26 @@ public class CusController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         instance = this;
         spCus = spCusMain;
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("explore.fxml"));
 
-        try{
-            StackPane stackPane = fxmlLoader.load();
-            spCusDefault.getChildren().add(stackPane);
-        }catch(IOException e){
-            e.printStackTrace();
-        }
+        Scene.switchScene("explore.fxml", spCusDefault);
     }
 
     public static Receipt receipt(){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation( Scene.class.getResource("receipt.fxml"));
-
-        try {
-            StackPane newStakePane = fxmlLoader.load();
-            spCus.getChildren().clear();
-            spCus.getChildren().add(newStakePane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Receipt receipt = fxmlLoader.getController();
+        Receipt receipt = (Receipt) Scene.getController("receipt.fxml", spCus);
         return receipt;
-    }
-
-    public void switchScene(String fxml){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource(fxml));
-
-        try{
-            StackPane stackPane = fxmlLoader.load();
-            spCusDefault.getChildren().clear();
-            spCusDefault.getChildren().add(stackPane);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
     @FXML
     private void handleMenuAction(ActionEvent event) throws Exception{
         if(event.getSource()==btnExplore || event.getSource()==exploreMenu){
             btnExplore.requestFocus();
-            switchScene("explore.fxml");
+            Scene.switchScene("explore.fxml", spCusDefault);
         }else if(event.getSource()==btnHistory || event.getSource()==bookingMenu){
             btnHistory.requestFocus();
-            switchScene("cusHistory.fxml");
+            Scene.switchScene("cusHistory.fxml", spCusDefault);
         }else if(event.getSource()==btnProfile || event.getSource()==profileMenu){
             btnProfile.requestFocus();
-            switchScene("cusProfile.fxml");
+            Scene.switchScene("cusProfile.fxml", spCusDefault);
         }
     }
 

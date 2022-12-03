@@ -3,29 +3,19 @@ package com.example.carpro;
 import com.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import static java.time.ZoneId.systemDefault;
-import static java.util.Date.from;
 
 public class PaymentController {
 
@@ -33,13 +23,7 @@ public class PaymentController {
     private Button btnCC;
 
     @FXML
-    private Button btnCancel;
-
-    @FXML
     private Button btnEWallet;
-
-    @FXML
-    private Button btnPay;
 
     @FXML
     private Button btnTransfer;
@@ -48,31 +32,10 @@ public class PaymentController {
     private ImageView imgCar;
 
     @FXML
-    private ImageView imgCreditCard;
-
-    @FXML
-    private ImageView imgEWallet1;
-
-    @FXML
-    private ImageView imgLocation;
-
-    @FXML
-    private ImageView imgTransfer1;
-
-    @FXML
-    private Label lblArrow;
-
-    @FXML
     private Label lblBookingId;
 
     @FXML
     private Label lblCarDesc;
-
-    @FXML
-    private Label lblCreditCard;
-
-    @FXML
-    private Label lblEWallet1;
 
     @FXML
     private Label lblEndTime;
@@ -93,38 +56,20 @@ public class PaymentController {
     private Label lblStartTime;
 
     @FXML
-    private Label lblTotal;
-
-    @FXML
     private Label lblTotalPrice;
-
-    @FXML
-    private Label lblTransfer1;
-
-    @FXML
-    private Separator separatorGrey;
 
     @FXML
     private StackPane spPayment;
 
-    @FXML
-    private VBox vboxCreditCard;
-
-    @FXML
-    private VBox vboxEWallet1;
-
-    @FXML
-    private VBox vboxTransfer1;
-
-    private static com.model.dataFactory dataFactory = new dataFactory();
+    private com.model.dataFactory dataFactory = new dataFactory();
     private database dbCar = dataFactory.getDB("car");
     private List<Car> cars = new ArrayList<>(dbCar.getAllData());
 
     private database dbBooking = dataFactory.getDB("booking");
     private List<Booking> bookings = new ArrayList<>(dbBooking.getAllData());
 
-    private static database dbPayment = dataFactory.getDB("payment");
-    private static List<Payment> payments = new ArrayList<>(dbPayment.getAllData());
+    private database dbPayment = dataFactory.getDB("payment");
+    private List<Payment> payments = new ArrayList<>(dbPayment.getAllData());
 
     private Booking bookingToPay = new Booking();
     private Payment payment = new Payment();
@@ -146,7 +91,7 @@ public class PaymentController {
                 }
             }
             Receipt receipt = CusController.instance.receipt();
-            receipt.setData(bookingToPay, payment);
+            receipt.setData(bookingToPay);
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Payment error");
@@ -223,7 +168,7 @@ public class PaymentController {
         return (int) diff;
     }
 
-    public static String generateId(){
+    public String generateId(){
         String paymentId;
         if(!payments.isEmpty()){
             Payment payment = payments.get(payments.size()-1);
@@ -246,33 +191,5 @@ public class PaymentController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        com.model.dataFactory dataFactory = new dataFactory();
-
-        database dbCar = dataFactory.getDB("car");
-        List<Car> cars = new ArrayList<>(dbCar.getAllData());
-
-        database dbBooking = dataFactory.getDB("booking");
-        List<Booking> bookings = new ArrayList<>(dbBooking.getAllData());
-
-        database dbPayment = dataFactory.getDB("payment");
-        List<Payment> payments = new ArrayList<>(dbPayment.getAllData());
-
-        for(Booking booking: bookings){
-            if(booking.getPaymentId().equals("P00053")){
-                for(Car car: cars){
-                    if(booking.getCarId().equals(car.getId())){
-                        Payment payment = new Payment();
-                        payment.setId(PaymentController.generateId());
-                        payment.setMethod("Transfer");
-                        payment.setTotal(PaymentController.toHours(booking)*car.getPrice());
-                        System.out.println(payment);
-                    }
-                }
-            }
-        }
-
     }
 }

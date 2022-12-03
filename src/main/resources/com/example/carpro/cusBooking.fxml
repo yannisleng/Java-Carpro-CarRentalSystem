@@ -85,12 +85,12 @@
             <Insets left="20.0" top="295.0" />
          </StackPane.margin>
       </Label>
-      <Label fx:id="lblPrice" alignment="CENTER_RIGHT" text="RM10.99" StackPane.alignment="TOP_LEFT">
+      <Label fx:id="lblPrice" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="50.0" prefWidth="238.0" text="RM10.99" textAlignment="RIGHT" StackPane.alignment="TOP_RIGHT">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
          <StackPane.margin>
-            <Insets left="600.0" top="295.0" />
+            <Insets right="40.0" top="295.0" />
          </StackPane.margin>
       </Label>
       <Label fx:id="lblFor1Hrs" text="for every 1 hour" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
