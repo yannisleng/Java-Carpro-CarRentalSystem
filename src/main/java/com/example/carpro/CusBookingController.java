@@ -9,13 +9,17 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -31,6 +35,9 @@ public class CusBookingController implements Initializable {
     private dataFactory dataFactory = new dataFactory();
     private database db = dataFactory.getDB("booking");
     private List<Booking> bookingList = new ArrayList<>(db.getAllData());
+
+    private database dbCar = dataFactory.getDB("car");
+    private List<Car> cars = new ArrayList<>(dbCar.getAllData());
 
     @FXML
     private Button btnBook;
@@ -80,6 +87,7 @@ public class CusBookingController implements Initializable {
     @FXML
     private Tooltip ttAddress;
 
+
     @FXML
     void cancel(ActionEvent event) {
         Scene.switchScene("explore.fxml", spBooking);
@@ -87,6 +95,9 @@ public class CusBookingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Scene.restrictDatePicker(dpPickUp, LocalDate.now(), LocalDate.now().plusMonths(6));
+        Scene.restrictDatePicker(dpDropOff, LocalDate.now(), LocalDate.now().plusMonths(6));
+
         try{
             timePickerLoader = new FXMLLoader();
             timePickerLoader.setLocation(getClass().getResource("timePicker.fxml"));
@@ -129,16 +140,41 @@ public class CusBookingController implements Initializable {
                 if(dpPickUp.getValue() != null && !timePickerController.getTime().equals("00:00 PM") &&
                         dpDropOff.getValue() != null && !timePickerController2.getTime().equals("00:00 PM")){
                     if(timeVal(booking.getStartDate(), booking.getEndDate(), booking.getStartTime(), booking.getEndTime())){
-                        lblAPU.setVisible(false);
-                        lblADO.setVisible(false);
+                        if(periodVal()){
+                            lblAPU.setVisible(false);
+                            lblADO.setVisible(false);
 
-                        db.addData(booking);
+                            db.addData(booking);
 
-                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                        alert.setTitle("Booking done");
-                        alert.setHeaderText("You've booked a car.");
-                        alert.setContentText("Check your order confirmation on the history page.");
-                        alert.show();
+                            car.setStatus("Unavailable");
+                            for(int i = 0; i < cars.size(); i++){
+                                Car txtCar = cars.get(i);
+                                if(txtCar.getId().equals(car.getId())){
+                                    cars.set(i, car);
+                                    try {
+                                        FileWriter file = new FileWriter("src/main/resources/com/example/carpro/database/car.txt");
+                                        for(Car car2: cars){
+                                            file.write(String.valueOf(car2));
+                                        }
+                                        file.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+
+                            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                            alert.setTitle("Booking done");
+                            alert.setHeaderText("You've booked a car.");
+                            alert.setContentText("Check your order confirmation on the order page.");
+                            alert.show();
+                        }else{
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Time error");
+                            alert.setHeaderText("Please select period more than 1 hour and within 1 week.");
+                            alert.setContentText("Please try again.");
+                            alert.show();
+                        }
                     }else{
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Time error");
@@ -202,5 +238,22 @@ public class CusBookingController implements Initializable {
             bookingId = "O00001";
         }
         return bookingId;
+    }
+
+    private boolean periodVal(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        long diff = 0;
+        try {
+            Date d1 = sdf.parse(dpDropOff.getValue() + " " + timePickerController2.getTime());
+            Date d2 = sdf.parse(dpPickUp.getValue() + " " + timePickerController.getTime());
+            diff = ((d1.getTime()-d2.getTime())/(1000 * 60 * 60));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if(diff < 1 || diff > 168){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

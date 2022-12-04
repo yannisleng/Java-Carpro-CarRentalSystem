@@ -85,6 +85,9 @@ public class ExploreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Scene.restrictDatePicker(dpPickUp, LocalDate.now(), LocalDate.now().plusMonths(6));
+        Scene.restrictDatePicker(dpDropOff, LocalDate.now(), LocalDate.now().plusMonths(6));
+
         recentlyAdded = new ArrayList<>(recentlyAdded());
         recommended = new ArrayList<>(cars());
 

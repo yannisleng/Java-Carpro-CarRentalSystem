@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -53,28 +54,31 @@ public class HistoryController implements Initializable {
     @FXML
     private void view(ActionEvent event) {
         if(event.getSource()==btnPending || event.getSource()==btnPending){
-            setBlack(btnPending);
-            setWhite(btnOngoing);
-            setWhite(btnEnded);
             loadBookingCard(bookingList("Pending"));
         }else if(event.getSource()==btnOngoing || event.getSource()==btnOngoing){
-            setBlack(btnOngoing);
-            setWhite(btnPending);
-            setWhite(btnEnded);
             loadBookingCard(bookingList("Ongoing"));
         }else if(event.getSource()==btnEnded || event.getSource()==btnEnded){
-            setBlack(btnEnded);
-            setWhite(btnPending);
-            setWhite(btnOngoing);
             loadBookingCard(bookingList("Ended"));
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setBlack(btnOngoing);
-        setWhite(btnPending);
-        setWhite(btnEnded);
+        for(Booking cusBooking: fullBookings){
+           if(cusBooking.getEndDate().isBefore(LocalDate.now()) && cusBooking.getStatus().equals("Approved")){
+               setReturn(cusBooking);
+
+               cusBooking.setStatus("Completed");
+               for(int j = 0; j < fullBookings.size(); j++){
+                   Booking booking1 = fullBookings.get(j);
+                   if(booking1.getId().equals(cusBooking.getId())){
+                       fullBookings.set(j, cusBooking);
+                       updateDb("src/main/resources/com/example/carpro/database/booking.txt", fullBookings);
+                   }
+               }
+               loadBookingCard(bookingList("Ended"));
+           }
+        }
         loadBookingCard(bookingList("Ongoing"));
     }
 
@@ -82,12 +86,18 @@ public class HistoryController implements Initializable {
         List<Booking> cusBooking = new ArrayList<>();
 
         if(status.equals("Pending")){
+            setBlack(btnPending);
+            setWhite(btnOngoing);
+            setWhite(btnEnded);
             for(Booking booking: fullBookings){
                 if(booking.getCustomerId().equals(customer.getUsername()) && booking.getStatus().equals("Pending")){
                     cusBooking.add(booking);
                 }
             }
         }else if(status.equals("Ongoing")){
+            setBlack(btnOngoing);
+            setWhite(btnPending);
+            setWhite(btnEnded);
             for(Booking booking: fullBookings){
                 if(booking.getCustomerId().equals(customer.getUsername()) && booking.getStatus().equals("Approved") &&
                 booking.getPaymentId().equals("null")){
@@ -95,6 +105,9 @@ public class HistoryController implements Initializable {
                 }
             }
         }else if(status.equals("Ended")){
+            setBlack(btnEnded);
+            setWhite(btnPending);
+            setWhite(btnOngoing);
             for(Booking booking: fullBookings){
                 if(booking.getCustomerId().equals(customer.getUsername()) && (booking.getStatus().equals("Completed") ||
                         (booking.getStatus().equals("Rejected")))){
@@ -147,7 +160,7 @@ public class HistoryController implements Initializable {
                             alert.setContentText("Are you sure you want to return the car?");
 
                             if(alert.showAndWait().get() == ButtonType.OK){
-                                setFuel(booking);
+                                setReturn(booking);
 
                                 booking.setStatus("Completed");
                                 for(int j = 0; j < fullBookings.size(); j++){
@@ -164,6 +177,10 @@ public class HistoryController implements Initializable {
                         historyCardController.getBtnReturn().setText("Rejected");
                     }else if(booking.getStatus().equals("Completed") && !booking.getPaymentId().equals("null")) {
                         historyCardController.getBtnReturn().setText("Paid");
+                        historyCardController.getBtnReturn().setOnAction(event -> {
+                            Receipt receipt = CusController.instance.receipt();
+                            receipt.setData(booking);
+                        });
                     }
 
                     if(column == 1){
@@ -200,10 +217,11 @@ public class HistoryController implements Initializable {
                 "-fx-border-radius: 8px; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 20px;");
     }
 
-    private void setFuel(Booking booking){
+    private void setReturn(Booking booking){
         for(int i = 0; i < cars.size(); i++){
             Car car = cars.get(i);
             if(car.getId().equals(booking.getCarId())){
+                car.setStatus("Available");
                 car.setFuel(car.getFuel()-generateRandomNumber(5,70));
                 if(car.getFuel()<=0){
                     car.setFuel(100);
