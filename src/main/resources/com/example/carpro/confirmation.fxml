@@ -90,7 +90,10 @@
             <Insets left="110.0" top="332.0" />
          </StackPane.margin>
          <tooltip>
-            <Tooltip fx:id="ttCarDesc" text="Empty Tooltip" />
+            <Tooltip fx:id="ttCarDesc" text="Empty Tooltip">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
          </tooltip>
       </Label>
       <Circle fx:id="cirLocation" radius="32.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="TOP_LEFT">
@@ -122,7 +125,10 @@
             <Insets left="410.0" top="332.0" />
          </StackPane.margin>
          <tooltip>
-            <Tooltip fx:id="ttAddress" text="Empty Tooltip" />
+            <Tooltip fx:id="ttAddress" text="Empty Tooltip">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
          </tooltip>
       </Label>
       <Circle fx:id="cirPrice" radius="32.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="TOP_LEFT">

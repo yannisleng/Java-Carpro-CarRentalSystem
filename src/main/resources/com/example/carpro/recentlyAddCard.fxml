@@ -29,7 +29,10 @@
                <Insets left="10.0" top="105.0" />
             </StackPane.margin>
             <tooltip>
-               <Tooltip fx:id="ttCarDesc" text="Empty Tooltip" />
+               <Tooltip fx:id="ttCarDesc" text="Empty Tooltip">
+                  <font>
+                     <Font size="14.0" />
+                  </font></Tooltip>
             </tooltip>
          </Label>
          <Label fx:id="lblLocation" text="Kuala Lumpur" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
