@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="spConfirmation" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.ConfirmationController">
+   <children>
+      <Label fx:id="lblCarPro" text="CarPro" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="30.0" top="30.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblName" text="Hey! Aaron," StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="30.0" top="120.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblWaiting" text="Your order is waiting for approval." StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="30.0" top="155.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblEmail" text="You will receive a confirmation email soon" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="30.0" top="200.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDetails" text="with your booking details." StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="30.0" top="220.0" />
+         </StackPane.margin>
+      </Label>
+      <ImageView fx:id="imgPending" fitHeight="172.22" fitWidth="229.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@img/pendingEmail.png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="600.0" top="50.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Circle fx:id="cirCar" radius="32.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="30.0" top="300.0" />
+         </StackPane.margin>
+      </Circle>
+      <ImageView fx:id="imgCar" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@img/bookingCar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="45.0" top="314.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Label fx:id="lblCarInfo" text="Car Information" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="110.0" top="310.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblCar" text="Toyota Vios WWE4404" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="110.0" top="332.0" />
+         </StackPane.margin>
+      </Label>
+      <Circle fx:id="cirLocation" radius="32.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="330.0" top="300.0" />
+         </StackPane.margin>
+      </Circle>
+      <ImageView fx:id="imgLocation" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@img/location4.png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="345.0" top="314.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Label fx:id="lblLocation" text="Location" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="410.0" top="310.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblAddress" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="210.0" text="Sunshine Residence" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="410.0" top="332.0" />
+         </StackPane.margin>
+      </Label>
+      <Circle fx:id="cirPrice" radius="32.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="629.0" top="300.0" />
+         </StackPane.margin>
+      </Circle>
+      <ImageView fx:id="imgPrice" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@img/tag.png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="644.0" top="314.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Label fx:id="lblPrice" text="Price" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="709.0" top="310.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblPricePerHour" text="RM4.99/hrs" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="709.0" top="332.0" />
+         </StackPane.margin>
+      </Label>
+      <Circle fx:id="cirPickUpTime" radius="32.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="30.0" top="410.0" />
+         </StackPane.margin>
+      </Circle>
+      <ImageView fx:id="imgPickUpTime" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@img/time(2).png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="45.0" top="424.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Label fx:id="lblPiUTime" text="Pick-up Time" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="110.0" top="420.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblPickUpTime" text="2022-12-05 11:13 AM" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="110.0" top="442.0" />
+         </StackPane.margin>
+      </Label>
+      <Circle fx:id="cirDropOffTime" radius="32.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="330.0" top="410.0" />
+         </StackPane.margin>
+      </Circle>
+      <ImageView fx:id="imgDropOffTime" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@img/time(2).png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="345.0" top="424.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Label fx:id="lblDOTime" text="Drop-off Time" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="410.0" top="420.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="lblDropOffTime" text="2022-12-06 22:13 PM" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="410.0" top="442.0" />
+         </StackPane.margin>
+      </Label>
+      <Button fx:id="btnGoHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#history" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #000000; -fx-background-radius: 8;" styleClass="btnHover" stylesheets="@style.css" text="Go to history" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="620.0" top="520.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</StackPane>

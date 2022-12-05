@@ -162,12 +162,8 @@ public class CusBookingController implements Initializable {
                                     }
                                 }
                             }
-
-                            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                            alert.setTitle("Booking done");
-                            alert.setHeaderText("You've booked a car.");
-                            alert.setContentText("Check your order confirmation on the order page.");
-                            alert.show();
+                            ConfirmationController confirmation = CusController.instance.confirmation();
+                            confirmation.setData(booking);
                         }else{
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setTitle("Time error");
