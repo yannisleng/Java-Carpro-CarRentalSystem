@@ -159,7 +159,7 @@ public class ExploreController implements Initializable {
         database db = dataFactory.getDB("car");
         List<Car> recentCars = new ArrayList<>(db.getAllData());
 
-        for(int i = recentCars.size()-10; i < recentCars.size(); i++){
+        for(int i = recentCars.size()-15; i < recentCars.size(); i++){
             Car car = recentCars.get(i);
             if(car.getStatus().equals("Available")){
                 carlist.add(car);
