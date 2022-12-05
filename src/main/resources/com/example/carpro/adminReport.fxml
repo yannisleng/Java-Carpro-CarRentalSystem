@@ -37,7 +37,19 @@
                      <children>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" styleClass="reportVBox" stylesheets="@style.css">
                            <children>
-                              <Label fx:id="totalSalesLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
+                              <Label fx:id="transactionLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                              <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 13px; -fx-text-fill: #ADADAD;" text="Transaction">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" style="-fx-background-color: black;" styleClass="reportVBox" stylesheets="@style.css">
+                           <children>
+                              <Label fx:id="totalSalesLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600; -fx-text-fill: white;" text="Label">
                                  <padding>
                                     <Insets left="15.0" />
                                  </padding>
@@ -47,18 +59,6 @@
                                     <Insets left="15.0" />
                                  </padding>
                               </Label>
-                           </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" styleClass="reportVBox" stylesheets="@style.css">
-                           <children>
-                              <Label fx:id="transactionLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
-                                 <padding>
-                                    <Insets left="15.0" />
-                                 </padding></Label>
-                              <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 13px; -fx-text-fill: #ADADAD;" text="Transaction">
-                                 <padding>
-                                    <Insets left="15.0" />
-                                 </padding></Label>
                            </children>
                         </VBox>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" styleClass="reportVBox" stylesheets="@style.css">

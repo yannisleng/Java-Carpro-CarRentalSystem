@@ -21,33 +21,33 @@
          </StackPane.margin>
          <children>
             <Region prefHeight="115.0" />
-            <Button id="reportBtn_menu" fx:id="reportMenu" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Report">
+            <Button id="reportBtn_menu" fx:id="reportMenu" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Report">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
-            <Button id="editBtn_menu" fx:id="editMenu" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Add/Edit Car">
+            <Button id="editBtn_menu" fx:id="editMenu" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Add/Edit Car">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
-            <Button id="bookingBtn_menu" fx:id="bookingMenu" layoutX="10.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Customer Booking">
+            <Button id="bookingBtn_menu" fx:id="bookingMenu" layoutX="10.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Customer Booking">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
-            <Button id="addUserBtn_menu" fx:id="addUserMenu" layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Register User">
+            <Button id="addUserBtn_menu" fx:id="addUserMenu" layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Register User">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
             <Region prefHeight="76.0" prefWidth="250.0" />
-            <Button id="profileBtn_menu" fx:id="profileMenu" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Profile">
+            <Button id="profileBtn_menu" fx:id="profileMenu" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Profile">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
-            <Button id="logoutBtn_menu" mnemonicParsing="false" onAction="#exit" prefHeight="60.0" prefWidth="163.0" stylesheets="@style.css" text="Logout">
+            <Button id="logoutBtn_menu" mnemonicParsing="false" onAction="#exit" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Logout">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>

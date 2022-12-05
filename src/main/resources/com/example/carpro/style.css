@@ -89,7 +89,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0.0, 0.0);
 }
 
-#deleteBtn, #returnBtn, #searchBtn,
+.secondBtn,#deleteBtn, #returnBtn, #searchBtn,
 #closeBtn, #editItemBtn, #bookingSearchBtn,
 #exitBtn{
     -fx-background-color: transparent;
@@ -97,7 +97,7 @@
     -fx-font-size: 12px;
 }
 
-#deleteBtn:hover, #returnBtn:hover, #uploadPhotoBtn:hover,
+.secondBtn:hover, #deleteBtn:hover, #returnBtn:hover, #uploadPhotoBtn:hover,
 #searchBtn:hover, #closeBtn:hover, #editItemBtn:hover,
 #bookingSearchBtn:hover{
     -fx-background-color: #f3f5f7;

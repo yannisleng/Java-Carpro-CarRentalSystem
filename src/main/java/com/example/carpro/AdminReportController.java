@@ -139,6 +139,7 @@ public class AdminReportController implements Initializable {
         else if(!paymentList.isEmpty()){
             container.setPrefHeight(1000);
             scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+
             pagination.setPageFactory(new Callback<Integer, Node>() {
                 @Override
                 public Node call(Integer pageIndex) {
