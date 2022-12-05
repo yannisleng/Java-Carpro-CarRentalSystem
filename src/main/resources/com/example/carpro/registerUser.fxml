@@ -66,12 +66,12 @@
                   <Insets left="14.0" top="28.0" />
                </GridPane.margin>
             </ComboBox>
-            <TextField id="lastNameText" fx:id="lastNameText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="text-field" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <TextField id="lastNameText" fx:id="lastNameText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="infoText" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="14.0" top="28.0" />
                </GridPane.margin>
             </TextField>
-            <TextField id="emailText" fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="384.0" styleClass="text-field" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+            <TextField id="emailText" fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="384.0" styleClass="infoText" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="32.0" top="28.0" />
                </GridPane.margin>
@@ -116,7 +116,7 @@
                   <Insets left="32.0" top="7.0" />
                </GridPane.margin>
             </Label>
-            <TextField id="phoneNumText" fx:id="phoneNumText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <TextField id="phoneNumText" fx:id="phoneNumText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="infoText" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="32.0" top="28.0" />
                </GridPane.margin>
@@ -126,12 +126,12 @@
                   <Insets left="14.0" top="7.0" />
                </GridPane.margin>
             </Label>
-            <TextField id="usernameText" fx:id="usernameText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+            <TextField id="usernameText" fx:id="usernameText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="infoText" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="32.0" top="28.0" />
                </GridPane.margin>
             </TextField>
-            <TextField id="firstNameText" fx:id="firstNameText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <TextField id="firstNameText" fx:id="firstNameText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="infoText" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="32.0" top="28.0" />
                </GridPane.margin>
@@ -181,7 +181,7 @@
                   <Insets left="32.0" top="14.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="384.0" styleClass="text-field" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+            <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="384.0" styleClass="infoText" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="32.0" top="40.0" />
                </GridPane.margin>
@@ -191,7 +191,7 @@
                   <Insets left="32.0" top="8.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="postCodeText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="text-field" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <TextField fx:id="postCodeText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" styleClass="infoText" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="32.0" top="33.0" />
                </GridPane.margin>

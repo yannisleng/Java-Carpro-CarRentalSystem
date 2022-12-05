@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<StackPane fx:id="spAdminMain" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AdminController">
+<StackPane fx:id="spAdminMain" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AdminController">
    <children>
       <StackPane fx:id="switchScene" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" StackPane.alignment="TOP_RIGHT">
       </StackPane>
@@ -72,7 +72,7 @@
                   <DropShadow />
                </effect>
                <children>
-            <Button id="logoBtn" mnemonicParsing="false" onAction="#setMenuVisible" stylesheets="@style.css">
+            <Button id="logoBtn" mnemonicParsing="false" onAction="#setMenuVisible" styleClass="defaultBtn" stylesheets="@style.css">
                <graphic>
                         <ImageView fitHeight="55.61" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -81,7 +81,7 @@
                         </ImageView>
                </graphic>
             </Button>
-            <Button id="reportBtn" fx:id="report" mnemonicParsing="false" onAction="#handleMenuAction" stylesheets="@style.css">
+            <Button id="reportBtn" fx:id="report" mnemonicParsing="false" onAction="#handleMenuAction" styleClass="defaultBtn" stylesheets="@style.css">
                <graphic>
                   <ImageView id="reportBtn" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -90,7 +90,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="editBtn" fx:id="edit" mnemonicParsing="false" onAction="#handleMenuAction" stylesheets="@style.css">
+            <Button id="editBtn" fx:id="edit" mnemonicParsing="false" onAction="#handleMenuAction" styleClass="defaultBtn" stylesheets="@style.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -99,7 +99,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="bookingBtn" fx:id="booking" mnemonicParsing="false" onAction="#handleMenuAction" stylesheets="@style.css">
+            <Button id="bookingBtn" fx:id="booking" mnemonicParsing="false" onAction="#handleMenuAction" styleClass="defaultBtn" stylesheets="@style.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -108,7 +108,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="addUserBtn" fx:id="addUser" layoutX="32.0" layoutY="541.0" mnemonicParsing="false" onAction="#handleMenuAction" stylesheets="@style.css">
+            <Button id="addUserBtn" fx:id="addUser" layoutX="32.0" layoutY="541.0" mnemonicParsing="false" onAction="#handleMenuAction" styleClass="defaultBtn" stylesheets="@style.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -118,7 +118,7 @@
                </graphic>
             </Button>
             <Region prefHeight="79.0" prefWidth="46.0" />
-            <Button id="profileBtn" fx:id="profile" mnemonicParsing="false" onAction="#handleMenuAction">
+            <Button id="profileBtn" fx:id="profile" mnemonicParsing="false" onAction="#handleMenuAction" styleClass="defaultBtn">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -127,7 +127,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="logoutBtn" fx:id="logout" layoutX="32.0" layoutY="583.0" mnemonicParsing="false" onAction="#exit" stylesheets="@style.css">
+            <Button id="logoutBtn" fx:id="logout" layoutX="32.0" layoutY="583.0" mnemonicParsing="false" onAction="#exit" styleClass="defaultBtn" stylesheets="@style.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>

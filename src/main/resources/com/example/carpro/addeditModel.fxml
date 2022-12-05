@@ -14,7 +14,7 @@
 
 <StackPane fx:id="AddModelPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AddEditModelController">
    <children>
-      <TextField id="searchBarText" fx:id="searchModelBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <TextField id="searchBarText" fx:id="searchModelBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" styleClass="infoText" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="155.0" top="53.0" />
          </StackPane.margin>
@@ -41,12 +41,12 @@
             <Insets left="33.0" top="57.0" />
          </StackPane.margin>
       </Label>
-      <TextField id="addModelText" fx:id="ModelText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="119.0" StackPane.alignment="TOP_LEFT">
+      <TextField id="addModelText" fx:id="ModelText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="119.0" styleClass="infoText" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="155.0" top="96.0" />
          </StackPane.margin>
       </TextField>
-      <Button id="addBrandInfoBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveModel" prefHeight="30.0" prefWidth="30.0" stylesheets="@style.css" text="+" StackPane.alignment="TOP_LEFT">
+      <Button id="addBrandInfoBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveModel" prefHeight="30.0" prefWidth="30.0" styleClass="defaultBtn" stylesheets="@style.css" text="+" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="283.0" top="94.0" />
          </StackPane.margin>
@@ -87,7 +87,7 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane id="addBrandScrollPane" fx:id="ModelScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
+            <ScrollPane id="addBrandScrollPane" fx:id="ModelScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" styleClass="scrollBar" stylesheets="@style.css">
                <content>
                   <VBox fx:id="ModelListLayout" prefHeight="415.0" prefWidth="331.0" style="-fx-background-color: white;" />
                </content>

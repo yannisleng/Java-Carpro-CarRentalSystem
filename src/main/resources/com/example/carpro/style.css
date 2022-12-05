@@ -2,10 +2,7 @@
     -fx-font-family: 'SF Pro Display';
 }
 
-#reportBtn,#editBtn,#bookingBtn,#addUserBtn,
-#addCarbtn, #logoBtn,#logoutBtn,#saveBtn, #addBrandInfoBtn,
-#profileBtn, #approveBtn, #btnExplore, #btnHistory, #btnProfile,
-#btnLogout, #btnCarPro{
+.defaultBtn{
     -fx-background-color: #000000;
     -fx-text-fill: #ffffff;
     -fx-background-radius: 8px;
@@ -62,9 +59,7 @@
     -fx-graphic: url(img/logout-hover.png);
 }
 
-.btnMenu, #reportBtn_menu, #editBtn_menu,
-#bookingBtn_menu, #addUserBtn_menu, #logoutBtn_menu,
-#profileBtn_menu, #bookingMenu, #exploreMenu, #logoutMenu, #profileMenu, #logoutMenu{
+.btnMenu{
     -fx-background-color: #ffffff;
     -fx-text-fill: black;
     -fx-background-radius: 0px;
@@ -79,6 +74,12 @@
 
 #logoutBtn_menu, #logoutMenu{
     -fx-background-radius: 0px 0px 24px 0px;
+}
+
+/*report*/
+.reportVBox{
+    -fx-border-color: #000000;
+    -fx-border-width: 0px 1px 0px 0px;
 }
 
 /*Add edit car page*/
@@ -149,10 +150,7 @@
     -fx-text-fill: #000000;
 }
 
-#priceText, #plateNumText, #addressText,
-#postCodeText,#searchBarText, #addBrandText,
-#addModelText, #usernameText, #firstNameText,
-#lastNameText,#phoneNumText,#emailText{
+.infoText{
     -fx-text-fill: #000000;
     -fx-border-color: #dedede;
     -fx-border-radius: 8px;
@@ -199,11 +197,11 @@
     -fx-font-size: 9px;
 }
 
-#addBrandScrollPane, #bookingScrollPane > .viewport{
+.scrollBar > .viewport{
     -fx-background-color: transparent;
 }
 
-#addBrandScrollPane, #bookingScrollPane{
+#addBrandScrollPane, #bookingScrollPane, #reportScrollPane{
     -fx-background-color: transparent;
 }
 

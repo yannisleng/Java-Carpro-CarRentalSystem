@@ -288,7 +288,6 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
     @FXML
     private void saveData(ActionEvent event) throws Exception{
         Car car = new Car();
-        ArrayList <String> arr = new ArrayList<>();
 
         if(validation()){
             String id = generateCarId();

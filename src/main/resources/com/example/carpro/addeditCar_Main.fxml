@@ -16,7 +16,7 @@
 
 <StackPane fx:id="addeditcar_Main" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditcar_Main_Controller">
    <children>
-      <Button id="addCarbtn" fx:id="addCar" mnemonicParsing="false" onAction="#switchtoCarInfo" prefHeight="40.0" prefWidth="120.0" stylesheets="@style.css" text="+ Add Car" StackPane.alignment="TOP_LEFT">
+      <Button id="addCarbtn" fx:id="addCar" mnemonicParsing="false" onAction="#switchtoCarInfo" prefHeight="40.0" prefWidth="120.0" styleClass="defaultBtn" stylesheets="@style.css" text="+ Add Car" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="29.0" top="37.0" />
          </StackPane.margin>
@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField id="searchBarText" fx:id="searchBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="205.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <TextField id="searchBarText" fx:id="searchBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="205.0" styleClass="infoText" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="553.0" top="45.0" />
          </StackPane.margin>

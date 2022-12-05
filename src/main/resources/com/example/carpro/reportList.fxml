@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<HBox id="addeditMainTitle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="720.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.ReportListController">
+   <children>
+      <Label fx:id="paymentID" prefHeight="45.0" prefWidth="120.0" text="Payment ID" />
+      <Label id="#addeditMainTitle" fx:id="date" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Date">
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </Label>
+      <Label fx:id="customer" prefHeight="45.0" prefWidth="120.0" style="-fx-text-fill: black;" stylesheets="@style.css" text="Customer">
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </Label>
+      <Label fx:id="carID" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Booking Car">
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </Label>
+      <Label fx:id="paymentType" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Payment Type">
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </Label>
+      <Label fx:id="total" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Total">
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </Label>
+   </children>
+</HBox>

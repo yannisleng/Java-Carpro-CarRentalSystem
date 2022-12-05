@@ -148,7 +148,7 @@
             </Label>
          </children>
       </StackPane>
-      <Button id="approveBtn" fx:id="approveBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="146.0" text="Approve" StackPane.alignment="TOP_LEFT">
+      <Button id="approveBtn" fx:id="approveBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="146.0" styleClass="defaultBtn" stylesheets="@style.css" text="Approve" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="36.0" top="548.0" />
          </StackPane.margin>

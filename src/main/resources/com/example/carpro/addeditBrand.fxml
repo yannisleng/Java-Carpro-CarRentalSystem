@@ -13,7 +13,7 @@
 
 <StackPane fx:id="AddBrandPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AddEditBrandController">
    <children>
-      <TextField id="searchBarText" fx:id="searchBrandBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <TextField id="searchBarText" fx:id="searchBrandBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" styleClass="infoText" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="155.0" top="53.0" />
          </StackPane.margin>
@@ -35,7 +35,7 @@
             <Insets left="33.0" top="57.0" />
          </StackPane.margin>
       </Label>
-      <TextField id="addBrandText" fx:id="BrandText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="234.97" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <TextField id="addBrandText" fx:id="BrandText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="234.97" styleClass="infoText" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="33.0" top="96.0" />
          </StackPane.margin>
@@ -45,7 +45,7 @@
             <Insets left="33.0" top="130.0" />
          </StackPane.margin>
       </Label>
-      <Button id="addBrandInfoBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveBrand" prefHeight="30.0" prefWidth="30.0" stylesheets="@style.css" text="+" StackPane.alignment="TOP_LEFT">
+      <Button id="addBrandInfoBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveBrand" prefHeight="30.0" prefWidth="30.0" styleClass="defaultBtn" stylesheets="@style.css" text="+" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="283.0" top="94.0" />
          </StackPane.margin>
@@ -83,7 +83,7 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane id="addBrandScrollPane" fx:id="BrandScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" stylesheets="@style.css">
+            <ScrollPane id="addBrandScrollPane" fx:id="BrandScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="336.0" styleClass="scrollBar" stylesheets="@style.css">
                <content>
                   <VBox fx:id="BrandListLayout" prefHeight="424.0" prefWidth="331.0" style="-fx-background-color: white;" />
                </content>

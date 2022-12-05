@@ -1,10 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-           prefHeight="600.0" prefWidth="780.0"
-           xmlns:fx="http://javafx.com/fxml/1">
-   <Label text="AdminReport"/>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AdminReportController">
+   <children>
+      <Label style="-fx-font-size: 13px; -fx-text-fill: #C2C2C2;" text="From" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="31.0" top="26.0" />
+         </StackPane.margin>
+      </Label>
+      <Label style="-fx-font-size: 13px; -fx-text-fill: #C2C2C2;" text="To" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="231.0" top="26.0" />
+         </StackPane.margin>
+      </Label>
+      <VBox fx:id="transactionListLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="722.0" style="-fx-background-color: transparent;" stylesheets="@style.css" />
+      <ScrollPane id="reportScrollPane" fx:id="scrollPane" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" styleClass="scrollBar" stylesheets="@style.css" vbarPolicy="ALWAYS" StackPane.alignment="TOP_RIGHT">
+         <StackPane.margin>
+            <Insets top="100.0" />
+         </StackPane.margin>
+         <content>
+            <VBox fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="750.0">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="720.0" style="-fx-border-color: #000000; -fx-border-radius: 8px;">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" styleClass="reportVBox" stylesheets="@style.css">
+                           <children>
+                              <Label fx:id="totalSalesLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding>
+                              </Label>
+                              <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 13px; -fx-text-fill: #ADADAD;" text="Total Sales">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" styleClass="reportVBox" stylesheets="@style.css">
+                           <children>
+                              <Label fx:id="transactionLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                              <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 13px; -fx-text-fill: #ADADAD;" text="Transaction">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" styleClass="reportVBox" stylesheets="@style.css">
+                           <children>
+                              <Label fx:id="cardLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                              <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 13px; -fx-text-fill: #ADADAD;" text="Credit Card">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" styleClass="reportVBox" stylesheets="@style.css">
+                           <children>
+                              <Label fx:id="transferLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                              <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 13px; -fx-text-fill: #ADADAD;" text="Transfer">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                           </children>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="144.0" stylesheets="@style.css">
+                           <children>
+                              <Label fx:id="eWalletLbl" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 17px; -fx-font-weight: 600;" text="Label">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                              <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="150.0" style="-fx-font-size: 13px; -fx-text-fill: #ADADAD;" text="E-Wallet">
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding></Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <AreaChart fx:id="areaChart" legendVisible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="730.0" styleClass="areaChart" stylesheets="@style.css">
+                    <xAxis>
+                      <CategoryAxis animated="false" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+                  <StackPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label style="-fx-font-size: 17px; -fx-font-weight: bold;" text="Transaction" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </StackPane>
+                  <VBox fx:id="transactionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="721.0">
+                     <children>
+                        <HBox id="addeditMainTitle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="720.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css">
+                           <children>
+                              <Label prefHeight="45.0" prefWidth="120.0" text="Payment ID" />
+                              <Label id="#addeditMainTitle" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Date">
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="45.0" prefWidth="120.0" style="-fx-text-fill: black;" stylesheets="@style.css" text="Customer">
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Booking Car">
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Payment Type">
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                              </Label>
+                              <Label prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Total">
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Pagination fx:id="pagination" focusTraversable="false" maxHeight="-Infinity" maxPageIndicatorCount="6" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="722.0" style="-fx-background-color: white;" stylesheets="@style.css">
+                           <styleClass>
+                              <String fx:value="pagination" />
+                              <String fx:value="pagination-control" />
+                              <String fx:value="right-arrow-button" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Pagination>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <DatePicker fx:id="fromDatePicker" editable="false" onAction="#handleDateChange" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="31.0" top="51.0" />
+         </StackPane.margin>
+      </DatePicker>
+      <DatePicker fx:id="toDatePicker" editable="false" onAction="#handleDateChange" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="231.0" top="51.0" />
+         </StackPane.margin>
+      </DatePicker>
+   </children>
 </StackPane>

@@ -50,7 +50,7 @@
             <Insets left="296.0" top="84.0" />
          </StackPane.margin>
       </Button>
-      <ScrollPane id="bookingScrollPane" fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="750.0" StackPane.alignment="TOP_RIGHT">
+      <ScrollPane id="bookingScrollPane" fx:id="scrollPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="750.0" styleClass="scrollBar" stylesheets="@style.css" StackPane.alignment="TOP_RIGHT">
          <StackPane.margin>
             <Insets top="136.0" />
          </StackPane.margin>
