@@ -85,7 +85,7 @@ public class CusBookingController implements Initializable {
     private StackPane tpPickUp;
 
     @FXML
-    private Tooltip ttAddress;
+    private Tooltip ttAddress, ttCarDesc;
 
 
     @FXML
@@ -122,6 +122,7 @@ public class CusBookingController implements Initializable {
         ttAddress.setText(car.getAddress());
         imgCar.setImage(new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc()));
         lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
+        ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
         lblPrice.setText("RM" + car.getPrice() + "0");
         lblPerson.setText(car.getSeat() + " " + "Persons");
         lblFuelPercent.setText(car.getFuel() + "%");
