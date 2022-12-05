@@ -77,13 +77,19 @@
             <Insets top="95.0" />
          </StackPane.margin>
       </ImageView>
-      <Label fx:id="lblCarDesc" text="Toyota Vios WWE 4404" StackPane.alignment="TOP_LEFT">
+      <Label fx:id="lblCarDesc" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="560.0" text="Toyota Vios WWE 4404" StackPane.alignment="TOP_LEFT">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
          <StackPane.margin>
             <Insets left="20.0" top="295.0" />
          </StackPane.margin>
+         <tooltip>
+            <Tooltip fx:id="ttCarDesc" text="Empty Tooltip">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Label>
       <Label fx:id="lblPrice" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="50.0" prefWidth="238.0" text="RM10.99" textAlignment="RIGHT" StackPane.alignment="TOP_RIGHT">
          <font>

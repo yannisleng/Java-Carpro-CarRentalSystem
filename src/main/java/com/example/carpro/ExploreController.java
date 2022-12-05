@@ -68,7 +68,11 @@ public class ExploreController implements Initializable {
     private Label lblSelectPU;
 
     @FXML
-    private StackPane spExplore,spExploreC1;
+    private StackPane spExplore, spExploreS, spExploreC1;
+
+    public StackPane getSpExploreS() {
+        return spExploreS;
+    }
 
     @FXML
     private StackPane tpDropOff;
@@ -85,6 +89,9 @@ public class ExploreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        instance = this;
+        spExploreS = spExplore;
+
         Scene.restrictDatePicker(dpPickUp, LocalDate.now(), LocalDate.now().plusMonths(6));
         Scene.restrictDatePicker(dpDropOff, LocalDate.now(), LocalDate.now().plusMonths(6));
 
@@ -152,7 +159,7 @@ public class ExploreController implements Initializable {
         database db = dataFactory.getDB("car");
         List<Car> recentCars = new ArrayList<>(db.getAllData());
 
-        for(int i = recentCars.size()-10; i < recentCars.size(); i++){
+        for(int i = recentCars.size()-15; i < recentCars.size(); i++){
             Car car = recentCars.get(i);
             if(car.getStatus().equals("Available")){
                 carlist.add(car);
@@ -187,8 +194,9 @@ public class ExploreController implements Initializable {
                 if(timeVal(dpPickUp.getValue(), dpDropOff.getValue(), timePickerController.getTime(),
                         timePickerController2.getTime())){
                     searchTxt = txtLocation.getText();
-                    lblRecommend.setText("Results of ‘" + searchTxt + "’");
-                    loadHorizontalCars(searchCars());
+                    Scene.switchScene("searchResult.fxml", spExploreC1);
+                    /*lblRecommend.setText("Results of ‘" + searchTxt + "’");
+                    loadHorizontalCars(searchCars());*/
                 }else{
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Time error");

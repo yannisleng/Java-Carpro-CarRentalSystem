@@ -85,7 +85,7 @@ public class CusBookingController implements Initializable {
     private StackPane tpPickUp;
 
     @FXML
-    private Tooltip ttAddress;
+    private Tooltip ttAddress, ttCarDesc;
 
 
     @FXML
@@ -122,6 +122,7 @@ public class CusBookingController implements Initializable {
         ttAddress.setText(car.getAddress());
         imgCar.setImage(new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc()));
         lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
+        ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
         lblPrice.setText("RM" + car.getPrice() + "0");
         lblPerson.setText(car.getSeat() + " " + "Persons");
         lblFuelPercent.setText(car.getFuel() + "%");
@@ -162,12 +163,8 @@ public class CusBookingController implements Initializable {
                                     }
                                 }
                             }
-
-                            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                            alert.setTitle("Booking done");
-                            alert.setHeaderText("You've booked a car.");
-                            alert.setContentText("Check your order confirmation on the order page.");
-                            alert.show();
+                            ConfirmationController confirmation = CusController.instance.confirmation();
+                            confirmation.setData(booking);
                         }else{
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setTitle("Time error");

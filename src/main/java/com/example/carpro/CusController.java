@@ -67,6 +67,11 @@ public class CusController implements Initializable {
         Scene.switchScene("explore.fxml", spCusDefault);
     }
 
+    public static ConfirmationController confirmation(){
+        ConfirmationController confirmation = (ConfirmationController) Scene.getController("confirmation.fxml", spCus);
+        return confirmation;
+    }
+
     public static Receipt receipt(){
         Receipt receipt = (Receipt) Scene.getController("receipt.fxml", spCus);
         return receipt;

@@ -130,7 +130,7 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             modelCmb.getItems().addAll(modelList.get(j).getModelName());
         }
 
-        ObservableList<String> seats = FXCollections.observableArrayList("5","7","8");
+        ObservableList<String> seats = FXCollections.observableArrayList("1","2","4","5","6","7","8");
         seatsCmb.setItems(seats);
 
         ObservableList<String> state = FXCollections.observableArrayList("Johor","Kedah","Kelantan","Kuala Lumpur","Melaka","Negeri Sembilan","Pahang","Penang","Perak","Perlis","Sabah","Sarawak","Selangor","Terengganu");

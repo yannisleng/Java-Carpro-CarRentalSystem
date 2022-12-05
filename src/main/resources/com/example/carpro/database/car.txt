@@ -1,18 +1,98 @@
-0010010001`Honda`Civic`DWE 123`15.00`5`27`Available`No. 63, Channel Road,`96000`Sarawak`0010010001.png
+0010010001`Honda`Civic`DWE 123`15.00`5`55`Available`No. 63, Channel Road`96000`Sarawak`0010010001.png
 0020010001`Toyota`Alphard`JVE 545`30.00`7`33`Available`No. 3498 Jln Ampang Hilir 5`28200`Pahang`0020010001.png
 0030010001`Mercedes-Benz`G-Class`RA 6571`85.00`5`100`Available`2 Blok C Jln 21/13 Seksyen 21 Petaling Jaya`40000`Selangor`0030010001.png
 0040010001`Perodua`Alza`VWM 654`12.00`5`100`Available`No. 37 Jln Pasir Merah New Pasir Puteh`16500`Kelantan`0040010001.jpg
 0050010001`BMW`1 Series`PFV 55`99.00`5`100`Available`Lot Off 3/4 Mile Jalan Bercham`80000`Johor`0050010001.jpg
-0060010001`Proton`Exora`LRM 54`25.00`5`63`Available`No. 563 Taman Clonlee`71760`Negeri Sembilan`0060010001.png
+0060010001`Proton`Exora`LRM 54`25.00`5`63`Unavailable`No. 563 Taman Clonlee`71760`Negeri Sembilan`0060010001.png
 0070010001`Porsche`Boxster`MVD 521`75.00`5`100`Available`443-63 Batu 2 1/2 Jalan Wilayah Persekutuan`02600`Perlis`0070010001.png
-0080010001`Volkswagen`Beetle`VSD 125`66.00`5`100`Available`Jalan Berkat 3, Taman Malim Jaya,`30000`Perak`0080010001.png
-0090010001`Bentley`Arnage`ABC 12`99.00`5`100`Available`B 5 Jln 7 Kaw 16 Taman Intan`75050`Melaka`0090010001.jpg
-0100010001`Audi`Q8`JK 12`129.00`5`37`Available`Tuaran Road, Jalan Kolombong,`88100`Sabah`0100010001.png
-0050020001`BMW`X Series`IJH 5`59.00`5`100`Available`3141 Jln Selangan Batu Kuching`93450`Sarawak`0050020001.png
+0080010001`Volkswagen`Beetle`VSD 125`66.00`5`100`Available`Jalan Berkat 3, Taman Malim Jaya`30000`Perak`0080010001.png
+0090010001`Bentley`Arnage`ABC 12`99.00`5`100`Unavailable`B 5 Jln 7 Kaw 16 Taman Intan`75050`Melaka`0090010001.jpg
+0100010001`Audi`Q8`JK 12`129.00`5`37`Unavailable`Tuaran Road, Jalan Kolombong`88100`Sabah`0100010001.png
+0050020001`BMW`X Series`IJH 5`59.00`5`100`Unavailable`3141 Jln Selangan Batu Kuching`93450`Sarawak`0050020001.png
 0010010002`Honda`Civic`LK 2`16.00`5`100`Available`39 Jln Midah 5 Taman Midah`81200`Johor`0010010002.png
 0070010002`Porsche`Boxster`JH 6`79.00`5`100`Available`2 1/2 Miles, Jalan , Wilayah Persekutuan`30250`Perak`0070010002.png
-0110010001`Mazda`3`LV 465`89.00`5`100`Available`22 Jalan Sri Hartamas 14 Sri Hartamas 14 Sri Hartamas Malay`14000`Penang`0110010001.png
-0130010001`MINI`Cooper`V 78`88.00`5`100`Available`71 1St Floor Jln Mustapha Al-Bakri`30300`Perak`0130010001.png
-0010020001`Honda`CR-V`VBN 123`89.00`7`70`Available`No. 39 Jln Tanjong Taman Dato Penggawa Barat`81200`Johor`0010020001.png
+0110010001`Mazda`3`LV 465`89.00`5`100`Unavailable`22 Jalan Sri Hartamas 14 Sri Hartamas 14 Sri Hartamas Malay`14000`Penang`0110010001.png
+0130010001`MINI`Cooper`V 78`88.00`5`100`Unavailable`71 1St Floor Jln Mustapha Al-Bakri`30300`Perak`0130010001.png
+0010020001`Honda`CR-V`VBN 123`89.00`7`70`Unavailable`No. 39 Jln Tanjong Taman Dato Penggawa Barat`81200`Johor`0010020001.png
 0010030001`Honda`NSX`BJ 15`122.00`5`51`Available`No. 19 Jln Jujur 2 Bandar Tun Abdul Razak`56000`Kuala Lumpur`0010030001.png
-0120010001`Lamborghini`Aventador`VGH 45`98.00`5`92`Unavailable`B 33 Ground Floor Lorong Seri Kuantan 25`25250`Pahang`0120010001.png
+0120010001`Lamborghini`Aventador`VGH 45`98.00`5`92`Available`B 33 Ground Floor Lorong Seri Kuantan 25`25250`Pahang`0120010001.png
+0060020001`Proton`X50`QCC 1102`9.00`5`100`Available`Pej Tapak World Wide Constr Jln Matang Batu 8`93050`Sarawak`0060020001.png
+0040010002`Perodua`Alza`QOD 8930`11.00`7`100`Available`2 Srb Chung Hua 5 Jln Chawan Kuching`93300`Sarawak`0040010002.png
+0010040001`Honda`Accord`QSE 2283`12.00`5`100`Available`1 Riverbank Suite Jln Tunku Abdul Rahman`93100`Sarawak`0010040001.png
+0020020001`Toyota`GR Yaris Hatchback`QJD 3290`34.00`4`100`Available`11-21 Chermai Jaya Matriculation Ctr Jln Matang`93050`Sarawak`0020020001.png
+0140010001`Peugeot`2008`SAK 1342`46.00`5`100`Available`10 Wisma Merdeka Jln Tun Razak Kota Kinabalu Kota Kinabalu`88000`Sabah`0140010001.png
+0110020001`Mazda`2`SMG 8429`23.00`5`100`Available`Jalan Perpaduan, Kampung Air`88000`Sabah`0110020001.png
+0150010001`Nissan`Almera`SKF 9472`32.00`5`100`Available`10th Floor Wisma Yakim Tower Block, Jalan Datuk Salleh Sulong, P.O. Box`10152`Sabah`0150010001.png
+0060030001`Proton`X70`SDM 0933`49.00`5`100`Available`Fajar Centre, Jalan Segama`91100`Sabah`0060030001.png
+0040020001`Perodua`Myvi`SAD 1704`7.00`5`100`Available`Jalan Haji Saman, Po Box , 88813`11223`Sabah`0040020001.png
+0020030001`Toyota`GR Supra Coupe`SJC 6668`56.00`2`100`Available`no6, lorong api- api api-api centre,`88000`Sabah`0020030001.png
+0010050001`Honda`BR-V`CAS 4284`62.00`7`100`Available`No. 17-21 Jalan Semantan 2 Lurah Semantan`28000`Pahang`0010050001.png
+0110010002`Mazda`3`CAH 2138`18.00`5`100`Available`B 33 Ground Floor Lorong Seri Kuantan 25 Kuantan`25250`Pahang`0110010002.png
+0150020001`Nissan`Serena`CKF 5328`36.00`7`100`Available`Batu 2 1/2, Jalan Karak`28400`Pahang`0150020001.png
+0060040001`Proton`Saga`CWF 9794`5.00`5`100`Available`No. 7 Temerloh Industrial Park Mentakab`28400`Pahang`0060040001.png
+0040030001`Perodua`Ativa`CAF 8782`23.00`5`100`Available`367 Jln Kuantan-Kemaman Kampung Cherating Lama`26080`Pahang`0040030001.png
+0020040001`Toyota`Vios GR-S Sedan`CJH 6898`14.00`5`100`Available`Unit B7 3A Jalan Selaman 1 Dataran Palma Ampang`68000`Selangor`0020040001.png
+0010060001`Honda`City`WJD 3222`21.00`5`100`Available`28 Jln U5/20 Seksyen U5 40150 Shah Alam Shah Alam`40150`Selangor`0010060001.png
+0110030001`Mazda`6`WDJ 5344`56.00`5`100`Available`Lot 765 Jalan Haji Sirat Off Jalan Meru`42100`Selangor`0110030001.png
+0150030001`Nissan`X-Trail`WFD 1445`23.00`5`100`Available`23 Jalan Cungah Port Malaysia`42000`Selangor`0150030001.png
+0140020001`Peugeot`3008`WGS 6335`34.00`5`100`Available`12 Jalan Tambur 33/19 Shah Alam Technology Park`42450`Selangor`0140020001.png
+0140030001`Peugeot`5008`QGD 3453`66.00`7`100`Available`Lot 3112 Jalan Hamzah Alang Kampung Bukit`45800`Sarawak`0140030001.png
+0060050001`Proton`Persona`WFD 5538`8.00`5`100`Available`17 Lebuh Sultan Mohamed 2 Kawasan Industri Bandar Sultan Sulaiman`42000`Selangor`0060050001.png
+0060060001`Proton`Iriz`CSD 435`4.00`5`100`Available`985, Jalan Dato' Lundang`15200`Kelantan`0060060001.png
+0040040001`Perodua`Aruz`CHG 2646`35.00`7`100`Available`Lot 1985/1986 Bandar Baru`18300`Kelantan`0040040001.png
+0020050001`Toyota`Corolla Cross Hybrid Electric Crossover`CDA 8778`93.00`5`100`Available`Kaunter Transnational Ekspres, Stesen Bas Skmk`15000`Kelantan`0020050001.png
+0010070001`Honda`City Hatchback`CHY 1222`40.00`5`100`Available`6402-C Lot 2094 Jalan Raja Dewa Telipot`15150`Kelantan`0010070001.png
+0110040001`Mazda`MX-5 RF`CSR 4353`65.00`2`100`Available`5701 Kawasan Miel Lundang Jalan Sultan Yahya Putra`15150`Kelantan`0110040001.png
+0150040001`Nissan`Leaf`CBH 7566`23.00`5`100`Available`5268 Jalan Tengku Petra Semerak`15300`Kelantan`0150040001.png
+0060010002`Proton`Exora`JAD 3455`45.00`7`100`Available`26 A Jalan Padi 2 Bandar Baru Uda`81200`Johor`0060010002.png
+0040050001`Perodua`Axia`JSD 5343`6.00`5`100`Available`Jalan Shahbandar 8, Taman Ungku Tun Aminah`81300`Johor`0040050002.png
+0040060001`Perodua`Bezza`JAT 4344`27.00`5`100`Available`49 A Jalan Sulam Taman Sentosa`80150`Johor`0040060001.png
+0020060001`Toyota`Rush SUV`JRG 2236`62.00`7`100`Available`3A Jalan Seroja 1 Taman Johor Jaya`81100`Johor`0020060001.png
+0010010003`Honda`Civic`NFA 5343`23.00`5`100`Available`No. 872 Psn Semarak 2 Taman Panchor Jaya`70400`Negeri Sembilan`0010010003.png
+0110050001`Mazda`CX-3`NDF 66`43.00`5`100`Available`G 32 Jln Dato Lee Fong Yee`70000`Negeri Sembilan`0110050001.png
+0020070001`Toyota`Corolla Cross Crossover`NHT 3800`34.00`5`100`Available`M Bangunan Uda Bandar Baru Ampangan`70400`Negeri Sembilan`0020070001.png
+0010020002`Honda`CR-V`NSG 5333`57.00`5`100`Available`278 2 Taman Ast`70200`Negeri Sembilan`0010020002.png
+0110060001`Mazda`CX-30`NSK 2422`88.00`5`100`Available`135 Jalan TTJ 1/13 Taman Tuanku Jaafar`71450`Negeri Sembilan`0110060001.png
+0020080001`Toyota`Fortuner SUV`NAS 74`66.00`7`100`Available`Ground Floor Jaya Jusco 2`70200`Negeri Sembilan`0020080001.png
+0020090001`Toyota`Harrier SUV`RGB 6353`37.00`5`100`Available`67 Jalan Jublee Perak`01000`Perlis`0020090001.png
+0010080001`Honda`HR-V`RSD 4311`47.00`5`100`Available`96, Persiaran Jubli Emas`01000`Perlis`0010080001.png
+0110070001`Mazda`CX-5`RHT 533`30.00`1`100`Available`Kampung Kerisik, Mata Air`01000`Perlis`0110070001.png
+0020100001`Toyota`Vios Sedan`RJO 0240`28.00`5`100`Available`2 Jalan Raja Syed Alwi`01000`Perlis`0020100001.png
+0110080001`Mazda`CX-8`RWF 3023`75.00`6`100`Available`Putra Palace 135 Persiaran Jubli Emas`01000`Perlis`0110080001.png
+0020070002`Toyota`Corolla Cross Crossover`RFS 0142`54.00`5`100`Available`67 Jalan Jublee Perak`01000`Perlis`0020070002.png
+0020110001`Toyota`Corolla Sedan`APU 0240`34.00`5`100`Available`302 Jalan Pasir Puteh Perak`31650`Perak`0020110001.png
+0020120001`Toyota`Camry Sedan`AUG 3511`12.00`5`100`Available`40 Jalan Ghazali Jawi`31400`Perak`0020120001.png
+0110090001`Mazda`CX-9`AGA 5202`51.00`7`100`Available`64 2nd Floor Jalan Leong Sin Nam`30300`Perak`0110090001.png
+0020130001`Toyota`Yaris Hatchback`AJI 5420`10.00`5`100`Available`96 Jln Sultan Iskandar Shah`30000`Perak`0020130001.png
+0020140001`Toyota`Veloz MPV`MAI 305`76.00`7`100`Available`No. 25 Jalan Bukit Beruang 4, Taman Bukit Beruang`75450`Melaka`0020140001.png
+0020150001`Toyota`Innova MPV`MSF 3512`120.00`8`100`Available`No. 9 Jln Sri Rama 2 Taman Muzaffar Shah`75450`Melaka`0020150001.png
+0020160001`Toyota`Vellfire MPV`MRH 1398`66.00`7`100`Available`Taman Pandan Malim, Balai Panjang`75250`Melaka`0020160001.png
+0020170001`Toyota`Alphard MPV`MSF 5501`154.00`8`100`Available`Jalan BPM 5, Taman Bukit Piatu Mutiara`75150`Melaka`0020170001.png
+0110100001`Mazda`MX-30`MYW 3980`39.00`5`100`Available`No. 37, Jalan Banda Kaba`75000`Melaka`0110100001.png
+0030020001`Mercedes-Benz`EQS Saloon`MAS 5431`78.00`5`100`Available`Jalan D7, Tmn Dahlia Bkt Beruang`75450`Melaka`0030020001.png
+0160010001`Hyundai`Elantra`PSD 1010`52.00`6`100`Available`Lot 128 Prai Free Trade Zone`13600`Penang`0160010001.png
+0070020001`Porsche`718`PAW 4238`42.00`2`100`Available`4215 Jalan Ong Yi How`13400`Penang`0070020001.png
+0100020001`Audi`A3`PSG 3423`75.00`5`100`Available`5 Jalan Sungai Tiram 2`11900`Penang`0100020001.png
+0030030001`Mercedes-Benz`A-Class Saloon`PFD 2384`34.00`5`100`Available`5848 Kampung Paya`12000`Penang`0030030001.png
+0160020001`Hyundai`Sonata`PAD 3451`45.00`5`100`Available`1085 Jalan Sungai Puyu`13020`Penang`0160020001.png
+0070030001`Porsche`911`PAD 3489`76.00`4`100`Available`Plot 17 Hilir Sungai Keluang 3 Bayan Lepas Free Industrial Zone Phase Iv`11900`Penang`0070030001.png
+0100030001`Audi`A5`VER 4231`103.00`5`100`Available`No 2.1A, Jalan Perdana 6/8B, Pandan Perdana`56300`Kuala Lumpur`0100030001.png
+0030040001`Mercedes-Benz`C-Class Saloon`VAS 2348`54.00`5`100`Available`Tingkat 7, Wisma Chase Perdana, Off Jalan Semantan`50490`Kuala Lumpur`0030040001.png
+0070040001`Porsche`Taycan`VSK 4310`34.00`4`100`Available`Jalan Desa Jaya, Pusat Bandar, Taman Desa`58100`Kuala Lumpur`0070040001.png
+0100040001`Audi`A6`VDF 2010`86.00`5`100`Available`28, Jalan 4/91, Taman Shamelin Perkasa`56100`Kuala Lumpur`0100040001.png
+0040050002`Perodua`Axia`VTR 2023`14.00`5`100`Available`Pudu Plaza, Jalan Landak, Off Jalan Pudu`55100`Kuala Lumpur`0040050002.png
+0030050001`Mercedes-Benz`E-Class Saloon`VES 6352`65.00`5`100`Available`20-1, Jalan 2/98, Taman Supreme`56100`Kuala Lumpur`0030050001.png
+0160030001`Hyundai`Kona`THE 3240`45.00`5`100`Available`Lot 166 Kg. Renek, 22020 Jertih, Besut`22020`Terengganu`0160030001.png
+0070050001`Porsche`Panamera`TSE 3401`46.00`5`100`Available`293 Jalan Abdul Rahman Kemaman`24000`Terengganu`0070050001.png
+0100050001`Audi`A7`TSD 2121`21.00`5`100`Available`157, Jalan Bandar, 20100`20100`Terengganu`0100050001.png
+0030060001`Mercedes-Benz`S-Class Saloon`TWA 209`198.00`5`100`Available`235-B Jalan Sultan Zainal Abidin`20000`Terengganu`0030060001.png
+0160050001`Hyundai`Ioniq 5`TWJ 34`34.00`5`100`Available`No. 1913, Taman Chendering`21080`Terengganu`0160050001.png
+0070060001`Porsche`Macan`THR 4512`142.00`5`100`Available`Tingkat Atas, Taman Geliga Sakti`24000`Terengganu`0070060001.png
+0100070001`Audi`Q2`TDG 1431`123.00`5`100`Available`Lot PT 11248, Taman Industri Paka`11248`Terengganu`0100070001.png
+0030070001`Mercedes-Benz`Mercedes-Maybach S-Class`KFC 4531`45.00`4`100`Available`4163, Jalan Langgar`05460`Kedah`0030070001.png
+0160060001`Hyundai`Santa FE`KEA 2092`62.00`5`100`Available`32 Kompleks Sri Temin Jalan Ibrahim`08000`Kedah`0160060001.png
+0070070001`Porsche`Cayenne`KGT 6243`80.00`5`100`Available`Lot 40-48 Pusat Mas Batu 1 Kelibang Kuah`07000`Kedah`0070070001.png
+0030080001`Mercedes-Benz`EQA SUV`KGF 5489`151.00`5`100`Available`No 32 Taipan Squre Taipan Squre Business Center`08000`Kedah`0030080001.png
+0030090001`Mercedes-Benz`EQB SUV`KHG 29`165.00`7`100`Available`Jalan Penarak, Mukim Kuah`07000`Kedah`0030090001.png
+0160070001`Hyundai`Palisade`KWE 2300`69.00`8`100`Available`Lorong 6A, Taman Mewah,`08000`Kedah`0160070001.png
+1000100001`Audi`RS`KOD 923`98.00`5`100`Available`Taman Senangin, Kilang Lama`09000`Kedah`1000100001.png

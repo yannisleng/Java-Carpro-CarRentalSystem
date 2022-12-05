@@ -4,6 +4,7 @@ import com.model.Car;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
@@ -26,10 +27,14 @@ public class RecommendedCarController {
     @FXML
     private Label lblLocation;
 
+    @FXML
+    private Tooltip ttCarDesc;
+
     public void setData(Car car){
         Image image = new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc());
         imgCar.setImage(image);
         lblBrandModel.setText(car.getBrand() + " " + car.getModel());
+        ttCarDesc.setText(car.getBrand() + " " + car.getModel());
         lblLocation.setText(car.getState());
     }
 

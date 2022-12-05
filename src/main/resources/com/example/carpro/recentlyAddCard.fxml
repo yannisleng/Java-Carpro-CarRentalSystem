@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -20,13 +21,19 @@
                <Insets top="20.0" />
             </StackPane.margin>
          </ImageView>
-         <Label fx:id="lblBrandModel" text="Toyota Vios" StackPane.alignment="TOP_LEFT">
+         <Label fx:id="lblBrandModel" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="225.0" text="Toyota Vios" StackPane.alignment="TOP_LEFT">
             <font>
                <Font name="System Bold" size="16.0" />
             </font>
             <StackPane.margin>
                <Insets left="10.0" top="105.0" />
             </StackPane.margin>
+            <tooltip>
+               <Tooltip fx:id="ttCarDesc" text="Empty Tooltip">
+                  <font>
+                     <Font size="14.0" />
+                  </font></Tooltip>
+            </tooltip>
          </Label>
          <Label fx:id="lblLocation" text="Kuala Lumpur" textFill="#c2c2c2" StackPane.alignment="TOP_LEFT">
             <font>

@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -30,9 +31,6 @@ import java.util.ResourceBundle;
 public class RecentlyAddCardController implements Initializable {
 
     @FXML
-    private HBox boxRecentlyAddCar;
-
-    @FXML
     private Button btnView;
 
     public Button getBtnView() {
@@ -46,21 +44,17 @@ public class RecentlyAddCardController implements Initializable {
     private Label lblBrandModel;
 
     @FXML
-    private Label lblCar;
-
-    @FXML
     private Label lblLocation;
 
     @FXML
-    private StackPane spRecentlyAddCard;
-    private Stage stage;
-    private javafx.scene.Scene scene;
-    private javafx.scene.Parent root;
+    private Tooltip ttCarDesc;
+
 
     public void setData(Car car){
         Image image = new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc());
         imgRecentlyAddCar.setImage(image);
         lblBrandModel.setText(car.getBrand() + " " + car.getModel());
+        ttCarDesc.setText(car.getBrand() + " " + car.getModel());
         lblLocation.setText(car.getState());
     }
 
