@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="spExploreC2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.SearchController">
+    <children>
+        <Label fx:id="lblSearch" text="About 100 results of ‘Kuala Lumpur’" StackPane.alignment="TOP_LEFT">
+            <StackPane.margin>
+                <Insets top="5.0" />
+            </StackPane.margin>
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <ScrollPane fx:id="spSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #ffffff;" StackPane.alignment="TOP_LEFT">
+            <content>
+                <GridPane fx:id="gridSearch" style="-fx-background-color: #ffffff;">
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </content>
+            <StackPane.margin>
+                <Insets top="35.0" />
+            </StackPane.margin>
+        </ScrollPane>
+    </children>
+</StackPane>
