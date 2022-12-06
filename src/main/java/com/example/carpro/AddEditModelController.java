@@ -164,6 +164,10 @@ public class AddEditModelController implements Initializable {
 
         ArrayList <String> arr = new ArrayList<>();
 
+        dataFactory dataFactory = new dataFactory();
+        database modelDb = dataFactory.getDB("model");
+        List<Model> models = new ArrayList<>(modelDb.getAllData());
+
         if(validate){
             for(Brand brand:brands){
                 if(brand.getBrandName().equals(addModelBrandCmb.getValue())){
