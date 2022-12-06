@@ -10,28 +10,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<StackPane fx:id="spCusMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.CusController">
+<StackPane fx:id="spCusMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.CusController">
    <StackPane fx:id="spCusDefault" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" StackPane.alignment="TOP_RIGHT" />
    <VBox fx:id="vboxCusMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.82" prefWidth="249.0" style="-fx-background-color: white; -fx-background-radius: 24px;" visible="false" StackPane.alignment="TOP_LEFT">
       <children>
          <Region prefHeight="140.0" />
-         <Button fx:id="exploreMenu" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="btnMenu" stylesheets="@style.css" text="Explore">
+         <Button fx:id="exploreMenu" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Explore">
             <VBox.margin>
                <Insets left="86.0" />
             </VBox.margin>
          </Button>
-         <Button fx:id="bookingMenu" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="btnMenu" stylesheets="@style.css" text="Booking">
+         <Button fx:id="bookingMenu" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Booking">
             <VBox.margin>
                <Insets left="86.0" />
             </VBox.margin>
          </Button>
-         <Button fx:id="profileMenu" layoutX="10.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="btnMenu" stylesheets="@style.css" text="Profile">
+         <Button fx:id="profileMenu" layoutX="10.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="105.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Profile">
             <VBox.margin>
                <Insets left="86.0" />
             </VBox.margin>
          </Button>
          <Region prefHeight="140.0" />
-         <Button id="logoutBtn_menu" fx:id="logoutMenu" mnemonicParsing="false" onAction="#exit" prefHeight="105.0" prefWidth="163.0" stylesheets="@style.css" text="Logout">
+         <Button id="logoutBtn_menu" fx:id="logoutMenu" mnemonicParsing="false" onAction="#exit" prefHeight="105.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Logout">
             <VBox.margin>
                <Insets left="86.0" />
             </VBox.margin>
