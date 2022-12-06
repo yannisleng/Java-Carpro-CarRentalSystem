@@ -112,22 +112,32 @@ public class AddEditBrandController implements Initializable {
         }
     }
 
-    @FXML
-    private void saveBrand(ActionEvent event) throws Exception{
+    private Boolean saveBrandValidation(){
         addBrandHint.setVisible(false);
-        boolean validate = true;
+
+        database brandDb = dataFactory.getDB("brand");
+        List<Brand> brands = new ArrayList<>(brandDb.getAllData());
 
         if(!BrandText.getText().isEmpty() && BrandText.getText() != null){
             for(int i=0;i<brands.size();i++){
                 if(brands.get(i).getBrandName().equals(BrandText.getText())){
-                    validate = false;
                     addBrandHint.setVisible(true);
+                    return false;
                 }
             }
         }else{
             BrandText.setPromptText("Please enter brand name");
-            validate = false;
+            return false;
         }
+        return true;
+    }
+
+    @FXML
+    private void saveBrand(ActionEvent event) throws Exception{
+        Boolean validate = saveBrandValidation();
+
+        database brandDb = dataFactory.getDB("brand");
+        List<Brand> brands = new ArrayList<>(brandDb.getAllData());
 
         if(validate){
             Brand brand = new Brand();

@@ -152,7 +152,8 @@ public class AddEditModelController implements Initializable {
         model.setModelName(ModelText.getText());
 
         modelDb.addData(model);
-        refreshPane();
+        filterModel();
+        //refreshPane();
     }
 
     @FXML
@@ -190,7 +191,7 @@ public class AddEditModelController implements Initializable {
     }
 
     @FXML
-    public void searchModelBar (ActionEvent event) throws Exception{
+    private void searchModelBar (ActionEvent event) throws Exception{
         /*set search bar visible*/
         if(searchModelBar.isVisible()&&(searchModelBar.getText()==null || searchModelBar.getText().trim().isEmpty())){
             searchModelBar.setVisible(false);
@@ -200,6 +201,40 @@ public class AddEditModelController implements Initializable {
         }else{
             List<Model> searchmodel= modelDb.searchData(searchModelBar.getText());
             displayModel(searchmodel);
+        }
+    }
+
+    @FXML
+    private void filterModel(ActionEvent event){
+        filterModel();
+        /*List<Model> models = new ArrayList<>();
+
+        database brandDb = dataFactory.getDB("brand");
+        List<Brand> brands = new ArrayList<>(brandDb.getAllData());
+
+        if(addModelBrandCmb.getValue()!=null & !addModelBrandCmb.getValue().isEmpty()){
+            for(Brand brand:brands){
+                if(brand.getBrandName().equals(addModelBrandCmb.getValue())){
+                    models=brand.getModels();
+                }
+            }
+            displayModel(models);
+        }*/
+    }
+
+    private void filterModel(){
+        List<Model> models = new ArrayList<>();
+
+        database brandDb = dataFactory.getDB("brand");
+        List<Brand> brands = new ArrayList<>(brandDb.getAllData());
+
+        if(addModelBrandCmb.getValue()!=null & !addModelBrandCmb.getValue().isEmpty()){
+            for(Brand brand:brands){
+                if(brand.getBrandName().equals(addModelBrandCmb.getValue())){
+                    models=brand.getModels();
+                }
+            }
+            displayModel(models);
         }
     }
 }

@@ -61,7 +61,6 @@ public class addeditcar_Main_Controller implements Initializable {
     protected List <Model> modelList = new ArrayList<>(readModel());
     protected List <Brand> brandList = new ArrayList<>(readBrand());
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(this.pagination != null){
@@ -76,15 +75,7 @@ public class addeditcar_Main_Controller implements Initializable {
                 modelCmb.getItems().addAll(modelList.get(j).getModelName());
             }
 
-            pagination.setPageFactory(new Callback<Integer, Node>() {
-                @Override
-                public Node call(Integer pageIndex) {
-                    carlistLayout.getChildren().clear();
-                    return createPage(pageIndex,carList);
-                }
-            });
-
-            setPaginationPageCount(carList);
+            setPagination(carList);
         }
 
     }
@@ -118,6 +109,19 @@ public class addeditcar_Main_Controller implements Initializable {
         }
 
         pagination.setPageCount(pageCount);
+    }
+
+    private void setPagination(List<Car> carList){
+        pagination.setPageFactory(new Callback<Integer, Node>() {
+            @Override
+            public Node call(Integer pageIndex) {
+                carlistLayout.getChildren().clear();
+                return createPage(pageIndex,carList);
+            }
+
+        });
+        pagination.setCurrentPageIndex(pagination.getCurrentPageIndex());
+        setPaginationPageCount(carList);
     }
 
     private Node createPage(int pageIndex, List<Car> carList){
@@ -186,14 +190,14 @@ public class addeditcar_Main_Controller implements Initializable {
 
             //update model combo box and car list
             List<Car> carlist = new ArrayList<>();
+
             for (int j=0;j<models.size();j++) {
                 modelCmb.getItems().addAll(models.get(j).getModelName());
                 carlist.addAll(models.get(j).getCars());
                 carlistLayout.getChildren().clear();
-                createPage(pagination.getCurrentPageIndex(),carlist);
-            }
 
-            setPaginationPageCount(carlist);
+            }
+            setPagination(carlist);
         }
     }
 
@@ -211,10 +215,9 @@ public class addeditcar_Main_Controller implements Initializable {
             for (int j=0;j<cars.size();j++) {
                 carlist.add(cars.get(j));
                 carlistLayout.getChildren().clear();
-                createPage(pagination.getCurrentPageIndex(),carlist);
-            }
 
-            setPaginationPageCount(carlist);
+            }
+            setPagination(carlist);
         }
     }
 

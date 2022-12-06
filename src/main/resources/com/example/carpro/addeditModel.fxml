@@ -19,7 +19,7 @@
             <Insets left="155.0" top="53.0" />
          </StackPane.margin>
       </TextField>
-      <ComboBox id="brandCmb" fx:id="addModelBrandCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="118.0" promptText="Select Brand" styleClass="combo-box" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <ComboBox id="brandCmb" fx:id="addModelBrandCmb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#filterModel" prefHeight="30.0" prefWidth="118.0" promptText="Select Brand" styleClass="combo-box" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="25.0" top="96.0" />
          </StackPane.margin>
