@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane fx:id="addeditcar_Main" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditcar_Main_Controller">
+<StackPane fx:id="addeditcar_Main" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditcar_Main_Controller">
    <children>
       <Button id="addCarbtn" fx:id="addCar" mnemonicParsing="false" onAction="#switchtoCarInfo" prefHeight="40.0" prefWidth="120.0" styleClass="defaultBtn" stylesheets="@style.css" text="+ Add Car" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>

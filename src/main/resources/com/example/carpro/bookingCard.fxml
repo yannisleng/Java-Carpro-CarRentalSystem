@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" style="-fx-background-radius: 8px;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.BookingCardController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" style="-fx-background-radius: 8px;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.BookingCardController">
    <children>
       <StackPane id="bookingCard" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #dedede; -fx-border-radius: 8px;" stylesheets="@style.css">
          <children>

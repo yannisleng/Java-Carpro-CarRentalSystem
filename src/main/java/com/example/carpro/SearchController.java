@@ -26,9 +26,6 @@ public class SearchController implements Initializable {
     @FXML
     private Label lblSearch;
 
-    @FXML
-    private StackPane spExploreC2;
-
     private User customer = ExploreController.getCustomer();
 
     private List<Car> searchCars;
@@ -51,7 +48,8 @@ public class SearchController implements Initializable {
                 RecommendedCarController recommendedCarController = fxmlLoader.getController();
                 recommendedCarController.setData(car);
                 recommendedCarController.getBtnView().setOnAction(event -> {
-                    CusBookingController cusBookingController = (CusBookingController) Scene.getController("cusBooking.fxml", ExploreController.instance.getSpExploreS());
+                    CusBookingController cusBookingController = (CusBookingController)
+                            Scene.getController("cusBooking.fxml", ExploreController.instance.getSpExploreS());
                     cusBookingController.setCar(customer, car);
                 });
 

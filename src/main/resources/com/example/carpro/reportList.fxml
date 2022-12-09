@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox id="addeditMainTitle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="720.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.ReportListController">
+<HBox id="addeditMainTitle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="720.0" style="-fx-background-color: white;" styleClass="HBox" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.ReportListController">
    <children>
       <Label fx:id="paymentID" prefHeight="45.0" prefWidth="120.0" text="Payment ID" />
       <Label id="#addeditMainTitle" fx:id="date" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" stylesheets="@style.css" text="Date">

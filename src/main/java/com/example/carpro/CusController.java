@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class CusController implements Initializable {
 
-    Stage stage;
+    private Stage stage;
 
     @FXML
     private Button bookingMenu;

@@ -26,10 +26,8 @@ import java.util.ResourceBundle;
 public class CusBookingController implements Initializable {
     private User customer = ExploreController.getCustomer();
 
-    private FXMLLoader timePickerLoader;
     private TimePickerController timePickerController;
 
-    private FXMLLoader timePickerLoader2;
     private TimePickerController timePickerController2;
 
     private dataFactory dataFactory = new dataFactory();
@@ -89,7 +87,7 @@ public class CusBookingController implements Initializable {
 
 
     @FXML
-    void cancel(ActionEvent event) {
+    private void cancel(ActionEvent event) {
         Scene.switchScene("explore.fxml", spBooking);
     }
 
@@ -98,26 +96,11 @@ public class CusBookingController implements Initializable {
         Scene.restrictDatePicker(dpPickUp, LocalDate.now(), LocalDate.now().plusMonths(6));
         Scene.restrictDatePicker(dpDropOff, LocalDate.now(), LocalDate.now().plusMonths(6));
 
-        try{
-            timePickerLoader = new FXMLLoader();
-            timePickerLoader.setLocation(getClass().getResource("timePicker.fxml"));
-            StackPane timePicker = timePickerLoader.load();
-            tpPickUp.getChildren().add(timePicker);
-
-            timePickerLoader2 = new FXMLLoader();
-            timePickerLoader2 = new FXMLLoader();
-            timePickerLoader2.setLocation(getClass().getResource("timePicker.fxml"));
-            StackPane timePicker2 = timePickerLoader2.load();
-            tpDropOff.getChildren().add(timePicker2);
-        }catch(IOException e){
-            e.printStackTrace();
-        }
+        timePickerController = (TimePickerController) Scene.getController("timePicker.fxml", tpPickUp);
+        timePickerController2 = (TimePickerController) Scene.getController("timePicker.fxml", tpDropOff);
     }
 
     public void setCar(User customer, Car car) {
-        timePickerController = timePickerLoader.getController();
-        timePickerController2 = timePickerLoader2.getController();
-
         lblAddress.setText(car.getAddress());
         ttAddress.setText(car.getAddress());
         imgCar.setImage(new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc()));
@@ -224,19 +207,6 @@ public class CusBookingController implements Initializable {
         return true;
     }
 
-    private String generateId(){
-        String bookingId;
-        if(!bookingList.isEmpty()){
-            Booking lastBooking = bookingList.get(bookingList.size()-1);
-            bookingId= lastBooking.getId().substring(1,6);
-
-            bookingId = "O" + String.format("%05d", (Integer.parseInt(bookingId) + 1));
-        }else{
-            bookingId = "O00001";
-        }
-        return bookingId;
-    }
-
     private boolean periodVal(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         long diff = 0;
@@ -252,5 +222,18 @@ public class CusBookingController implements Initializable {
         }else{
             return true;
         }
+    }
+
+    private String generateId(){
+        String bookingId;
+        if(!bookingList.isEmpty()){
+            Booking lastBooking = bookingList.get(bookingList.size()-1);
+            bookingId= lastBooking.getId().substring(1,6);
+
+            bookingId = "O" + String.format("%05d", (Integer.parseInt(bookingId) + 1));
+        }else{
+            bookingId = "O00001";
+        }
+        return bookingId;
     }
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="spHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryController">
+<StackPane fx:id="spHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryController">
    <children>
       <Button fx:id="btnPending" mnemonicParsing="false" onAction="#view" prefHeight="50.0" prefWidth="250.0" style="-fx-border-color: #000000; -fx-border-radius: 8;" stylesheets="@style.css" text="Pending" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
