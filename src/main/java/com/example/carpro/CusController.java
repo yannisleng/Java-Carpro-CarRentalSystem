@@ -1,9 +1,7 @@
 package com.example.carpro;
 
-import com.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -12,13 +10,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CusController implements Initializable {
 
-    Stage stage;
+    private Stage stage;
 
     @FXML
     private Button bookingMenu;
@@ -72,8 +69,8 @@ public class CusController implements Initializable {
         return confirmation;
     }
 
-    public static Receipt receipt(){
-        Receipt receipt = (Receipt) Scene.getController("receipt.fxml", spCus);
+    public static ReceiptController receipt(){
+        ReceiptController receipt = (ReceiptController) Scene.getController("receipt.fxml", spCus);
         return receipt;
     }
 

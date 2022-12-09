@@ -31,7 +31,7 @@ public class ConfirmationController {
     private Label lblPickUpTime;
 
     @FXML
-    private Label lblPrice;
+    private Label lblPricePerHour;
 
     @FXML
     private StackPane spConfirmation;
@@ -55,7 +55,7 @@ public class ConfirmationController {
                         ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
                         lblAddress.setText(car.getAddress());
                         ttAddress.setText(car.getAddress());
-                        lblPrice.setText("RM" + car.getPrice() + "/hrs");
+                        lblPricePerHour.setText("RM" + String.format("%.02f", car.getPrice()) + "/hrs");
                         lblPickUpTime.setText(booking.getStartDate() + " " + booking.getStartTime());
                         lblDropOffTime.setText(booking.getEndDate() + " " + booking.getEndTime());
                     }

@@ -26,14 +26,11 @@ public class SearchController implements Initializable {
     @FXML
     private Label lblSearch;
 
-    @FXML
-    private StackPane spExploreC2;
-
     private User customer = ExploreController.getCustomer();
 
     private List<Car> searchCars;
 
-    private String searchTxt = ExploreController.searchTxt;
+    private String searchTxt = ExploreController.getSearchTxt();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,7 +48,8 @@ public class SearchController implements Initializable {
                 RecommendedCarController recommendedCarController = fxmlLoader.getController();
                 recommendedCarController.setData(car);
                 recommendedCarController.getBtnView().setOnAction(event -> {
-                    CusBookingController cusBookingController = (CusBookingController) Scene.getController("cusBooking.fxml", ExploreController.instance.getSpExploreS());
+                    CusBookingController cusBookingController = (CusBookingController)
+                            Scene.getController("cusBooking.fxml", ExploreController.instance.getSpExploreS());
                     cusBookingController.setCar(customer, car);
                 });
 
@@ -84,7 +82,8 @@ public class SearchController implements Initializable {
         List<Car> cars = new ArrayList<>(db.getAllData());
 
         for(Car car: cars){
-            if(car.getState().equalsIgnoreCase(searchTxt) && car.getStatus().equals("Available")){
+            if((car.getState().equalsIgnoreCase(searchTxt) && car.getStatus().equals("Available")) ||
+                    (car.getAddress().contains(searchTxt) && car.getStatus().equals("Available"))){
                 searchCars.add(car);
             }
         }

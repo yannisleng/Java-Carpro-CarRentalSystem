@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<StackPane fx:id="spCusMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.CusController">
+<StackPane fx:id="spCusMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.CusController">
    <StackPane fx:id="spCusDefault" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" StackPane.alignment="TOP_RIGHT" />
    <VBox fx:id="vboxCusMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.82" prefWidth="249.0" style="-fx-background-color: white; -fx-background-radius: 24px;" visible="false" StackPane.alignment="TOP_LEFT">
       <children>

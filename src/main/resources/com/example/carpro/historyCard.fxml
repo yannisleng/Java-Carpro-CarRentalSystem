@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vboxHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="723.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryCardController">
+<VBox fx:id="vboxHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="723.0" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.HistoryCardController">
    <children>
       <StackPane fx:id="spHistory" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="723.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 8; -fx-border-style: dotted;">
          <children>

@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="spReceipt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.Receipt">
+<StackPane fx:id="spReceipt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.ReceiptController">
    <children>
       <Pane fx:id="pReceipt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="860.0" style="-fx-background-color: #242424; -fx-background-radius: 4;" StackPane.alignment="CENTER">
          <children>
@@ -65,10 +66,13 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="lblCarDesc" layoutX="30.0" layoutY="297.0" text="Toyota Vios WWE 4404 - 5 seats, " textFill="WHITE">
+            <Label fx:id="lblCarDesc" layoutX="30.0" layoutY="297.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" text="Toyota Vios WWE 4404 - 5 seats" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
+               <tooltip>
+                  <Tooltip fx:id="ttCarDesc" text="Empty Tooltip" />
+               </tooltip>
             </Label>
             <Label fx:id="lblPickUpTime" layoutX="45.0" layoutY="317.0" text="Pick-up: Fri, 28/10, 09:20PM, " textFill="WHITE">
                <font>
@@ -80,10 +84,13 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblLocation" layoutX="45.0" layoutY="357.0" text="Location: Asia Pacific University," textFill="WHITE">
+            <Label fx:id="lblLocation" layoutX="45.0" layoutY="357.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" text="Location: Asia Pacific University," textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
+               <tooltip>
+                  <Tooltip fx:id="ttLocation" text="Empty Tooltip" />
+               </tooltip>
             </Label>
             <Label fx:id="lblLocationState" layoutX="45.0" layoutY="377.0" text="57000 Kuala Lumpur." textFill="WHITE">
                <font>

@@ -46,16 +46,7 @@ public class CusProfileController implements Initializable {
     private ComboBox<String> cmbState;
 
     @FXML
-    private ImageView imgDone;
-
-    @FXML
-    private ImageView imgEdit;
-
-    @FXML
     private ImageView imgProfile;
-
-    @FXML
-    private ImageView imgView;
 
     @FXML
     private Label lblAAdrress;
@@ -76,43 +67,10 @@ public class CusProfileController implements Initializable {
     private Label lblAState;
 
     @FXML
-    private Label lblAddress;
-
-    @FXML
-    private Label lblDOB;
-
-    @FXML
-    private Label lblEmail;
-
-    @FXML
-    private Label lblGender;
-
-    @FXML
     private Label lblName;
 
     @FXML
-    private Label lblPSW;
-
-    @FXML
-    private Label lblPhoneNo;
-
-    @FXML
-    private Label lblPosCode;
-
-    @FXML
-    private Label lblState;
-
-    @FXML
-    private Label lblUserInformation;
-
-    @FXML
     private Label lblUsername;
-
-    @FXML
-    private Separator separatorGrey;
-
-    @FXML
-    private StackPane spCusProfile;
 
     @FXML
     private TextField txtAddress;
@@ -149,8 +107,6 @@ public class CusProfileController implements Initializable {
         cmbState.setItems(states);
 
         showUserInformation();
-
-        //btnUpdateProfile.setStyle("-fx-opacity: 1.0; -fx-background-color: transparent; -fx-border-color: transparent;");
     }
 
     //update profile image

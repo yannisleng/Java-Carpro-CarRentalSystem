@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="addeditcar_info" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_Info_Controller">
+<StackPane fx:id="addeditcar_info" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_Info_Controller">
    <children>
       <Button id="returnBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchtoBefore" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <graphic>

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane fx:id="AddModelPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AddEditModelController">
+<StackPane fx:id="AddModelPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="352.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.AddEditModelController">
    <children>
       <TextField id="searchBarText" fx:id="searchModelBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" styleClass="infoText" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>

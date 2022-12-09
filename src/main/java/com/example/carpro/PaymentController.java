@@ -7,7 +7,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -61,6 +60,9 @@ public class PaymentController {
     @FXML
     private StackPane spPayment;
 
+    @FXML
+    private Tooltip ttPayment;
+
     private com.model.dataFactory dataFactory = new dataFactory();
     private database dbCar = dataFactory.getDB("car");
     private List<Car> cars = new ArrayList<>(dbCar.getAllData());
@@ -74,7 +76,7 @@ public class PaymentController {
     private Booking bookingToPay = new Booking();
     private Payment payment = new Payment();
 
-    float total = 0;
+    private float total = 0;
 
     @FXML
     private void pay(ActionEvent event) throws IOException {
@@ -90,7 +92,7 @@ public class PaymentController {
                     updateDb("src/main/resources/com/example/carpro/database/booking.txt", bookings);
                 }
             }
-            Receipt receipt = CusController.instance.receipt();
+            ReceiptController receipt = CusController.instance.receipt();
             receipt.setData(bookingToPay);
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -102,7 +104,7 @@ public class PaymentController {
     }
 
     @FXML
-    void cancel(ActionEvent event) {
+    private void cancel(ActionEvent event) {
         Scene.switchScene("cusHistory.fxml", spPayment);
     }
 
@@ -128,21 +130,21 @@ public class PaymentController {
 
     public void setData(Booking booking){
         bookingToPay = booking;
-        System.out.println(bookingToPay);
         for(Car car: cars){
             if(booking.getCarId().equals(car.getId())){
                 Image image = new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc());
                 imgCar.setImage(image);
                 lblBookingId.setText("Payment for #" + booking.getId());
                 lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
+                ttPayment.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
                 lblSeats.setText(" - " + car.getSeat() + " seats");
                 lblStartTime.setText(booking.getStartDate() + ", " + booking.getStartTime());
                 lblEndTime.setText(booking.getEndDate() + ", " + booking.getEndTime());
                 lblLocation.setText(car.getState());
-                lblPrice.setText("RM" + car.getPrice() + "0/ hours");
+                lblPrice.setText("RM" + String.format("%.02f", car.getPrice()) + "/ hours");
                 lblHour.setText("Total Hour: " + toHours(booking));
                 total = car.getPrice()*toHours(booking);
-                lblTotalPrice.setText("RM"+String.valueOf(total+"0"));
+                lblTotalPrice.setText("RM" + (String.format("%.02f", total)));
             }
         }
     }

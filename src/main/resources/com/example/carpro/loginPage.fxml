@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="spLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.LoginController">
+<StackPane fx:id="spLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.LoginController">
    <ImageView fx:id="imgLogin" fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
       <Image url="@img/loginPic.png" />
    </ImageView>
