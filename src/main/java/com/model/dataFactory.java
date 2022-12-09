@@ -1,19 +1,21 @@
 package com.model;
 
+import java.util.Objects;
+
 public class dataFactory {
 
     public database getDB(String dataType){
-        if (dataType == "car"){
+        if (Objects.equals(dataType, "car")){
             return new CarDB();
-        }else if(dataType == "user"){
+        }else if(Objects.equals(dataType, "user")){
             return new UserDB();
-        }else if(dataType == "model"){
+        }else if(Objects.equals(dataType, "model")){
             return new ModelDB();
-        }else if(dataType == "brand"){
+        }else if(Objects.equals(dataType, "brand")){
             return new BrandDB();
-        }else if(dataType == "booking"){
+        }else if(Objects.equals(dataType, "booking")){
             return new BookingDB();
-        }else if(dataType == "payment"){
+        }else if(Objects.equals(dataType, "payment")){
             return new PaymentDB();
         }
         return null;
