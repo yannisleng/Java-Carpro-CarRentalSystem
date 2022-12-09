@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="addeditcar_info" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_Info_Controller">
+<StackPane fx:id="addeditcar_info" prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.carpro.addeditCar_Info_Controller">
    <children>
       <Button id="returnBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchtoBefore" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <graphic>
@@ -279,7 +279,7 @@
             </Label>
          </children>
       </VBox>
-      <Button id="saveBtn" mnemonicParsing="false" onAction="#saveData" prefHeight="40.0" prefWidth="160.0" stylesheets="@style.css" text="Save" StackPane.alignment="TOP_LEFT">
+      <Button id="saveBtn" mnemonicParsing="false" onAction="#saveData" prefHeight="40.0" prefWidth="160.0" styleClass="defaultBtn" stylesheets="@style.css" text="Save" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="584.0" top="536.0" />
          </StackPane.margin>

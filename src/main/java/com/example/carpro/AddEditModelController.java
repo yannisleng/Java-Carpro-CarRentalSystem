@@ -153,7 +153,6 @@ public class AddEditModelController implements Initializable {
 
         modelDb.addData(model);
         filterModel();
-        //refreshPane();
     }
 
     @FXML
@@ -207,19 +206,6 @@ public class AddEditModelController implements Initializable {
     @FXML
     private void filterModel(ActionEvent event){
         filterModel();
-        /*List<Model> models = new ArrayList<>();
-
-        database brandDb = dataFactory.getDB("brand");
-        List<Brand> brands = new ArrayList<>(brandDb.getAllData());
-
-        if(addModelBrandCmb.getValue()!=null & !addModelBrandCmb.getValue().isEmpty()){
-            for(Brand brand:brands){
-                if(brand.getBrandName().equals(addModelBrandCmb.getValue())){
-                    models=brand.getModels();
-                }
-            }
-            displayModel(models);
-        }*/
     }
 
     private void filterModel(){
