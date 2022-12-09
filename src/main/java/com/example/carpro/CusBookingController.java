@@ -106,7 +106,7 @@ public class CusBookingController implements Initializable {
         imgCar.setImage(new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc()));
         lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
         ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
-        lblPrice.setText("RM" + car.getPrice() + "0");
+        lblPrice.setText("RM" + String.format("%.02f", car.getPrice()));
         lblPerson.setText(car.getSeat() + " " + "Persons");
         lblFuelPercent.setText(car.getFuel() + "%");
         lblCusState.setText(car.getState());

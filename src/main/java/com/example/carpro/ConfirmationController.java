@@ -55,7 +55,7 @@ public class ConfirmationController {
                         ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate());
                         lblAddress.setText(car.getAddress());
                         ttAddress.setText(car.getAddress());
-                        lblPricePerHour.setText("RM" + car.getPrice() + "0/hrs");
+                        lblPricePerHour.setText("RM" + String.format("%.02f", car.getPrice()) + "/hrs");
                         lblPickUpTime.setText(booking.getStartDate() + " " + booking.getStartTime());
                         lblDropOffTime.setText(booking.getEndDate() + " " + booking.getEndTime());
                     }

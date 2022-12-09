@@ -130,7 +130,6 @@ public class PaymentController {
 
     public void setData(Booking booking){
         bookingToPay = booking;
-        System.out.println(bookingToPay);
         for(Car car: cars){
             if(booking.getCarId().equals(car.getId())){
                 Image image = new Image("file:src/main/resources/com/example/carpro/img/car/" + car.getImgsrc());
@@ -142,10 +141,10 @@ public class PaymentController {
                 lblStartTime.setText(booking.getStartDate() + ", " + booking.getStartTime());
                 lblEndTime.setText(booking.getEndDate() + ", " + booking.getEndTime());
                 lblLocation.setText(car.getState());
-                lblPrice.setText("RM" + car.getPrice() + "0/ hours");
+                lblPrice.setText("RM" + String.format("%.02f", car.getPrice()) + "/ hours");
                 lblHour.setText("Total Hour: " + toHours(booking));
                 total = car.getPrice()*toHours(booking);
-                lblTotalPrice.setText("RM"+(total+"0"));
+                lblTotalPrice.setText("RM" + (String.format("%.02f", total)));
             }
         }
     }

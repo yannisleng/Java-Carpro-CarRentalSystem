@@ -98,9 +98,9 @@ public class ReceiptController {
                                 ttLocation.setText("Location: " + car.getAddress() + ",");
                                 lblLocationState.setText(car.getPostCode() + " " + car.getState() + ".");
                                 lblTotalHour.setText(String.valueOf(payment.getTotal()/car.getPrice()).replaceAll(".0",""));
-                                lblFarePerHour.setText(car.getPrice() + "0");
-                                lblTotalPrice.setText(payment.getTotal() + "0");
-                                lblFinalPrice.setText(payment.getTotal() + "0");
+                                lblFarePerHour.setText(String.format("%.02f", car.getPrice()));
+                                lblTotalPrice.setText(String.format("%.02f", payment.getTotal()));
+                                lblFinalPrice.setText(String.format("%.02f", payment.getTotal()));
                                 lblSelectedPaymentMethod.setText(payment.getMethod());
                             }
                         }
