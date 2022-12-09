@@ -33,7 +33,7 @@ public class SearchController implements Initializable {
 
     private List<Car> searchCars;
 
-    private String searchTxt = ExploreController.searchTxt;
+    private String searchTxt = ExploreController.getSearchTxt();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -84,7 +84,8 @@ public class SearchController implements Initializable {
         List<Car> cars = new ArrayList<>(db.getAllData());
 
         for(Car car: cars){
-            if(car.getState().equalsIgnoreCase(searchTxt) && car.getStatus().equals("Available")){
+            if((car.getState().equalsIgnoreCase(searchTxt) && car.getStatus().equals("Available")) ||
+                    (car.getAddress().contains(searchTxt) && car.getStatus().equals("Available"))){
                 searchCars.add(car);
             }
         }
