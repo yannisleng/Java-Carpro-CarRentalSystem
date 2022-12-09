@@ -7,13 +7,14 @@ import javafx.print.*;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.StackPane;
 import javafx.scene.transform.Scale;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Receipt {
+public class ReceiptController {
 
     @FXML
     private Button btnDownload;
@@ -66,6 +67,9 @@ public class Receipt {
     @FXML
     private StackPane spReceipt;
 
+    @FXML
+    private Tooltip ttCarDesc, ttLocation;
+
     private com.model.dataFactory dataFactory = new dataFactory();
     private database dbCar = dataFactory.getDB("car");
     private database dbPymt = dataFactory.getDB("payment");
@@ -87,9 +91,11 @@ public class Receipt {
                                 lblBookingNo.setText("Booking No. : #" + booking.getId());
                                 lblPayment.setText("Payment Date: " + payment.getDate());
                                 lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate() + " - " + car.getSeat() + " seats");
+                                ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate() + " - " + car.getSeat() + " seats");
                                 lblPickUpTime.setText("Pick-up: " + booking.getStartDate() + " " + booking.getStartTime());
                                 lblDropOffTime.setText("Drop-off: " + booking.getEndDate() + " " + booking.getEndTime());
                                 lblLocation.setText("Location: " + car.getAddress() + ",");
+                                ttLocation.setText("Location: " + car.getAddress() + ",");
                                 lblLocationState.setText(car.getPostCode() + " " + car.getState() + ".");
                                 lblTotalHour.setText(String.valueOf(payment.getTotal()/car.getPrice()).replaceAll(".0",""));
                                 lblFarePerHour.setText(car.getPrice() + "0");

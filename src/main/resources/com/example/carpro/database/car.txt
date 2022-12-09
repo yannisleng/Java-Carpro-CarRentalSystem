@@ -81,7 +81,7 @@
 0070040001`Porsche`Taycan`VSK 4310`34.00`4`100`Available`Jalan Desa Jaya, Pusat Bandar, Taman Desa`58100`Kuala Lumpur`0070040001.png
 0100040001`Audi`A6`VDF 2010`86.00`5`100`Available`28, Jalan 4/91, Taman Shamelin Perkasa`56100`Kuala Lumpur`0100040001.png
 0040050002`Perodua`Axia`VTR 2023`14.00`5`100`Available`Pudu Plaza, Jalan Landak, Off Jalan Pudu`55100`Kuala Lumpur`0040050002.png
-0030050001`Mercedes-Benz`E-Class Saloon`VES 6352`65.00`5`100`Available`20-1, Jalan 2/98, Taman Supreme`56100`Kuala Lumpur`0030050001.png
+0030050001`Mercedes-Benz`E-Class Saloon`VES 6352`65.00`5`82`Available`20-1, Jalan 2/98, Taman Supreme`56100`Kuala Lumpur`0030050001.png
 0160030001`Hyundai`Kona`THE 3240`45.00`5`100`Available`Lot 166 Kg. Renek, 22020 Jertih, Besut`22020`Terengganu`0160030001.png
 0070050001`Porsche`Panamera`TSE 3401`46.00`5`100`Available`293 Jalan Abdul Rahman Kemaman`24000`Terengganu`0070050001.png
 0100050001`Audi`A7`TSD 2121`21.00`5`100`Available`157, Jalan Bandar, 20100`20100`Terengganu`0100050001.png

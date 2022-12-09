@@ -89,8 +89,8 @@ public class ExploreController implements Initializable {
         instance = this;
         spExploreS = spExplore;
 
-        Scene.restrictDatePicker(dpPickUp, LocalDate.now(), LocalDate.now().plusMonths(6));
-        Scene.restrictDatePicker(dpDropOff, LocalDate.now(), LocalDate.now().plusMonths(6));
+        Scene.restrictDatePicker(dpPickUp, LocalDate.now().plusDays(1), LocalDate.now().plusMonths(6));
+        Scene.restrictDatePicker(dpDropOff, LocalDate.now().plusDays(1), LocalDate.now().plusMonths(6));
 
         recentlyAdded = new ArrayList<>(recentlyAddedCars());
         recommended = new ArrayList<>(recommendedCars());

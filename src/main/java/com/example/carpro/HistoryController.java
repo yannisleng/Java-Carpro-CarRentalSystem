@@ -178,7 +178,7 @@ public class HistoryController implements Initializable {
                     }else if(booking.getStatus().equals("Completed") && !booking.getPaymentId().equals("null")) {
                         historyCardController.getBtnReturn().setText("Paid");
                         historyCardController.getBtnReturn().setOnAction(event -> {
-                            Receipt receipt = CusController.instance.receipt();
+                            ReceiptController receipt = CusController.instance.receipt();
                             receipt.setData(booking);
                         });
                     }
