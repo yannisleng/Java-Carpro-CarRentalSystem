@@ -59,6 +59,7 @@ public class addeditCar_Update_Controller extends addeditCar_Info_Controller imp
     private StackPane addeditcar_update;
 
     private String imgPath = "file:src/main/resources/com/example/carpro/img/car/";
+    private String ImgPath = "src/main/resources/com/example/carpro/img/car/";
 
     private Car oriCar;
 
@@ -86,6 +87,7 @@ public class addeditCar_Update_Controller extends addeditCar_Info_Controller imp
         postCodeText.setText(car.getPostCode());
         stateCmb.getSelectionModel().select(car.getState());
         carPicimgView.setImage(new Image(imgPath+car.getImgsrc()));
+        pathLbl.setText(ImgPath+car.getImgsrc());
         setModelCmb(car);
     }
 
@@ -128,7 +130,7 @@ public class addeditCar_Update_Controller extends addeditCar_Info_Controller imp
             String oriPath = pathLbl.getText();
             Path from = Paths.get(oriPath);
             String fileExtension = oriPath.substring(oriPath.lastIndexOf("."), pathLbl.getText().length());
-            Path to = Paths.get("src/main/resources/com/example/carpro/img/car/"+oriCar.getId()+fileExtension);
+            Path to = Paths.get(ImgPath+oriCar.getId()+fileExtension);
             Files.copy(from,to, StandardCopyOption.REPLACE_EXISTING);
 
             //set car data

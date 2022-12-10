@@ -59,14 +59,16 @@ public class BrandDB extends database <Brand>{
         dataFactory dataFactory = new dataFactory();
         database db = dataFactory.getDB("car");
         List<Car> cars = new ArrayList<>(db.getAllData());
-        String stringToReplace = "";
+        String stringToReplace = null;
         for(Car car: cars){
             if(brand.getId().equals(car.getId().substring(0,3))){
                 stringToReplace = car.getBrand();
             }
         }
 
-        updateFile(carPath,stringToReplace,brand.getBrandName());
+        if(stringToReplace!=null){
+            updateFile(carPath,stringToReplace,brand.getBrandName());
+        }
 
         List<Brand> brands = new ArrayList<>(getAllData());
         for(int i = 0; i < brands.size(); i++){

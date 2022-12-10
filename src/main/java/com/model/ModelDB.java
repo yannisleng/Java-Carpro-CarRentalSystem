@@ -60,14 +60,16 @@ public class ModelDB extends database <Model>{
         dataFactory dataFactory = new dataFactory();
         database db = dataFactory.getDB("car");
         List<Car> cars = new ArrayList<>(db.getAllData());
-        String stringToReplace = "";
+        String stringToReplace = null;
         for(Car car: cars){
             if(model.getId().equals(car.getId().substring(0,6))){
                 stringToReplace = car.getModel();
             }
         }
 
-        updateFile(carPath,stringToReplace,model.getModelName());
+        if(stringToReplace!=null){
+            updateFile(carPath,stringToReplace,model.getModelName());
+        }
 
         List<Model> models = new ArrayList<>(getAllData());
         for(int i = 0; i < models.size(); i++){

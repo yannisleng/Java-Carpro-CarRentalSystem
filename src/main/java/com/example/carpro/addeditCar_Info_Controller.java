@@ -252,14 +252,6 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
         ft.setFromValue(1.0);
         ft.setToValue(0);
         ft.play();
-
-        //initial the scene
-        priceText.clear();
-        plateNumText.clear();
-        addressText.clear();
-        postCodeText.clear();
-        carPicimgView.setImage(defaultImg);
-        pathLbl.setText("src/main/resources/com/example/carpro/img/car/default-image.png");
     }
 
     private String generateCarId(){
@@ -316,6 +308,14 @@ public class addeditCar_Info_Controller extends addeditcar_Main_Controller imple
             db.addData(car);
 
             successAction();
+
+            //initial the scene
+            priceText.clear();
+            plateNumText.clear();
+            addressText.clear();
+            postCodeText.clear();
+            carPicimgView.setImage(defaultImg);
+            pathLbl.setText("src/main/resources/com/example/carpro/img/car/default-image.png");
         }
     }
 
