@@ -157,7 +157,7 @@ public class AddEditBrandController implements Initializable {
     }
 
     @FXML
-    public void searchBrandBar (ActionEvent event) throws Exception{
+    private void searchBrandBar (ActionEvent event) throws Exception{
         //set search bar visible
         if(searchBrandBar.isVisible()&&(searchBrandBar.getText()==null || searchBrandBar.getText().trim().isEmpty())){
             searchBrandBar.setVisible(false);

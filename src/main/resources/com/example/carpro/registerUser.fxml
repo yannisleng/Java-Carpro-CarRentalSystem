@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.RegisterUserController">
+<StackPane prefHeight="600.0" prefWidth="780.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.carpro.RegisterUserController">
    <children>
       <Label id="carinfoLbl" stylesheets="@style.css" text="General User Information" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
@@ -285,7 +285,7 @@
             </Label>
          </children>
       </VBox>
-      <Button id="saveBtn" mnemonicParsing="false" onAction="#saveData" prefHeight="40.0" prefWidth="160.0" stylesheets="@style.css" text="Save" StackPane.alignment="TOP_LEFT">
+      <Button id="saveBtn" mnemonicParsing="false" onAction="#saveData" prefHeight="40.0" prefWidth="160.0" styleClass="defaultBtn" stylesheets="@style.css" text="Save" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="584.0" top="536.0" />
          </StackPane.margin>
