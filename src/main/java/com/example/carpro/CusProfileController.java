@@ -22,6 +22,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -110,7 +114,7 @@ public class CusProfileController implements Initializable {
     }
 
     //update profile image
-    public void updateProfileImg(ActionEvent event){
+    public void updateProfileImg(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
         fileChooser = new FileChooser();
@@ -124,8 +128,15 @@ public class CusProfileController implements Initializable {
 
         if(file!=null){
             Image image = new Image("file:"+file.getPath());
+
+            String oriPath = file.getPath();
+            Path from = Paths.get(oriPath);
+            String fileExtension = oriPath.substring(oriPath.lastIndexOf("."), file.getPath().length());
+            Path to = Paths.get("src/main/resources/com/example/carpro/img/profile_pic/"+ customer.getUsername() + fileExtension);
+            Files.copy(from,to, StandardCopyOption.REPLACE_EXISTING);
+
             imgProfile.setImage(image);
-            customer.setProfilePic(file.getName());
+            customer.setProfilePic(customer.getUsername() + fileExtension);
         }
     }
 
@@ -199,6 +210,7 @@ public class CusProfileController implements Initializable {
         txtPosCode.setText(customer.getPostCode());
         cmbState.setPromptText(customer.getState());
         cmbState.setValue(customer.getState());
+        cmbState.setDisable(true);
     }
 
     private void initializeTxt(boolean editable, Cursor cursor){

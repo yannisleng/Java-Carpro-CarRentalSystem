@@ -88,6 +88,14 @@
                   <Insets left="145.0" top="100.0" />
                </StackPane.margin>
             </Label>
+            <Label fx:id="lblBookingNo" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="32.0" prefWidth="209.0" text="#O00001" StackPane.alignment="TOP_RIGHT">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets right="20.0" top="12.0" />
+               </StackPane.margin>
+            </Label>
          </children>
       </StackPane>
    </children>

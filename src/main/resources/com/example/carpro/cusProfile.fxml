@@ -296,7 +296,7 @@
             <Insets left="140.0" top="519.0" />
          </StackPane.margin>
       </Label>
-      <ComboBox fx:id="cmbState" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #c2c2c2; -fx-border-radius: 8;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
+      <ComboBox id="cmbCusState" fx:id="cmbState" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #c2c2c2; -fx-border-radius: 8;" stylesheets="@style.css" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets left="432.0" top="546.0" />
          </StackPane.margin>
