@@ -4,15 +4,14 @@ import com.model.Car;
 import com.model.User;
 import com.model.dataFactory;
 import com.model.database;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,6 +21,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ExploreController implements Initializable {
 
@@ -234,13 +234,18 @@ public class ExploreController implements Initializable {
     private void loadHorizontalCars(List<Car> list) throws IOException {
         gridRecommendCar.getChildren().clear();
 
-        int column = 0;
-        int row = 1;
-
+        AtomicInteger column = new AtomicInteger();
+        AtomicInteger row = new AtomicInteger(1);
+        new Thread(() -> {
         for(Car car: list){
             recommendLoader = new FXMLLoader();
             recommendLoader.setLocation(getClass().getResource("recommendedCar.fxml"));
-            VBox carBox = recommendLoader.load();
+            VBox carBox = null;
+            try {
+                carBox = recommendLoader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             RecommendedCarController recommendedCarController = recommendLoader.getController();
             recommendedCarController.setData(car);
             recommendedCarController.getBtnView().setOnAction(event -> {
@@ -257,27 +262,36 @@ public class ExploreController implements Initializable {
                 }
             });
 
-            if(column == 3){
-                column = 0;
-                ++row;
+            if(column.get() == 3){
+                column.set(0);
+                row.incrementAndGet();
             }
+            VBox finalCarBox = carBox;
+            Platform.runLater(() -> {
+                gridRecommendCar.add(finalCarBox, column.getAndIncrement(), row.get());
+            });
 
-            gridRecommendCar.add(carBox, column++, row);
 
-            if(column % 3 != 0){
+            if(column.get() % 3 != 0){
                 GridPane.setMargin(carBox, new Insets(-25,53, 55,0));
             }else{
                 GridPane.setMargin(carBox, new Insets(-25,0, 55,0));
             }
         }
+        }).start();
     }
 
     private void loadVerticalCar(List<Car> list) throws IOException{
-        try{
+        new Thread(() -> {
             for(Car car: list){
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("recentlyAddCard.fxml"));
-                HBox cardBox = fxmlLoader.load();
+                HBox cardBox = null;
+                try {
+                    cardBox = fxmlLoader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 RecentlyAddCardController recentlyAddCardController = fxmlLoader.getController();
                 recentlyAddCardController.setData(car);
                 recentlyAddCardController.getBtnView().setOnAction(event -> {
@@ -293,10 +307,12 @@ public class ExploreController implements Initializable {
                         e.printStackTrace();
                     }
                 });
-                cardLayout.getChildren().add(cardBox);
+                HBox finalCardBox = cardBox;
+                Platform.runLater(() -> {
+                    cardLayout.getChildren().add(finalCardBox);
+                });
+
             }
-        }catch(IOException e){
-            e.printStackTrace();
-        }
+        }).start();
     }
 }
