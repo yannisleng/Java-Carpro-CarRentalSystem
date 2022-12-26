@@ -1,6 +1,7 @@
 package com.example.carpro;
 
 import com.model.*;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -21,6 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class adminCusBookingController implements Initializable {
 
@@ -48,6 +50,9 @@ public class adminCusBookingController implements Initializable {
     @FXML
     private StackPane customerBookingLayout;
 
+    @FXML
+    private ProgressBar processBar ;
+
     dataFactory dataFactory = new dataFactory();
 
     database carDb = dataFactory.getDB("car");
@@ -65,42 +70,62 @@ public class adminCusBookingController implements Initializable {
     }
 
     private void loadBooking(List<Booking> bookings)throws IOException{
+        processBar.setProgress(0);
         bookingContainer.getChildren().clear();
 
-        int column = 0;
-        int row = 1;
+        new Thread(() -> {
+            AtomicInteger column = new AtomicInteger();
+            int row = 1;
 
-        for (Booking booking : bookings){
-            for(Car car:cars){
-                if(booking.getCarId().equals(car.getId())){
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("bookingCard.fxml"));
+            int index = 1;
 
-                    VBox bookingCard = fxmlLoader.load();
-                    BookingCardController bcc = fxmlLoader.getController();
-                    bcc.setData(booking,car);
+            for (Booking booking : bookings){
+                for(Car car:cars){
+                    if(booking.getCarId().equals(car.getId())){
+                        FXMLLoader fxmlLoader = new FXMLLoader();
+                        fxmlLoader.setLocation(getClass().getResource("bookingCard.fxml"));
 
-                    bookingCard.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent event) {
-                            String id = bcc.getOrderId().getText().substring(1,bcc.getOrderId().getText().length());
-                            BookingCardEventHandler(id);
-                            carBookingInfo.setVisible(true);
+                        VBox bookingCard = null;
+                        try {
+                            bookingCard = fxmlLoader.load();
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-                    });
+                        BookingCardController bcc = fxmlLoader.getController();
+                        bcc.setData(booking,car);
 
-                    if(column == 2){
-                        column = 0;
-                        ++row;
+                        bookingCard.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                            @Override
+                            public void handle(MouseEvent event) {
+                                String id = bcc.getOrderId().getText().substring(1,bcc.getOrderId().getText().length());
+                                BookingCardEventHandler(id);
+                                carBookingInfo.setVisible(true);
+                                processBar.setVisible(false);
+                                carBookingInfo.toFront();
+                            }
+                        });
+
+                        if(column.get() == 2){
+                            column.set(0);
+                            ++row;
+                        }
+                        int finalRow = row;
+                        int finalIndex = index;
+                        VBox finalBookingCard = bookingCard;
+                        Platform.runLater(() -> {
+                            processBar.setVisible(true);
+                            bookingContainer.add(finalBookingCard, column.getAndIncrement(), finalRow);
+                            GridPane.setMargin(finalBookingCard, new Insets(0,10,10,0));
+                            processBar.setProgress((double) finalIndex /bookings.size());
+                        });
                     }
-                    bookingContainer.add(bookingCard,column++,row);
-                    GridPane.setMargin(bookingCard, new Insets(0,10,10,0));
                 }
+                //System.out.println("index: "+index);
+                index++;
             }
-
-        }
+        }).start();
+        processBar.setVisible(false);
     }
-
     private void BookingCardEventHandler(String orderId){
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("carBookingInfo.fxml"));
