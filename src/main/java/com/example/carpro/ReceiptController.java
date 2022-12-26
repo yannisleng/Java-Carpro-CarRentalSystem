@@ -85,23 +85,7 @@ public class ReceiptController {
                     if(booking.getPaymentId().equals(payment.getId())){
                         for(Car car: cars){
                             if(booking.getCarId().equals(car.getId())){
-                                lblName.setText(user.getFirstName() + " " + user.getLastName());
-                                lblAddress.setText(user.getAddress() + ",");
-                                lblState.setText(user.getPostCode() + " " + user.getState() + ".");
-                                lblBookingNo.setText("Booking No. : #" + booking.getId());
-                                lblPayment.setText("Payment Date: " + payment.getDate());
-                                lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate() + " - " + car.getSeat() + " seats");
-                                ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate() + " - " + car.getSeat() + " seats");
-                                lblPickUpTime.setText("Pick-up: " + booking.getStartDate() + " " + booking.getStartTime());
-                                lblDropOffTime.setText("Drop-off: " + booking.getEndDate() + " " + booking.getEndTime());
-                                lblLocation.setText("Location: " + car.getAddress() + ",");
-                                ttLocation.setText("Location: " + car.getAddress() + ",");
-                                lblLocationState.setText(car.getPostCode() + " " + car.getState() + ".");
-                                lblTotalHour.setText(String.valueOf(payment.getTotal()/car.getPrice()).replaceAll(".0",""));
-                                lblFarePerHour.setText(String.format("%.02f", car.getPrice()));
-                                lblTotalPrice.setText(String.format("%.02f", payment.getTotal()));
-                                lblFinalPrice.setText(String.format("%.02f", payment.getTotal()));
-                                lblSelectedPaymentMethod.setText(payment.getMethod());
+                                setDetails(user, booking, car, payment);
                             }
                         }
                     }
@@ -146,5 +130,25 @@ public class ReceiptController {
         CusController cusController = (CusController) Scene.getController("cusMain.fxml", spReceipt);
         Scene.switchScene("cusHistory.fxml", cusController.getSpCusDefault());
         cusController.getBtnHistory().requestFocus();
+    }
+
+    private void setDetails(User user, Booking booking, Car car, Payment payment){
+        lblName.setText(user.getFirstName() + " " + user.getLastName());
+        lblAddress.setText(user.getAddress() + ",");
+        lblState.setText(user.getPostCode() + " " + user.getState() + ".");
+        lblBookingNo.setText("Booking No. : #" + booking.getId());
+        lblPayment.setText("Payment Date: " + payment.getDate());
+        lblCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate() + " - " + car.getSeat() + " seats");
+        ttCarDesc.setText(car.getBrand() + " " + car.getModel() + " " + car.getNumPlate() + " - " + car.getSeat() + " seats");
+        lblPickUpTime.setText("Pick-up: " + booking.getStartDate() + " " + booking.getStartTime());
+        lblDropOffTime.setText("Drop-off: " + booking.getEndDate() + " " + booking.getEndTime());
+        lblLocation.setText("Location: " + car.getAddress() + ",");
+        ttLocation.setText("Location: " + car.getAddress() + ",");
+        lblLocationState.setText(car.getPostCode() + " " + car.getState() + ".");
+        lblTotalHour.setText(String.valueOf(payment.getTotal()/car.getPrice()).replaceAll(".0",""));
+        lblFarePerHour.setText(String.format("%.02f", car.getPrice()));
+        lblTotalPrice.setText(String.format("%.02f", payment.getTotal()));
+        lblFinalPrice.setText(String.format("%.02f", payment.getTotal()));
+        lblSelectedPaymentMethod.setText(payment.getMethod());
     }
 }

@@ -21,10 +21,10 @@ public class HistoryCardController {
     private Button btnReturn;
 
     @FXML
-    private ImageView imgCar;
+    private Label lblAddress;
 
     @FXML
-    private Label lblAddress;
+    private Label lblBookingNo;
 
     @FXML
     private Label lblBrandModelCarPlate;
@@ -36,25 +36,10 @@ public class HistoryCardController {
     private Label lblEndTime;
 
     @FXML
-    private Label lblRoundArrow;
-
-    @FXML
     private Label lblStartDate;
 
     @FXML
     private Label lblStartTime;
-
-    @FXML
-    private Separator separatorBlack;
-
-    @FXML
-    private Separator separatorGrey;
-
-    @FXML
-    private StackPane spHistory;
-
-    @FXML
-    private VBox vboxHistory;
 
     public Button getBtnReturn() {
         return btnReturn;
@@ -74,6 +59,7 @@ public class HistoryCardController {
         }
 
         lblBrandModelCarPlate.setText(bookedCar.getBrand() + " " + bookedCar.getModel() + " " + bookedCar.getNumPlate());
+        lblBookingNo.setText("#" + booking.getId());
         lblAddress.setText(bookedCar.getAddress() + ", " + bookedCar.getPostCode() + ", " + bookedCar.getState());
         lblStartDate.setText(String.valueOf(booking.getStartDate()));
         lblStartTime.setText(booking.getStartTime());

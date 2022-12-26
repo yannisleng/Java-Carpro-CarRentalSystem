@@ -224,7 +224,7 @@ public class HistoryController implements Initializable {
                 car.setStatus("Available");
                 car.setFuel(car.getFuel()-generateRandomNumber(5,70));
                 if(car.getFuel()<=0){
-                    car.setFuel(100);
+                    car.setFuel(99);
                 }
                 cars.set(i, car);
                 updateCarDb("src/main/resources/com/example/carpro/database/car.txt", cars);

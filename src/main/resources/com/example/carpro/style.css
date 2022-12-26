@@ -325,16 +325,16 @@
 
 /*cus profile*/
 #cmbState, #cmbState:disabled{
-    -fx-opacity: 1.0;
-    -fx-background-color: transparent;
-    -fx-border-color: #c2c2c2;
-    -fx-border-radius: 8px;
     -fx-prompt-text-fill: #000000;
     -fx-text-fill: #000000;
     -fx-font-size: 14px;
 }
 
-#cmbState .arrow, #cmbState .arrow-button {
+#cmbCusState:disabled, #cmbCusState:disabled > * {
+    -fx-opacity: 1.0 ;
+}
+
+#cmbCusState .arrow, #cmbCusState .arrow-button {
     -fx-background-color: transparent;
 }
 

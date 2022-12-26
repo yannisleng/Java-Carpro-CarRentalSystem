@@ -47,10 +47,10 @@ public class Scene {
                         super.updateItem(item, empty);
                         if (item.isBefore(minDate)) {
                             setDisable(true);
-                            setStyle("-fx-background-color: #c2c2c2;");
+                            //setStyle("-fx-background-color: #c2c2c2;");
                         }else if (item.isAfter(maxDate)) {
                             setDisable(true);
-                            setStyle("-fx-background-color: #c2c2c2;");
+                            //setStyle("-fx-background-color: #c2c2c2;");
                         }
                     }
                 };

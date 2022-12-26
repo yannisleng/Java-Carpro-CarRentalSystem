@@ -93,6 +93,7 @@ public class CusBookingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         Scene.restrictDatePicker(dpPickUp, LocalDate.now().plusDays(1), LocalDate.now().plusMonths(6));
         Scene.restrictDatePicker(dpDropOff, LocalDate.now().plusDays(1), LocalDate.now().plusMonths(6));
 
