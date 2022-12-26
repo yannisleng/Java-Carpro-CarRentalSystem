@@ -45,7 +45,7 @@
                   <Insets top="222.5" />
                </StackPane.margin>
             </Label>
-            <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="730.0" style="-fx-background-color: #ffffff;" StackPane.alignment="TOP_LEFT">
+            <ScrollPane fx:id="scrollPaneRecommended" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="730.0" style="-fx-background-color: #ffffff;" StackPane.alignment="TOP_LEFT">
                <StackPane.margin>
                   <Insets top="260.0" />
                </StackPane.margin>

@@ -61,6 +61,12 @@ public class ExploreController implements Initializable {
     private Label lblSelectPU;
 
     @FXML
+    private ScrollPane scrollPaneRecentlyAdd;
+
+    @FXML
+    private ScrollPane scrollPaneRecommended;
+
+    @FXML
     private StackPane spExplore, spExploreS, spExploreC1;
 
     public StackPane getSpExploreS() {
@@ -88,6 +94,9 @@ public class ExploreController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         instance = this;
         spExploreS = spExplore;
+
+        scrollPaneRecentlyAdd.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPaneRecommended.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         Scene.restrictDatePicker(dpPickUp, LocalDate.now().plusDays(1), LocalDate.now().plusMonths(6));
         Scene.restrictDatePicker(dpDropOff, LocalDate.now().plusDays(1), LocalDate.now().plusMonths(6));
