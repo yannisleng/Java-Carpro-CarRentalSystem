@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox id="carItemHbox" fx:id="hbox" prefHeight="45.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carpro.addeditCar_item_Controller">
+<HBox id="carItemHbox" fx:id="hbox" prefHeight="45.0" prefWidth="721.0" style="-fx-background-color: white;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.example.carpro.addeditCar_item_Controller">
    <children>
       <CheckBox fx:id="id" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: transparent;" stylesheets="@style.css" text="1">
          <padding>
@@ -38,4 +39,7 @@
          </padding>
       </Label>
    </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </HBox>

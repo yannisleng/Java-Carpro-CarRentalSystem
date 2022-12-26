@@ -244,9 +244,7 @@ public class addeditcar_Main_Controller implements Initializable {
         cars = db.searchData(searchBar.getText());
 
         carlistLayout.getChildren().clear();
-        createPage(pagination.getCurrentPageIndex(),cars);
-
-        setPaginationPageCount(cars);
+        setPagination(cars);
     }
 
     @FXML

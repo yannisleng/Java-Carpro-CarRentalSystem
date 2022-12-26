@@ -26,7 +26,7 @@
                   <Insets left="86.0" />
                </VBox.margin>
             </Button>
-            <Button id="editBtn_menu" fx:id="editMenu" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Add/Edit Car">
+            <Button id="editBtn_menu" fx:id="editMenu" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleMenuAction" prefHeight="60.0" prefWidth="163.0" styleClass="secondBtn" stylesheets="@style.css" text="Manage Car">
                <VBox.margin>
                   <Insets left="86.0" />
                </VBox.margin>

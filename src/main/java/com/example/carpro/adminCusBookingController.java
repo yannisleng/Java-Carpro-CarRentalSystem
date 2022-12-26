@@ -80,13 +80,10 @@ public class adminCusBookingController implements Initializable {
                     BookingCardController bcc = fxmlLoader.getController();
                     bcc.setData(booking,car);
 
-                    bookingCard.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent event) {
-                            String id = bcc.getOrderId().getText().substring(1,bcc.getOrderId().getText().length());
-                            BookingCardEventHandler(id);
-                            carBookingInfo.setVisible(true);
-                        }
+                    bookingCard.setOnMouseClicked(event -> {
+                        String id = bcc.getOrderId().getText().substring(1,bcc.getOrderId().getText().length());
+                        BookingCardEventHandler(id);
+                        carBookingInfo.setVisible(true);
                     });
 
                     if(column == 2){
