@@ -269,14 +269,15 @@ public class ExploreController implements Initializable {
             VBox finalCarBox = carBox;
             Platform.runLater(() -> {
                 gridRecommendCar.add(finalCarBox, column.getAndIncrement(), row.get());
+                if(column.get() % 3 != 0){
+                    GridPane.setMargin(finalCarBox, new Insets(-25,53, 55,0));
+                }else{
+                    GridPane.setMargin(finalCarBox, new Insets(-25,0, 55,0));
+                }
             });
 
 
-            if(column.get() % 3 != 0){
-                GridPane.setMargin(carBox, new Insets(-25,53, 55,0));
-            }else{
-                GridPane.setMargin(carBox, new Insets(-25,0, 55,0));
-            }
+
         }
         }).start();
     }
