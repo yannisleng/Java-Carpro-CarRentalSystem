@@ -68,7 +68,7 @@
 0020150001`Toyota`Innova MPV`MSF 3512`120.00`8`100`Available`No. 9 Jln Sri Rama 2 Taman Muzaffar Shah`75450`Melaka`0020150001.png
 0020160001`Toyota`Vellfire MPV`MRH 1398`66.00`7`100`Available`Taman Pandan Malim, Balai Panjang`75250`Melaka`0020160001.png
 0020170001`Toyota`Alphard MPV`MSF 5501`154.00`8`100`Available`Jalan BPM 5, Taman Bukit Piatu Mutiara`75150`Melaka`0020170001.png
-0110100001`Mazda`MX-30`MYW 3980`39.00`5`100`Available`No. 37, Jalan Banda Kaba`75000`Melaka`0110100001.png
+0110100001`Mazda`MX-30`MYW 3980`39.00`5`85`Available`No. 37, Jalan Banda Kaba`75000`Melaka`0110100001.png
 0030020001`Mercedes-Benz`EQS Saloon`MAS 5431`78.00`5`100`Available`Jalan D7, Tmn Dahlia Bkt Beruang`75450`Melaka`0030020001.png
 0160010001`Hyundai`Elantra`PSD 1010`52.00`6`100`Available`Lot 128 Prai Free Trade Zone`13600`Penang`0160010001.png
 0070020001`Porsche`718`PAW 4238`42.00`2`100`Available`4215 Jalan Ong Yi How`13400`Penang`0070020001.png
