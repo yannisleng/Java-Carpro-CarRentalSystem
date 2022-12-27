@@ -234,18 +234,13 @@ public class ExploreController implements Initializable {
     private void loadHorizontalCars(List<Car> list) throws IOException {
         gridRecommendCar.getChildren().clear();
 
-        AtomicInteger column = new AtomicInteger();
-        AtomicInteger row = new AtomicInteger(1);
-        new Thread(() -> {
+        int column = 0;
+        int row = 1;
+
         for(Car car: list){
             recommendLoader = new FXMLLoader();
             recommendLoader.setLocation(getClass().getResource("recommendedCar.fxml"));
-            VBox carBox = null;
-            try {
-                carBox = recommendLoader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            VBox carBox = recommendLoader.load();
             RecommendedCarController recommendedCarController = recommendLoader.getController();
             recommendedCarController.setData(car);
             recommendedCarController.getBtnView().setOnAction(event -> {
@@ -262,24 +257,19 @@ public class ExploreController implements Initializable {
                 }
             });
 
-            if(column.get() == 3){
-                column.set(0);
-                row.incrementAndGet();
+            if(column == 3){
+                column = 0;
+                ++row;
             }
-            VBox finalCarBox = carBox;
-            Platform.runLater(() -> {
-                gridRecommendCar.add(finalCarBox, column.getAndIncrement(), row.get());
-                if(column.get() % 3 != 0){
-                    GridPane.setMargin(finalCarBox, new Insets(-25,53, 55,0));
-                }else{
-                    GridPane.setMargin(finalCarBox, new Insets(-25,0, 55,0));
-                }
-            });
 
+            gridRecommendCar.add(carBox, column++, row);
 
-
+            if(column % 3 != 0){
+                GridPane.setMargin(carBox, new Insets(-25,53, 55,0));
+            }else{
+                GridPane.setMargin(carBox, new Insets(-25,0, 55,0));
+            }
         }
-        }).start();
     }
 
     private void loadVerticalCar(List<Car> list) throws IOException{
