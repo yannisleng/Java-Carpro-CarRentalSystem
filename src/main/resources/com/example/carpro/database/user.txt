@@ -1,12 +1,12 @@
 yannis`Zhi Yan`Leng`2001-10-15`Female`lengzhiyan1015@gmail.com`0169985960`Sunshine Residence`57000`Kuala Lumpur`Admin`abc123`yannis.png
 pheymin`Phey Min`Foo`2000-12-23`Female`pheymin1223@gmail.com`0186651223`Rainbow Residence`47000`Kuala Lumpur`Admin`123abc`pheymin.png
-kexin`Ke Xin`Tan`2001-09-14`Female`kexintan@gmail.com`0128473999`Lorong Tengku Ahmad, Jalan Long Jaffar, Sungai Petani`08000`Kedah`Customer`cba321`kexin.jpg
+kexin`Ke Xin`Tan`2001-09-14`Female`kexintan@gmail.com`0113707311`Lorong Tengku Ahmad, Jalan Long Jaffar, Sungai Petani`08000`Kedah`Customer`cba321`kexin.jpg
 Reynard`Reynard`Kassandra`1996-11-29`Male`ReynardKassandra@hotmail.com`0123456789`220 Jalan Pasai Sri Petaling`57000`Kuala Lumpur`Customer`961129`Reynard.jpg
 Morgan`Morgan`Frederik`1994-11-11`Female`MorganFrederik@hotmail.com`0198541236`301 G Lrg 9 Off Jalan Rubber Kuching`93400`Sarawak`Customer`941111`Morgan.jpg
 Amar`Amar`Tshering`1992-11-06`Rather not say`AmarTshering@gmail.com`0165421365`No. 63 Jln Bijeh Timah`30000`Perak`Customer`921106`Amar.jpg
 Pasha`Pasha`Fareed`1995-11-10`Rather not say`PashaFareed@hotmail.com`0178541236`16 Jalan Mutiara Emas 6/1 Taman Mount Austin`81100`Johor`Customer`951110`Pasha.jpg
-Aaron`Aaron`Leong`1979-01-06`Male`aaronleong@yahoo.com`0117778282`7-11-2 Sunshine Residence, Sunshine Road`37001`Negeri Sembilan`Customer`790106`Aaron.png
-fayne`Fayne`Ng`1998-02-22`Female`fayneng123@gmail.com`0124789227`3-4-9 Rainbow Residence, Rainbow Road`72400`Pahang`Customer`980222`fayne.png
-colinseow`Colin`Seow`1977-04-09`Male`colinseow@hotmai.com`0182228039`C-9-11 Apartment Kos Sederhana Villa`52000`Terengganu`Customer`770409`colinseow.png
-fendy`Fendy`Chang`1972-06-16`Female`fendychanggg@gmail.com`0113990202`D-13-09 Hill Residence, Karry Street`47900`Kedah`Customer`720616`fendy.png
-jiatian`Jia Tian`Lim`2002-11-09`Female`jiatiannn@gmail.com`0122041178`20-4-7 Pangsapuri Sri Endah, Jalan 13/33`51000`Melaka`Customer`021109`jiatian.png
+Aaron`Aaron`Leong`1979-01-06`Male`aaronleong@yahoo.com`0117778282`7-11-2 Sunshine Residence, Sunshine Road`37001`Negeri Sembilan`Customer`790106`Aaron.jpg
+fayne`Fayne`Ng`1998-02-22`Female`fayneng123@gmail.com`0124789227`3-4-9 Rainbow Residence, Rainbow Road`72400`Pahang`Customer`980222`fayne.jpg
+colinseow`Colin`Seow`1977-04-09`Male`colinseow@hotmai.com`0182228039`C-9-11 Apartment Kos Sederhana Villa`52000`Terengganu`Customer`770409`colinseow.jpg
+fendy`Fendy`Chang`1972-06-16`Female`fendychanggg@gmail.com`0113990202`D-13-09 Hill Residence, Karry Street`47900`Kedah`Customer`720616`fendy.jpg
+jiatian`Jia Tian`Lim`2002-11-09`Female`jiatiannn@gmail.com`0122041178`20-4-7 Pangsapuri Sri Endah, Jalan 13/33`51000`Melaka`Customer`021109`jiatian.jpg
