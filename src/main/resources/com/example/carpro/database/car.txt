@@ -95,4 +95,4 @@
 0030080001`Mercedes-Benz`EQA SUV`KGF 5489`151.00`5`100`Available`No 32 Taipan Squre Taipan Squre Business Center`08000`Kedah`0030080001.png
 0030090001`Mercedes-Benz`EQB SUV`KHG 29`165.00`7`100`Available`Jalan Penarak, Mukim Kuah`07000`Kedah`0030090001.png
 0160070001`Hyundai`Palisade`KWE 2300`69.00`8`100`Available`Lorong 6A, Taman Mewah,`08000`Kedah`0160070001.png
-1000100001`Audi`RS`KOD 923`98.00`5`100`Available`Taman Senangin, Kilang Lama`09000`Kedah`1000100001.png
+1000100001`Audi`RS`KOD 923`98.00`5`53`Available`Taman Senangin, Kilang Lama`09000`Kedah`1000100001.png

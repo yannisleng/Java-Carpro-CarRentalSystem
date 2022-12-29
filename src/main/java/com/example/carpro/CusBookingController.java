@@ -132,21 +132,8 @@ public class CusBookingController implements Initializable {
                             db.addData(booking);
 
                             car.setStatus("Unavailable");
-                            for(int i = 0; i < cars.size(); i++){
-                                Car txtCar = cars.get(i);
-                                if(txtCar.getId().equals(car.getId())){
-                                    cars.set(i, car);
-                                    try {
-                                        FileWriter file = new FileWriter("src/main/resources/com/example/carpro/database/car.txt");
-                                        for(Car car2: cars){
-                                            file.write(String.valueOf(car2));
-                                        }
-                                        file.close();
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }
+                            dbCar.updateData(car);
+
                             ConfirmationController confirmation = CusController.instance.confirmation();
                             confirmation.setData(booking);
                         }else{

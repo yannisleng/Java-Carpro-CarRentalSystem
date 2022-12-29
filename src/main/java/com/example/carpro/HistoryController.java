@@ -39,9 +39,6 @@ public class HistoryController implements Initializable {
     private GridPane gridHistory;
 
     @FXML
-    private ScrollPane scrollHistory;
-
-    @FXML
     private StackPane spHistory;
 
     private dataFactory dataFactory = new dataFactory();
@@ -69,13 +66,7 @@ public class HistoryController implements Initializable {
                setReturn(cusBooking);
 
                cusBooking.setStatus("Completed");
-               for(int j = 0; j < fullBookings.size(); j++){
-                   Booking booking1 = fullBookings.get(j);
-                   if(booking1.getId().equals(cusBooking.getId())){
-                       fullBookings.set(j, cusBooking);
-                       updateDb("src/main/resources/com/example/carpro/database/booking.txt", fullBookings);
-                   }
-               }
+               db.updateData(cusBooking);
                loadBookingCard(bookingList("Ended"));
            }
         }
@@ -163,13 +154,7 @@ public class HistoryController implements Initializable {
                                 setReturn(booking);
 
                                 booking.setStatus("Completed");
-                                for(int j = 0; j < fullBookings.size(); j++){
-                                    Booking booking1 = fullBookings.get(j);
-                                    if(booking1.getId().equals(booking.getId())){
-                                        fullBookings.set(j, booking);
-                                        updateDb("src/main/resources/com/example/carpro/database/booking.txt", fullBookings);
-                                    }
-                                }
+                                db.updateData(booking);
                                 loadBookingCard(bookingList("Ended"));
                             }
                         });
@@ -226,8 +211,7 @@ public class HistoryController implements Initializable {
                 if(car.getFuel()<=0){
                     car.setFuel(99);
                 }
-                cars.set(i, car);
-                updateCarDb("src/main/resources/com/example/carpro/database/car.txt", cars);
+                dbCar.updateData(car);
             }
         }
     }
@@ -235,29 +219,4 @@ public class HistoryController implements Initializable {
     private int generateRandomNumber(int min, int max){
         return (int) (Math.random() * (max - min + 1) + min);
     }
-
-    private void updateCarDb(String fileStr, List<Car> list){
-        try {
-            FileWriter file = new FileWriter(fileStr);
-            for(Car car: list){
-                file.write(String.valueOf(car));
-            }
-            file.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void updateDb(String fileStr, List<Booking> list){
-        try {
-            FileWriter file = new FileWriter(fileStr);
-            for(Booking booking: list){
-                file.write(String.valueOf(booking));
-            }
-            file.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
