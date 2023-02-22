@@ -28,7 +28,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[product-screenshot]](https://github.com/yannisleng/Java-Carpro-CarRentalSystem/tree/master/src/main/resources/com/example/carpro/img/README/login_page.png)
+![product-screenshot](https://github.com/yannisleng/Java-Carpro-CarRentalSystem/tree/master/src/main/resources/com/example/carpro/img/README/login_page.png)
 
 CarPro is a car rental system which developed to rent cars in every state of Malaysia. With the slogan "CarPro is here to stay, and keep finding you the nearest car in Malaysia", CarPro is always ready for car renting.
 
@@ -46,19 +46,15 @@ Here's a step-by-step guide to help you get started with this Java project:
 
 ### Prerequisites
 
-* JDK
+1. JDK
 <br />
-Download and install the Java Development Kit (JDK) from the Oracle website
-```sh
+Download and install the Java Development Kit (JDK) from the Oracle website:
 https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html
-```
 
-* IDE
+2. IDE
   <br />
-Download and install the IntelliJ IDEA community edition from their website
-```sh
+Download and install the IntelliJ IDEA community edition from their website:
 https://www.jetbrains.com/idea/download/#section=windows
-```
 
 
 ### Installation
