@@ -47,12 +47,10 @@ Here's a step-by-step guide to help you get started with this Java project:
 ### Prerequisites
 
 1. JDK
-<br />
 Download and install the Java Development Kit (JDK) from the Oracle website:
 https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html
 
 2. IDE
-  <br />
 Download and install the IntelliJ IDEA community edition from their website:
 https://www.jetbrains.com/idea/download/#section=windows
 
