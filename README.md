@@ -28,7 +28,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![product-screenshot](https://github.com/yannisleng/Java-Carpro-CarRentalSystem/tree/master/src/main/resources/com/example/carpro/img/README/login_page.png)
+![product-screenshot](https://github.com/yannisleng/Java-Carpro-CarRentalSystem/blob/master/src/main/resources/com/example/carpro/img/README/login_page.png)
 
 CarPro is a car rental system which developed to rent cars in every state of Malaysia. With the slogan "CarPro is here to stay, and keep finding you the nearest car in Malaysia", CarPro is always ready for car renting.
 
@@ -72,10 +72,10 @@ git clone https://github.com/yannisleng/Java-Carpro-CarRentalSystem.git
 ## Usage
 ### Demo Video
 #### Customer
-[![Java-Carpro-CarRentalSystem-Customer](youtube_thumbnail.jpg)](youtube_link)
+[![Java-Carpro-CarRentalSystem-Customer](https://github.com/yannisleng/Java-Carpro-CarRentalSystem/blob/master/src/main/resources/com/example/carpro/img/README/customer.png)](https://youtu.be/DGfhKmbujqg)
 
 #### Administrator
-[![Java-Carpro-CarRentalSystem-Administrator](youtube_thumbnail.jpg)](youtube_link)
+[![Java-Carpro-CarRentalSystem-Administrator](https://github.com/yannisleng/Java-Carpro-CarRentalSystem/blob/master/src/main/resources/com/example/carpro/img/README/admin.png)](https://youtu.be/ld2a6Y4HxFE)
 
 
 <!-- LICENSE -->
